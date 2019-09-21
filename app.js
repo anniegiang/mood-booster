@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const bodyParser = require('body-parser');
 
 const users = require("./routes/api/users");
@@ -15,19 +16,17 @@ mongoose // connect to MongoDB using Mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => {
-  console.log(req.method);
-  console.log(req.url);
-  res.send("Twitter")
-}); 
-
 // tell Express to use imported routes
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
 
-// middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+// tell express to use middleware to parse JSON that's sent to frontend
+app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(bodyParser.json());
+
+// tell express to use middleware to initialize the authentication module
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
 // tell app which port to run on
 // server will run on a required heroku port or localhost:5000
