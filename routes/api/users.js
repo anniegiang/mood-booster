@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 
 const router = express.Router();
@@ -29,6 +30,27 @@ router.post('/register', (req, res) => {
                 })
             }
         })
+});
+
+router.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    User.findOne({ email })
+        .then(user => {
+            if(!user) {
+                res.status(400).json({email: "User does not exist"});
+            }
+
+            bcrypt.compare(password, user.password)
+                .then(isMatch => {
+                    if(isMatch) {
+                        res.json({msg: "Success!"});
+                    } else {
+                        res.status(400).json({password: "Invalid password"});
+                    }
+                })
+        })
+    
 });
 
 module.exports = router;
