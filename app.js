@@ -15,11 +15,17 @@ mongoose // connect to MongoDB using Mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Twitter")); 
+app.get("/", (req, res) => {
+  console.log(req.method);
+  console.log(req.url);
+  res.send("Twitter")
+}); 
 
 // tell Express to use imported routes
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
+
+// middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
