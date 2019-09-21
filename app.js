@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const users = require("./routes/api/users");
+const tweets = require("./routes/api/tweets");
+
 const app = express(); // creates a new express server
 const db = require('./config/keys').mongoURI
 
@@ -11,6 +14,10 @@ mongoose
   .catch(err => console.log(err));
 
 app.get("/", (req, res) => res.send("Twitter"));
+
+// tell Express to use imported routes
+app.use("/api/users", users);
+app.use("/api/tweets", tweets);
 
 // tell app which port to run on
 // server will run on a required heroku port or localhost:5000
