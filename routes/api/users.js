@@ -10,8 +10,6 @@ const validateLoginInput = require("../../validation/login");
 
 const router = express.Router();
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
-
 // private auth route
 router.get(
   "/current",
@@ -25,6 +23,7 @@ router.get(
   }
 );
 
+// REGISTER
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -57,6 +56,7 @@ router.post("/register", (req, res) => {
   });
 });
 
+// LOGIN
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
   const { errors, isValid } = validateLoginInput(req.body);
