@@ -1,6 +1,5 @@
 const express = require("express");
 const passport = require("passport");
-const mongoose = require("mongoose");
 const Tweet = require("../../models/Tweet");
 const validateTweetInput = require("../../validation/tweets");
 
@@ -8,8 +7,8 @@ const router = express.Router();
 
 // GET ALL TWEETS
 router.get("/", (req, res) => {
-  Tweet.find()
-    .sort({ date: -1 })
+  Tweet.find() // gives everything back because we're filtering by nothing
+    .sort({ date: -1 }) // sort by date in reverse order to get the newest
     .then(tweets => res.json(tweets))
     .catch(err => res.status(404).json({ notweetsfound: "No tweets found" }));
 });
@@ -31,6 +30,7 @@ router.get("/:id", (req, res) => {
 });
 
 // protected route for a user to post tweets
+// passport gives req the user property based on jwt
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
@@ -45,6 +45,17 @@ router.post(
     });
 
     newTweet.save().then(tweet => res.json(tweet));
+  }
+);
+
+// DELETE TWEET (protected)
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Tweet.deleteOne({ _id: req.params.id })
+      .then(() => res.json("sucess"))
+      .catch(err => res.status(404).json({ error: "Error" }));
   }
 );
 
