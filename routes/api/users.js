@@ -105,6 +105,4 @@ router.post("/login", (req, res) => {
   });
 });
 
-// LOGOUT
-
 module.exports = router;
