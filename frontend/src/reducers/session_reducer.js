@@ -1,4 +1,9 @@
-import { RECEIVE_USER_LOGOUT } from "../../actions/session_actions";
+import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
+
+const initialState = {
+  isAuthenticated: false,
+  user: {}
+};
 
 const sessionReducer = (state = initialState, action) => {
   Object.freeze(state);
@@ -12,3 +17,5 @@ const sessionReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default sessionReducer;
