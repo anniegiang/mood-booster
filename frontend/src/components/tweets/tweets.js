@@ -6,25 +6,23 @@ class Tweets extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteTweet(e.currentTarget.value);
+    window.location.reload(false);
+  }
+
   componentDidMount() {
     this.props.fetchTweets();
   }
 
-  handleDelete(e) {
-    e.preventDefault();
-    this.props.deleteTweet(e.currentTarget.value);
-  }
-
   render() {
-    if (this.props.tweets.length === 0) {
-      return null;
-    }
     return (
       <div>
         <ul>
           {this.props.tweets.map(tweet => (
             <li key={tweet._id}>
-              {tweet._id}
+              {tweet.text}
               <button value={tweet._id} onClick={this.handleDelete}>
                 Delete
               </button>
