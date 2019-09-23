@@ -22,7 +22,6 @@ const TweetsReducer = (
       newState.new = action.tweet.data;
       return newState;
     case REMOVE_TWEET:
-      debugger;
       delete newState.all[action.tweet.data._id];
       return newState;
     default:
