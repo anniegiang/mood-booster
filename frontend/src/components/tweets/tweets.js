@@ -1,8 +1,18 @@
 import React from "react";
 
 class Tweets extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchTweets();
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteTweet(e.currentTarget.value);
   }
 
   render() {
@@ -13,7 +23,12 @@ class Tweets extends React.Component {
       <div>
         <ul>
           {this.props.tweets.map(tweet => (
-            <li key={tweet._id}>{tweet.text}</li>
+            <li key={tweet._id}>
+              {tweet._id}
+              <button value={tweet._id} onClick={this.handleDelete}>
+                Delete
+              </button>
+            </li>
           ))}
         </ul>
       </div>

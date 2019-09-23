@@ -53,9 +53,14 @@ router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Tweet.deleteOne({ _id: req.params.id })
-      .then(() => res.json("sucess"))
-      .catch(err => res.status(404).json({ error: "Error" }));
+    Tweet.findOneAndRemove(
+      { _id: req.params.id },
+      { useFindAndModify: false },
+      function(err, tweet, result) {
+        if (err) res.status(404).send(err);
+        res.send(tweet);
+      }
+    );
   }
 );
 

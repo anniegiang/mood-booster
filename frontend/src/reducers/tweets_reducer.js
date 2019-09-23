@@ -1,7 +1,8 @@
 import {
   RECEIVE_TWEETS,
   RECEIVE_USER_TWEETS,
-  RECEIVE_NEW_TWEET
+  RECEIVE_NEW_TWEET,
+  REMOVE_TWEET
 } from "../actions/tweet_actions";
 
 const TweetsReducer = (
@@ -19,6 +20,10 @@ const TweetsReducer = (
       return newState;
     case RECEIVE_NEW_TWEET:
       newState.new = action.tweet.data;
+      return newState;
+    case REMOVE_TWEET:
+      debugger;
+      delete newState.all[action.tweet.data._id];
       return newState;
     default:
       return state;
