@@ -1,0 +1,6 @@
+.login-form-container {
+  display: flex;
+  max-width: 350px;
+  margin: auto;
+  background-color: red;
+}
