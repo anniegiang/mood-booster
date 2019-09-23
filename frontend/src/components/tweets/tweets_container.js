@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Tweets from "./tweets";
-import { fetchTweets } from "../../actions/tweet_actions";
+import { fetchTweets, deleteTweet } from "../../actions/tweet_actions";
 
 const msp = state => {
   return {
@@ -10,7 +10,8 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    fetchTweets: () => dispatch(fetchTweets())
+    fetchTweets: () => dispatch(fetchTweets()),
+    deleteTweet: id => dispatch(deleteTweet(id))
   };
 };
 

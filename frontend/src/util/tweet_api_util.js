@@ -11,3 +11,7 @@ export const getUserTweets = id => {
 export const writeTweet = data => {
   return axios.post("/api/tweets", data);
 };
+
+export const deleteTweet = id => {
+  return axios.delete(`/api/tweets/${id}`);
+};

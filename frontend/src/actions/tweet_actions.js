@@ -3,6 +3,7 @@ import * as APIUtil from "../util/tweet_api_util";
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS";
 export const RECEIVE_NEW_TWEET = "RECEIVE_NEW_TWEET";
 export const RECEIVE_USER_TWEETS = "RECEIVE_USER_TWEETS";
+export const REMOVE_TWEET = "REMOVE_TWEET";
 
 const receiveTweets = tweets => {
   return {
@@ -25,6 +26,13 @@ const receiveUserTweets = tweet => {
   };
 };
 
+const removeTweet = tweet => {
+  return {
+    type: REMOVE_TWEET,
+    tweet
+  };
+};
+
 // thunk
 export const fetchTweets = () => dispatch =>
   APIUtil.getTweets()
@@ -39,4 +47,9 @@ export const fetchUserTweets = id => dispatch =>
 export const composeTweet = data => dispatch =>
   APIUtil.writeTweet(data)
     .then(tweet => dispatch(receiveNewTweet(tweet)))
+    .catch(err => console.log(err));
+
+export const deleteTweet = id => dispatch =>
+  APIUtil.deleteTweet(id)
+    .then(tweet => dispatch(removeTweet(tweet)))
     .catch(err => console.log(err));
