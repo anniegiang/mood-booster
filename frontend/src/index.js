@@ -5,6 +5,7 @@ import Root from "./components/root";
 import configureStore from "./store/store";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import axios from "axios";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -27,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.store = store;
+  window.axios = axios;
+
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });
