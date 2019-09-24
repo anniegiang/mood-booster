@@ -56,7 +56,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="form-container">
+      <div className="form-container signup">
         <div className="form-inner">
           <h1>Sign Up</h1>
           <form className="form" onSubmit={this.handleSubmit}>
@@ -93,7 +93,7 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input className="submit-btn" type="submit" value="Submit" />
           </form>
         </div>
       </div>
