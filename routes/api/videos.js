@@ -5,9 +5,10 @@ const router = express.Router();
 
 
 // GET VIDEO
-router.get("/api/videos/:video_id", (req, res) => {
-    Video.find({video: req.params.video_id})
+router.get("/:video_id", (req, res) => {
+    Video.findOne({_id: req.params.video_id})
         .then(video => res.json(video))
         .catch(err => res.status(404).json({novideofound: 'No video found'}));
 })
 
+module.exports = router;
