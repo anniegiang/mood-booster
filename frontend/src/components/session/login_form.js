@@ -86,7 +86,6 @@ class LoginForm extends React.Component {
               placeholder="Email"
             />
             {this.renderEmailErrors()}
-            <br />
             <input
               className="input-password"
               type="password"
@@ -95,7 +94,6 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             {this.renderPasswordErrors()}
-            <br />
             <input className="submit-btn" type="submit" value="Submit" />
           </form>
         </div>
