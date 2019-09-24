@@ -4,7 +4,7 @@ import Quote from "./quote";
 
 const mapStateToProps = state => {
   return {
-    quote: state.quote,
+    quote: state.content.quote[ownProps.match.params.id],
     currentUser: state.session.user
   };
 };

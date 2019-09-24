@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 const comments = require("./routes/api/comments");
+const quotes = require("./routes/api/quotes");
+const quotes = require("./routes/api/photos");
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
@@ -21,6 +23,8 @@ mongoose // connect to MongoDB using Mongoose
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
 app.use("/api/comments", comments);
+app.use("/api/quotes", quotes);
+app.use("/api/photos", photos);
 
 // tell express to use middleware to parse JSON that's sent to frontend
 app.use(bodyParser.urlencoded({ extended: false }));

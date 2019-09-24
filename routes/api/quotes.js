@@ -5,8 +5,10 @@ const router = express.Router();
 
 
 // GET QUOTE
-router.get("/api/quotes/:quote_id", (req, res) => {
-    Quote.find({ quote: req.params.quote_id })
+router.get("/:quote_id", (req, res) => {
+    Quote.findOne({ quote: req.params.quote_id })
         .then(quote => res.json(quote))
         .catch(err => res.status(404).json({ noquotefound: 'No quote found' }));
 })
+
+module.exports = router;

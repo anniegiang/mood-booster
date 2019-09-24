@@ -5,7 +5,7 @@ const QuotesReducer = (state = {}, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_QUOTE:
-            newState = Object.assign({}, state, { [action.quote.id]: action.quote })
+            newState = Object.assign({}, state, { [action.quote.data._id]: action.quote.data })
             return newState;
         default:
             return state
