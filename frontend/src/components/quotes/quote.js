@@ -13,9 +13,12 @@ class Quote extends React.Component {
     this.props.fetchQuote(this.id);
   }
 
-  componentWillReceiveProps(newState) {
-    this.setState({ tweets: newState.tweets });
+  saveQuote(e) {
+    e.preventDefault();
+    this.props.composeTweet({ text: this.state.text });
+    this.setState({ text: "" });
   }
+
 
   render() {
     
@@ -23,7 +26,10 @@ class Quote extends React.Component {
         <div>
             <h3>{this.props.text}</h3>
             <h5>{this.props.author}</h5>
+            
         </div>
+
+        <button onClick={saveQuote()}>Save to Favorites</button>
       );
     
   }
