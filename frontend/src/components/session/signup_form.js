@@ -14,7 +14,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -42,6 +42,12 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user, this.props.history);
+    this.renderEmailErrors = this.renderEmailErrors.bind(this);
+    this.renderHandleErrors = this.renderHandleErrors.bind(this);
+    this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
+    this.renderConfirmPasswordErrors = this.renderConfirmPasswordErrors.bind(
+      this
+    );
   }
 
   renderErrors() {
@@ -52,6 +58,54 @@ class SignupForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  renderEmailErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Email")) {
+        return (
+          <div className="errors-container">
+            <p className="error-email">{err}</p>
+          </div>
+        );
+      }
+    }
+  }
+
+  renderHandleErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Handle")) {
+        return (
+          <div className="errors-container">
+            <p className="error-handle">{err}</p>
+          </div>
+        );
+      }
+    }
+  }
+
+  renderPasswordErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Password")) {
+        return (
+          <div className="errors-container">
+            <p className="error-password">{err}</p>
+          </div>
+        );
+      }
+    }
+  }
+
+  renderConfirmPasswordErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Confirm")) {
+        return (
+          <div className="errors-container">
+            <p className="error-confirm-password">{err}</p>
+          </div>
+        );
+      }
+    }
   }
 
   render() {
@@ -67,7 +121,7 @@ class SignupForm extends React.Component {
               onChange={this.update("email")}
               placeholder="Email"
             />
-            <br />
+            {this.renderEmailErrors()}
             <input
               className="input-handle"
               type="text"
@@ -75,7 +129,7 @@ class SignupForm extends React.Component {
               onChange={this.update("handle")}
               placeholder="Handle"
             />
-            <br />
+            {this.renderHandleErrors()}
             <input
               className="input-password"
               type="password"
@@ -83,7 +137,7 @@ class SignupForm extends React.Component {
               onChange={this.update("password")}
               placeholder="Password"
             />
-            <br />
+            {this.renderPasswordErrors()}
             <input
               className="input-password"
               type="password"
@@ -91,6 +145,7 @@ class SignupForm extends React.Component {
               onChange={this.update("password2")}
               placeholder="Confirm Password"
             />
+            {this.renderConfirmPasswordErrors()}
             <br />
             <input className="submit-btn" type="submit" value="Submit" />
           </form>

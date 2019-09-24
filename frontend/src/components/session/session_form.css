@@ -3,15 +3,17 @@
   flex-direction: column;
   align-items: center;
   max-width: 390px;
-  max-height: 500px;
+  max-height: 600px;
   margin: 0 auto;
   margin-top: 100px;
   background-color: #e6eeff;
   border-radius: 50px;
+  height: 400px;
+  width: 400px;
 }
 
 .signup {
-  max-height: 490px;
+  height: 550px;
 }
 
 .form-container h1 {
@@ -21,8 +23,6 @@
 }
 
 .form-inner {
-  max-height: 500px;
-  max-width: 400px;
   padding: 60px;
 }
 
@@ -36,19 +36,20 @@
 .input-password,
 .input-handle {
   padding: 10px;
-  margin-bottom: 10px;
+  margin-top: 33px;
+  margin-bottom: 4px;
   width: 280px;
   max-height: 30px;
   background-color: #fff;
   border-radius: 10px;
 }
 
-.error-email,
-.error-password {
+.errors-container {
+  height: 8px;
 }
 
 .submit-btn {
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: #fff;
   padding: 10px 20px;
   border-radius: 10px;
