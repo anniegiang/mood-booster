@@ -10,6 +10,7 @@ import TweetsContainer from "./tweets/tweets_container";
 import TweetComposeContainer from "./tweets/tweet_compose_container";
 import ProfileContainer from "./profile/profile_container";
 import QuoteContainer from "./quotes/quote_container";
+import PhotoContainer from "./photos/photo_container";
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
       <Route exact path="/quotes" component={QuoteContainer} />
+      <Route exact path="/photos" component={PhotoContainer} />
       <ProtectedRoute
         exact
         path="/new_tweet"
