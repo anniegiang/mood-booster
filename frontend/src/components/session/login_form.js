@@ -14,6 +14,8 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.renderEmailErrors = this.renderEmailErrors.bind(this);
+    this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -59,29 +61,57 @@ class LoginForm extends React.Component {
     );
   }
 
+  renderEmailErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Email")) {
+        return (
+          <div className="login-errors-container">
+            <p className="login-error-email">{err}</p>
+          </div>
+        );
+      }
+    }
+  }
+
+  renderPasswordErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Password")) {
+        return (
+          <div className="login-errors-container">
+            <p className="login-error-password">{err}</p>
+          </div>
+        );
+      }
+    }
+  }
+
   render() {
     return (
       <div className="login-form-container">
-        <form className="login-form" onSubmit={this.handleSubmit}>
-          <input
-            className="login-input-email"
-            type="text"
-            value={this.state.email}
-            onChange={this.update("email")}
-            placeholder="Email"
-          />
-          <br />
-          <input
-            className="login-input-password"
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-            placeholder="Password"
-          />
-          <br />
-          <input className="login-submit-btn" type="submit" value="Submit" />
-          {this.renderErrors()}
-        </form>
+        <div className="login-form-inner">
+          <h1>Log In</h1>
+          <form className="login-form" onSubmit={this.handleSubmit}>
+            <input
+              className="login-input-email"
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Email"
+            />
+            {this.renderEmailErrors()}
+            <br />
+            <input
+              className="login-input-password"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+            />
+            {this.renderPasswordErrors()}
+            <br />
+            <input className="login-submit-btn" type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     );
   }
