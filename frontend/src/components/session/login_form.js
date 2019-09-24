@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "./login_form.css";
+import "./session_form.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
     this.renderEmailErrors = this.renderEmailErrors.bind(this);
     this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
   }
@@ -49,24 +48,12 @@ class LoginForm extends React.Component {
   }
 
   // Render the session errors if there are any
-  renderErrors() {
-    return (
-      <ul className="login-errors-container">
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li className="login-errors" key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   renderEmailErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Email")) {
         return (
-          <div className="login-errors-container">
-            <p className="login-error-email">{err}</p>
+          <div className="errors-container">
+            <p className="error-email">{err}</p>
           </div>
         );
       }
@@ -77,8 +64,8 @@ class LoginForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Password")) {
         return (
-          <div className="login-errors-container">
-            <p className="login-error-password">{err}</p>
+          <div className="errors-container">
+            <p className="error-password">{err}</p>
           </div>
         );
       }
@@ -87,12 +74,12 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <div className="login-form-inner">
+      <div className="form-container">
+        <div className="form-inner">
           <h1>Log In</h1>
-          <form className="login-form" onSubmit={this.handleSubmit}>
+          <form className="form" onSubmit={this.handleSubmit}>
             <input
-              className="login-input-email"
+              className="input-email"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
@@ -101,7 +88,7 @@ class LoginForm extends React.Component {
             {this.renderEmailErrors()}
             <br />
             <input
-              className="login-input-password"
+              className="input-password"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
@@ -109,7 +96,7 @@ class LoginForm extends React.Component {
             />
             {this.renderPasswordErrors()}
             <br />
-            <input className="login-submit-btn" type="submit" value="Submit" />
+            <input className="submit-btn" type="submit" value="Submit" />
           </form>
         </div>
       </div>
