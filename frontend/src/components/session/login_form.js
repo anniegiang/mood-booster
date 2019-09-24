@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
       if (err.includes("Email")) {
         return (
           <div className="errors-container">
-            <p className="error-email">{err}</p>
+            <div className="error">{err}</div>
           </div>
         );
       }
@@ -65,7 +65,7 @@ class LoginForm extends React.Component {
       if (err.includes("Password")) {
         return (
           <div className="errors-container">
-            <p className="error-password">{err}</p>
+            <div className="error-pr">{err}</div>
           </div>
         );
       }

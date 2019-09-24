@@ -65,7 +65,7 @@ class SignupForm extends React.Component {
       if (err.includes("Email")) {
         return (
           <div className="errors-container">
-            <p className="error-email">{err}</p>
+            <p className="error">{err}</p>
           </div>
         );
       }
@@ -77,7 +77,7 @@ class SignupForm extends React.Component {
       if (err.includes("Handle")) {
         return (
           <div className="errors-container">
-            <p className="error-handle">{err}</p>
+            <p className="error">{err}</p>
           </div>
         );
       }
@@ -89,7 +89,7 @@ class SignupForm extends React.Component {
       if (err.includes("Password")) {
         return (
           <div className="errors-container">
-            <p className="error-password">{err}</p>
+            <p className="error">{err}</p>
           </div>
         );
       }
@@ -101,7 +101,7 @@ class SignupForm extends React.Component {
       if (err.includes("Confirm")) {
         return (
           <div className="errors-container">
-            <p className="error-confirm-password">{err}</p>
+            <p className="error">{err}</p>
           </div>
         );
       }
