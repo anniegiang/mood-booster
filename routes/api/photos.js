@@ -4,8 +4,11 @@ const Photo = require("../../models/Photo")
 const router = express.Router();
 
 // GET PHOTO
-router.get("/api/photos/:photo_id", (req, res) => {
-    Photo.find({photo: req.params.photo_id})
+router.get("/:photo_id", (req, res) => {
+    Photo.findOne({_id: req.params.photo_id})
         .then(photo => res.json(photo))
         .catch(err =>  res.status(404).json({nophotofound: "No photo found"}))
 })
+
+
+module.exports = router;
