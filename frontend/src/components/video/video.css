@@ -13,8 +13,11 @@
 }
 
 .video {
-    height: 504px;
-    width: 896px;
+    /* height: 504px;
+    width: 896px; */
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 .title {
@@ -26,7 +29,8 @@ button {
     margin: 10px 0 0 0;
 }
 @media only screen and (max-width: 900px) {
-    .video {
-        max-width: 100%
+    .video-div {
+        margin: 0px;
+        padding: 0px;
     }
   }

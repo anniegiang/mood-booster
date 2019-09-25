@@ -1,4 +1,5 @@
 import React from "react";
+import "./photo.css";
 
 class Photo extends React.Component {
   constructor(props) {
@@ -25,9 +26,9 @@ class Photo extends React.Component {
       return null
   }
       return (
-        <div>
+        <div className="photo-div">
           <h3>{this.props.photo.title}</h3>
-          <img src={this.props.photo.photoURL}></img>
+          <img src={this.props.photo.photoUrl}></img>
           {/* <p>Photo will go here</p> */}
           <button onClick={this.savePhoto}>Save to Favorites</button>
         </div>
