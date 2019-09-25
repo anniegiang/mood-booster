@@ -15,11 +15,12 @@ class Video extends React.Component {
             return null
         }
         return(
-            <div className="video">
-                <video controls width='500' height='500'>
+            <div className="video-div">
+                 <h1 className="title">{this.props.video.title}</h1>
+                 <video className="video" controls>
                     <source src=''></source>
                 </video>
-                <h1>{this.props.video.title}</h1>
+               
                     <button>
                         Save to my list
                     </button>
