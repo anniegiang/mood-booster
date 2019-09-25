@@ -24,9 +24,25 @@
     padding: 0 1%;
 }
 
+
 button {
-    width: 150px;
-    margin: 10px 0 0 0;
+    background-color: #008CBA; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 20%;
+    padding: 1% 2%;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: rgb(2, 167, 223);
+    
 }
 @media only screen and (max-width: 900px) {
     .video-div {
