@@ -1,6 +1,6 @@
 const Photo = require("./models/Photo");
-const Seed = () => {
-    const photo2 = new({
+const seed1 = () => {
+    const photo2 = new Photo({
         "title": "Meme Title",
         "photoUrl": "https://www.todaysparent.com/wp-content/uploads/2017/06/when-your-kid-becomes-a-meme-1024x576-1497986561.jpg",
         "mood1": false,
@@ -11,6 +11,7 @@ const Seed = () => {
         "mood6": false,
         "mood7": false
     })
+    photo2.save()
 }
 
-module.exports = Seed
+module.exports = seed1

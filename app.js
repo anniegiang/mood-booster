@@ -7,7 +7,9 @@ const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 const comments = require("./routes/api/comments");
 const quotes = require("./routes/api/quotes");
-const quotes = require("./routes/api/photos");
+const photos = require("./routes/api/photos");
+const seed1 = require('./photo_seed');
+const seed2 = require('./quotes_seed');
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
@@ -40,3 +42,7 @@ const port = process.env.PORT || 5000;
 
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
+
+
+seed1()
+seed2()
