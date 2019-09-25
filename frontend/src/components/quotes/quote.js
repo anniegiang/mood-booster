@@ -3,7 +3,7 @@ import React from "react";
 class Quote extends React.Component {
   constructor(props) {
     super(props);
-    this.id = this.props.quoteID 
+    // this.id = this.props.quoteID 
 
 //    this.text = this.props.text;
 //    this.author = this.props.author;
@@ -11,7 +11,8 @@ class Quote extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchQuote(this.props.match.params.id);
+    // debugger
+    this.props.fetchQuote(this.props.match.params.quote_id);
   }
 
   saveQuote(e) {
@@ -22,13 +23,14 @@ class Quote extends React.Component {
 
 
   render() {
-    if (!this.props.quote) {
+    if (!this.props.quotes) {
       return null
   }
       return (
         <div>
-            <h3>{this.props.text}</h3>
-            <h5>{this.props.author}</h5>
+          <h1>This is a quote</h1>
+            <h3>{this.props.quotes.quoteText}</h3>
+            <h5>{this.props.quotes.author}</h5>
             {/* <p>Quote will go here</p> */}
             <button onClick={this.saveQuote}>Save to Favorites</button>
         </div>

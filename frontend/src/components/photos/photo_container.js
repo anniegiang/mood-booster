@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import { fetchPhoto } from "../../actions/photo_action";
 import Photo from "./photo";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    photo: state.content.photo[ownProps.match.params.id],
+    photo: state.content.photos[ownProps.match.params.photo_id],
     currentUser: state.session.user
   };
 };

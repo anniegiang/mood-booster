@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import { fetchQuote } from "../../actions/quote_action";
 import Quote from "./quote";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    quote: state.content.quote[ownProps.match.params.id],
+    quotes: state.content.quotes[ownProps.match.params.quote_id],
     currentUser: state.session.user
   };
 };

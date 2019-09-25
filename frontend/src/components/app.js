@@ -21,8 +21,8 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
-      <Route exact path="/quotes" component={QuoteContainer} />
-      <Route exact path="/photos" component={PhotoContainer} />
+      <Route exact path="/quotes/:quote_id" component={QuoteContainer} />
+      <Route exact path="/photos/:photo_id" component={PhotoContainer} />
       <ProtectedRoute
         exact
         path="/new_tweet"
