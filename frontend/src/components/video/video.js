@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "./video.css";
+
 class Video extends React.Component {
+
     componentDidMount() {
         this.props.fetchVideo(this.props.match.params.video_id)
     }
@@ -12,7 +15,7 @@ class Video extends React.Component {
             return null
         }
         return(
-            <div>
+            <div className="video">
                 <video controls width='500' height='500'>
                     <source src=''></source>
                 </video>
