@@ -17,7 +17,13 @@ class Photo extends React.Component {
 
   savePhoto(e) {
     e.preventDefault();
-    // call action here
+    let data = {
+      contentType: "photoLikes",
+      contentId: this.props.match.params.photo_id,
+      userId: this.props.currentUser.id
+    };
+    debugger;
+    this.props.likeContent(data);
   }
 
   render() {
@@ -29,7 +35,6 @@ class Photo extends React.Component {
         <button onClick={this.savePhoto}>Save to Favorites</button>
         <h3>{this.props.photo.title}</h3>
         <img src={this.props.photo.photoUrl}></img>
-        <p>Photo will go here</p>
       </div>
     );
   }

@@ -10,11 +10,6 @@ const receiveUser = user => {
 };
 
 // thunk
-export const likeContent = (contentType, contentId, userId) => dispatch => {
-  const data = {
-    contentType: contentType,
-    contentId: contentId,
-    userId: userId
-  };
+export const likeContent = data => dispatch => {
   return APIUtil.likeContent(data).then(user => dispatch(receiveUser(user)));
 };

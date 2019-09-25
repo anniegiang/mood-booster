@@ -35,10 +35,10 @@ router.post(
   "/content/like",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let { content, contentId, userId } = req.body;
+    let { contentType, contentId, userId } = req.body;
     User.findOne({ _id: userId })
       .then(user => {
-        user[content].push(contentId);
+        user[contentType].push(contentId);
         user.save();
         res.json(user);
       })
