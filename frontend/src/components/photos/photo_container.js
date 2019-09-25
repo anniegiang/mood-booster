@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchPhoto } from "../../actions/photo_actions";
-import { likeContent } from "../../actions/user_actions";
+import { saveContent } from "../../actions/user_actions";
 import Photo from "./photo";
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPhoto: id => dispatch(fetchPhoto(id)),
-    likeContent: data => dispatch(likeContent(data))
+    saveContent: data => dispatch(saveContent(data))
   };
 };
 
