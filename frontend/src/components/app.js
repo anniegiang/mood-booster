@@ -11,10 +11,11 @@ import TweetComposeContainer from "./tweets/tweet_compose_container";
 import ProfileContainer from "./profile/profile_container";
 import QuoteContainer from "./quotes/quote_container";
 import PhotoContainer from "./photos/photo_container";
+import VideoContainer from './video/video_container';
 
 const App = () => (
   <div>
-    <NavBarContainer />
+    
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -28,6 +29,8 @@ const App = () => (
         path="/new_tweet"
         component={TweetComposeContainer}
       />
+      <Route exact path="/videos/:video_id" component={VideoContainer} />
+      
     </Switch>
   </div>
 );
