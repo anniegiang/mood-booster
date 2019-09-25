@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-  videoSave: [{ type: mongoose.Schema.Types.ObjectId, ref: "videos" }],
-  photoSave: [{ type: mongoose.Schema.Types.ObjectId, ref: "photos" }],
-  quoteSave: [{ type: mongoose.Schema.Types.ObjectId, ref: "quotes" }],
+  videoLikes: [{ type: mongoose.Schema.Types.ObjectId, ref: "videos" }],
+  photoLikes: [{ type: mongoose.Schema.Types.ObjectId, ref: "photos" }],
+  quoteLikes: [{ type: mongoose.Schema.Types.ObjectId, ref: "quotes" }],
   handle: {
     type: String,
     required: true
