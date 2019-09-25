@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     if (loggedIn) {
       return (
         <div className="nav-links">
-          <Link className="nav-boost" to={"/boost"}>
+          <Link className="nav-boost" to={"/photos/5d8aa5006f2ead30dc456c35"}>
             Boost your mood
           </Link>
           <Link className="nav-profile" to={"/profile"}>
