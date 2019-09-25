@@ -11,19 +11,17 @@ class Photo extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchPhoto(this.props.match.params.photo_id);
   }
 
   savePhoto(e) {
     e.preventDefault();
     let data = {
-      contentType: "photoLikes",
+      contentType: "photoSave",
       contentId: this.props.match.params.photo_id,
       userId: this.props.currentUser.id
     };
-    debugger;
-    this.props.likeContent(data);
+    this.props.saveContent(data);
   }
 
   render() {

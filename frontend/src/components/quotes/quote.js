@@ -11,7 +11,6 @@ class Quote extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchQuote(this.props.match.params.quote_id);
   }
 

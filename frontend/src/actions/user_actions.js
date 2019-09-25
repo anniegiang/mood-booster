@@ -10,6 +10,6 @@ const receiveUser = user => {
 };
 
 // thunk
-export const likeContent = data => dispatch => {
-  return APIUtil.likeContent(data).then(user => dispatch(receiveUser(user)));
+export const saveContent = data => dispatch => {
+  return APIUtil.saveContent(data).then(user => dispatch(receiveUser(user)));
 };

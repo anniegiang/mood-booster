@@ -4,6 +4,6 @@ export const fetchUser = id => {
   return axios.get(`/api/users/${id}`);
 };
 
-export const likeContent = data => {
+export const saveContent = data => {
   return axios.post(`/api/users/content/like`, data);
 };

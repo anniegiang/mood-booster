@@ -1,8 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 class Video extends React.Component {
+  constructor(props) {
+    super(props);
+    this.saveVideo = this.saveVideo.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchVideo(this.props.match.params.video_id);
+  }
+
+  saveVideo(e) {
+    e.preventDefault();
+    let data = {
+      contentType: "videoSave",
+      contentId: this.props.video._id,
+      userId: this.props.currentUser.id
+    };
+    this.props.saveContent(data);
   }
 
   render() {
@@ -15,7 +30,7 @@ class Video extends React.Component {
           <source src=""></source>
         </video>
         <h1>{this.props.video.title}</h1>
-        <button>Save to my list</button>
+        <button onClick={this.saveVideo}>Save to Favorites</button>
       </div>
     );
   }
