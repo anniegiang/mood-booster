@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-import { fetchPhoto } from "../../actions/photo_action";
+import { fetchPhoto } from "../../actions/photo_actions";
+import { likeContent } from "../../actions/user_actions";
 import Photo from "./photo";
 
 const mapStateToProps = (state, ownProps) => {

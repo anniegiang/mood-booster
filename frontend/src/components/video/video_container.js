@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import {fetchVideo} from '../../actions/video_action';
+import {fetchVideo} from '../../actions/video_actions';
 import Video from './video'
 const msp = (state,ownProps) => {
     debugger
