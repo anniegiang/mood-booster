@@ -6,6 +6,10 @@ const bodyParser = require("body-parser");
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 const comments = require("./routes/api/comments");
+const quotes = require("./routes/api/quotes");
+const photos = require("./routes/api/photos");
+const seed1 = require('./photo_seed');
+const seed2 = require('./quotes_seed');
 const Video = require("./models/Video");
 const videos = require('./routes/api/videos')
 const seed = require('./seeder');
@@ -42,6 +46,8 @@ mongoose // connect to MongoDB using Mongoose
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
 app.use("/api/comments", comments);
+app.use("/api/quotes", quotes);
+app.use("/api/photos", photos);
 app.use("/api/videos", videos)
 
 // seed();
@@ -60,3 +66,7 @@ const port = process.env.PORT || 5000;
 
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
+
+
+seed1()
+seed2()

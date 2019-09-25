@@ -6,7 +6,11 @@ const QuoteSchema = new Schema({
         type: String,
         required: true
     },
-    photoUrl: {
+    quoteText: {
+        type: String,
+        required: true
+    },
+    author: {
         type: String,
         required: true
     },
