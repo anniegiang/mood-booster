@@ -8,13 +8,12 @@ const tweets = require("./routes/api/tweets");
 const comments = require("./routes/api/comments");
 const quotes = require("./routes/api/quotes");
 const photos = require("./routes/api/photos");
-const seed1 = require('./photo_seed');
-const seed2 = require('./quotes_seed');
+const seed1 = require("./photo_seed");
+const seed2 = require("./quotes_seed");
+const seed3 = require("./users_seed");
+const seed = require("./seeder");
 const Video = require("./models/Video");
-const videos = require('./routes/api/videos')
-const seed = require('./seeder');
-
-
+const videos = require("./routes/api/videos");
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
@@ -36,11 +35,10 @@ app.use(bodyParser.json());
 //   res.send('Video is saved')
 // })
 
-
 mongoose // connect to MongoDB using Mongoose
-.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log("Connected to MongoDB successfully"))
-.catch(err => console.log(err));
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch(err => console.log(err));
 
 // tell Express to use imported routes
 app.use("/api/users", users);
@@ -48,7 +46,7 @@ app.use("/api/tweets", tweets);
 app.use("/api/comments", comments);
 app.use("/api/quotes", quotes);
 app.use("/api/photos", photos);
-app.use("/api/videos", videos)
+app.use("/api/videos", videos);
 
 // seed();
 
@@ -67,6 +65,6 @@ const port = process.env.PORT || 5000;
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
-
-seed1()
-seed2()
+seed1();
+seed2();
+seed3();
