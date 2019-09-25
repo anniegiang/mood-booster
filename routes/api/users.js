@@ -38,9 +38,13 @@ router.post(
     let { contentType, contentId, userId } = req.body;
     User.findOne({ _id: userId })
       .then(user => {
-        user[contentType].push(contentId);
-        user.save();
-        res.json(user);
+        if (!user[contentType].includes(contentId)) {
+          user[contentType].push(contentId);
+          user.save();
+          res.json(user);
+        } else {
+          res.json({ alreadyliked: "Already liked" });
+        }
       })
       .catch(err => res.status(400).json(err));
   }
