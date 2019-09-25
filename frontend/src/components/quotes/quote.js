@@ -21,7 +21,6 @@ class Quote extends React.Component {
       contentId: this.props.match.params.quote_id,
       userId: this.props.currentUser.id
     };
-    debugger;
     this.props.saveContent(data);
   }
 

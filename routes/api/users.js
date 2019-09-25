@@ -41,10 +41,8 @@ router.post(
         if (!user[contentType].includes(contentId)) {
           user[contentType].push(contentId);
           user.save();
-          res.json(user);
-        } else {
-          res.json({ alreadyliked: "Already liked" });
         }
+        res.json(user);
       })
       .catch(err => res.status(400).json(err));
   }
