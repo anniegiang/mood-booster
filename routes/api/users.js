@@ -23,6 +23,13 @@ router.get(
   }
 );
 
+// USER PROFILE
+router.get("/:user_id", (req, res) => {
+  User.findOne({ _id: req.params.user_id })
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json({ nouserfound: "No user found" }));
+});
+
 // REGISTER
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
