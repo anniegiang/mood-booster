@@ -1,4 +1,5 @@
 import React from "react";
+import "./quote.css";
 
 class Quote extends React.Component {
   constructor(props) {
@@ -27,10 +28,9 @@ class Quote extends React.Component {
       return null
   }
       return (
-        <div>
-          <h1>This is a quote</h1>
-            <h3>{this.props.quotes.quoteText}</h3>
-            <h5>{this.props.quotes.author}</h5>
+        <div className="quote-box">
+            <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
+            <h3 className="author">- {this.props.quotes.author}</h3>
             {/* <p>Quote will go here</p> */}
             <button onClick={this.saveQuote}>Save to Favorites</button>
         </div>
