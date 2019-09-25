@@ -24,12 +24,12 @@ const App = () => (
       <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
       <Route exact path="/quotes/:quote_id" component={QuoteContainer} />
       <Route exact path="/photos/:photo_id" component={PhotoContainer} />
+      <Route exact path="/videos/:video_id" component={VideoContainer} />
       <ProtectedRoute
         exact
         path="/new_tweet"
         component={TweetComposeContainer}
       />
-      <Route exact path="/videos/:video_id" component={VideoContainer} />
     </Switch>
   </div>
 );

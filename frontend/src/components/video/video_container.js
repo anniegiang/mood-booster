@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import {fetchVideo} from '../../actions/video_action';
 import Video from './video'
 const msp = (state,ownProps) => {
+    debugger
     return({
         video: state.content.videos[ownProps.match.params.video_id]
     })

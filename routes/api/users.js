@@ -30,6 +30,20 @@ router.get("/:user_id", (req, res) => {
     .catch(err => res.status(404).json({ nouserfound: "No user found" }));
 });
 
+// SAVE CONTENT (protected)
+router.post(
+  "/content/like",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    let { content, contentId, userId } = req.body;
+    User.findOne({ _id: userId }).then(user => {
+      user[content].push(contentId);
+      user.save();
+      res.json(user);
+    });
+  }
+);
+
 // REGISTER
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);

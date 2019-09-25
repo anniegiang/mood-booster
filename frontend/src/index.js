@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode";
 import Root from "./components/root";
 import configureStore from "./store/store";
 import { setAuthToken } from "./util/session_api_util";
-import { deleteTweet } from "./util/tweet_api_util";
+import { fetchUser, likeContent } from "./util/user_api_util";
 import { logout } from "./actions/session_actions";
 import axios from "axios";
 
@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.store = store;
   window.axios = axios;
-  window.deleteTweet = deleteTweet;
+  window.fetchUser = fetchUser;
+  window.likeContent = likeContent;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
