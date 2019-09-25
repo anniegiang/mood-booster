@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "./video.css";
+
 class Video extends React.Component {
+
     componentDidMount() {
         this.props.fetchVideo(this.props.match.params.video_id)
     }
@@ -11,12 +14,14 @@ class Video extends React.Component {
         if (!this.props.video) {
             return null
         }
+        // debugger
         return(
-            <div>
-                <video controls width='500' height='500'>
-                    <source src=''></source>
+            <div className="video-div">
+                 <h1 className="title">{this.props.video.title}</h1>
+                 <video className="video" controls height="576" width="1024">
+                    <source src={this.props.video.videoUrl}></source>  Can't play video because 
                 </video>
-                <h1>{this.props.video.title}</h1>
+               
                     <button>
                         Save to my list
                     </button>
