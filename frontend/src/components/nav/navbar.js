@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     if (loggedIn) {
       return (
         <div className="nav-links">
-          <Link className="nav-boost" to={"/photos/5d8aa5006f2ead30dc456c35"}>
+          <Link className="nav-boost" to={"/"}>
             Boost your mood
           </Link>
           <Link className="nav-profile" to={"/profile"}>
@@ -54,7 +54,12 @@ class NavBar extends React.Component {
         <a href="/#" className="nav-logo">
           <div className="logo"></div>
         </a>
-        {this.getLinks()}
+        <button className="icon">&#9776;</button>
+        <div className="dropdown">
+          
+          {this.getLinks()}
+        </div>
+        {/* <a href="javascript:void(0);" className="icon" onclick="myFunction()">&#9776;</a> */}
       </div>
     );
   }

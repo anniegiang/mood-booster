@@ -16,7 +16,7 @@ class AboutPage extends React.Component {
             <h4>Creators:</h4>
             <div className="creators">     
                 <div className="dropdown">
-                    <button className="dropbtn">Annie<i class="fa fa-caret-down"></i></button>
+                    <button className="dropbtn">Annie</button>
                     <div className="dropdown-content">
                         <a href="#">Personal Site</a>
                         <a href="#">GitHub</a>
@@ -24,7 +24,7 @@ class AboutPage extends React.Component {
                     </div>
                 </div>
                 <div className="dropdown">
-                    <button className="dropbtn">Johnson<i class="fa fa-caret-down"></i></button>
+                    <button className="dropbtn">Johnson</button>
                     <div className="dropdown-content">
                         <a href="#">Personal Site</a>
                         <a href="#">GitHub</a>
@@ -32,7 +32,7 @@ class AboutPage extends React.Component {
                     </div>
                 </div>
                 <div className="dropdown">
-                    <button className="dropbtn">Rebecca<i class="fa fa-caret-down"></i></button>
+                    <button className="dropbtn">Rebecca</button>
                     <div className="dropdown-content">
                         <a href="#">Personal Site</a>
                         <a href="#">GitHub</a>
