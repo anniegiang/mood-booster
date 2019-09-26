@@ -42,10 +42,18 @@ background-image: url("water.jpg")
   font-size: 25px;
   width: 50%;
   cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(darken(rgb(5, 95, 185), 40%));
 }
 
 .main_button:hover {
 background-color: rgb(2, 167, 223);
+}
+
+.main_button:active {
+  background-color: rgb(0, 101, 134);
+  margin: 3% 2% 2% 2%;
+  box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%))
+
 }
 
 h2 {
