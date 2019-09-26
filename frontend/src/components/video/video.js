@@ -35,7 +35,7 @@ class Video extends React.Component {
             <div className="video-div">
                  <h1 className="title">{this.props.video.title}</h1>
                  <video className="video" controls height="576" width="1024">
-                    <source src={this.props.video.videoUrl}></source>  Can't play video because 
+                    <source src={this.props.video.videoUrl}></source>  
                 </video>
                
                     <button>
