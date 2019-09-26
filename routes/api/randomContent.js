@@ -22,7 +22,11 @@ router.get("/", (req, res) => {
         let random = Math.floor(Math.random() * quotes.length);
         let rand = quotes[random];
         allContent["quotes"] = rand;
-        res.json(allContent);
+
+        let randomContent = Math.floor(
+          Math.random() * Object.values(allContent).length
+        );
+        res.json(Object.values(allContent)[randomContent]);
       });
     });
   });
