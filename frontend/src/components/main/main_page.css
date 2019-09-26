@@ -4,11 +4,22 @@
 
 .content-otd-container {
   background-color: #fff;
-  border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 15px;
+  max-width: 700px;
+  max-height: 500px;
+  padding: 10px;
 }
 
-.content h3 {
+.content {
+  margin-bottom: 40px;
+}
+
+.content h4 {
   text-align: center;
 }
 
+.content img {
+  max-width: 65%;
+  max-height: 65%;
+  margin: 0 auto;
+}
