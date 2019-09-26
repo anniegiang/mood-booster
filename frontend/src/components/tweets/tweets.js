@@ -1,4 +1,5 @@
 import React from "react";
+import "./tweets.css";
 
 class Tweets extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Tweets extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="tweets-container">
         <ul>
           {this.props.tweets.map(tweet => (
             <li key={tweet._id}>

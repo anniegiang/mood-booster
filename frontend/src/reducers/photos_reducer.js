@@ -1,4 +1,4 @@
-import { RECEIVE_PHOTO } from '../actions/photo_action';
+import { RECEIVE_PHOTO } from "../actions/photo_actions";
 
 const PhotosReducer = (state = {}, action) => {
     Object.freeze(state);
