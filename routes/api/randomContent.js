@@ -8,49 +8,25 @@ const router = express.Router();
 // GET RANDOM CONTENT
 router.get("/", (req, res) => {
   let allContent = {};
+  Photo.find().then(photos => {
+    let random = Math.floor(Math.random() * photos.length);
+    let rand = photos[random];
+    allContent["photos"] = rand;
 
-  // Get the count of all photos
-  Photo.count().exec((err, count) => {
-    // Get a random entry
-    let random = Math.floor(Math.random() * count);
+    Video.find().then(videos => {
+      let random = Math.floor(Math.random() * videos.length);
+      let rand = videos[random];
+      allContent["videos"] = rand;
 
-    // Again query all users but only fetch one offset by our random #
-    Photo.findOne()
-      .skip(random)
-      .exec((err, result) => {
-        // Tada! random photo
-        allContent["photo"] = result;
-      });
-  });
-
-  // Get the count of all videos
-  Video.count().exec((err, count) => {
-    // Get a random entry
-    let random = Math.floor(Math.random() * count);
-
-    // Again query all users but only fetch one offset by our random #
-    Video.findOne()
-      .skip(random)
-      .exec((err, result) => {
-        // Tada! random video
-        allContent["video"] = result;
-      });
-  });
-
-  // Get the count of all quotes
-  Quote.count().exec((err, count) => {
-    // Get a random entry
-    let random = Math.floor(Math.random() * count);
-
-    // Again query all users but only fetch one offset by our random #
-    Quote.findOne()
-      .skip(random)
-      .exec((err, result) => {
-        // Tada! random quote
-        allContent["quote"] = result;
+      Quote.find().then(quotes => {
+        let random = Math.floor(Math.random() * quotes.length);
+        let rand = quotes[random];
+        allContent["quotes"] = rand;
         res.json(allContent);
       });
+    });
   });
-});
 
+  // res.json(allContent);
+});
 module.exports = router;
