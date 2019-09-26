@@ -8,10 +8,7 @@ class MainPage extends React.Component {
         <div className="content-otd-container">
           <div className="content">
             <h4>Boost of the Day</h4>
-            <img
-              src="https://www.fosi.org/media/images/22601782810_cbe3ede5f5_o.focus-none.original.jpg"
-              alt=""
-            />
+            {this.props.randomContent.title}
           </div>
         </div>
       </div>
