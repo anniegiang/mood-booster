@@ -7,6 +7,7 @@ const users = require("./routes/api/users");
 const quotes = require("./routes/api/quotes");
 const photos = require("./routes/api/photos");
 const videos = require("./routes/api/videos");
+const randomContent = require("./routes/api/randomContent");
 
 // const photosSeed = require("./photos_seed");
 // const quotesSeed = require("./quotes_seed");
@@ -28,6 +29,7 @@ app.use("/api/users", users);
 app.use("/api/quotes", quotes);
 app.use("/api/photos", photos);
 app.use("/api/videos", videos);
+app.use("/api/random", randomContent);
 
 // tell express to use middleware to parse JSON that's sent to frontend
 app.use(bodyParser.urlencoded({ extended: false }));
