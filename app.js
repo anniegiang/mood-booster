@@ -49,7 +49,13 @@ const port = process.env.PORT || 5000;
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
+<<<<<<< HEAD
+
+// seed1()
+// seed2()
+=======
 // seed();
 // seed1();
 // seed2();
 // seed3();
+>>>>>>> 780c469e016aad4ffe2ad89ebc7a7ac84b387026
