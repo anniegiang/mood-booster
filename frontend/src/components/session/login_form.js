@@ -94,6 +94,7 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             {this.renderPasswordErrors()}
+            <br></br>
             <input className="submit-btn" type="submit" value="Submit" />
           </form>
         </div>
