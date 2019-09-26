@@ -49,7 +49,7 @@ class NavBar extends React.Component {
     return (
       <div className="nav-container">
         <a href="/#" className="nav-logo">
-          Mood Booster
+          <div className="logo"></div>
         </a>
         {this.getLinks()}
       </div>

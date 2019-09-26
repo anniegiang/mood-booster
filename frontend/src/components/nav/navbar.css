@@ -12,9 +12,18 @@
 }
 
 .nav-logo {
-  margin: 20px 40px;
+  /* margin: 20px 40px;
+  height: 100px;
+  width:100%; */
 }
 
+.logo {
+  background-image: url(/static/media/logo-no-back.7a39142d.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 300px;
+}
 .nav-links {
   margin: 20px 40px;
 }
