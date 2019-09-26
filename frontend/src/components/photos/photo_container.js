@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     photo: state.content.photos[ownProps.match.params.photo_id],
     currentUser: state.session.user
   };
-};
+};  
 
 const mapDispatchToProps = dispatch => {
   return {
