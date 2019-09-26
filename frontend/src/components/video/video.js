@@ -45,16 +45,8 @@ class Video extends React.Component {
             </div>
         )
     }
-    return (
-      <div>
-        <video controls width="500" height="500">
-          <source src=""></source>
-        </video>
-        <h1>{this.props.video.title}</h1>
-        <button onClick={this.saveVideo}>Save to Favorites</button>
-      </div>
-    );
-  }
+
+  
 }
 
 export default Video;

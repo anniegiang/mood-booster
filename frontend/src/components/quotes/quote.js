@@ -27,19 +27,6 @@ class Quote extends React.Component {
 
   render() {
     if (!this.props.quotes) {
-<<<<<<< HEAD
-      return null;
-    }
-    return (
-      <div>
-        <h1>This is a quote</h1>
-        <h3>{this.props.quotes.quoteText}</h3>
-        <h5>{this.props.quotes.author}</h5>
-        {/* <p>Quote will go here</p> */}
-        <button onClick={this.saveQuote}>Save to Favorites</button>
-      </div>
-    );
-=======
       return null
   }
       return (
@@ -52,7 +39,6 @@ class Quote extends React.Component {
 
       );
     
->>>>>>> master
   }
 }
 
