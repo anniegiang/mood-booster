@@ -8,10 +8,10 @@ const quotes = require("./routes/api/quotes");
 const photos = require("./routes/api/photos");
 const videos = require("./routes/api/videos");
 
-const photosSeed = require("./photos_seed");
-const quotesSeed = require("./quotes_seed");
-const usersSeed = require("./users_seed");
-const videosSeed = require("./seeder");
+// const photosSeed = require("./photos_seed");
+// const quotesSeed = require("./quotes_seed");
+// const usersSeed = require("./users_seed");
+// const videosSeed = require("./seeder");
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
@@ -25,8 +25,6 @@ mongoose // connect to MongoDB using Mongoose
 
 // tell Express to use imported routes
 app.use("/api/users", users);
-app.use("/api/tweets", tweets);
-app.use("/api/comments", comments);
 app.use("/api/quotes", quotes);
 app.use("/api/photos", photos);
 app.use("/api/videos", videos);
@@ -46,7 +44,7 @@ const port = process.env.PORT || 5000;
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
-photosSeed();
-quotesSeed();
-usersSeed();
-videosSeed();
+// photosSeed();
+// quotesSeed();
+// usersSeed();
+// videosSeed();
