@@ -4,24 +4,26 @@ import "./quote.css";
 class Quote extends React.Component {
   constructor(props) {
     super(props);
-    // this.id = this.props.quoteID 
+    // this.id = this.props.quoteID
 
-//    this.text = this.props.text;
-//    this.author = this.props.author;
-    this.saveQuote = this.saveQuote.bind(this)
+    //    this.text = this.props.text;
+    //    this.author = this.props.author;
+    this.saveQuote = this.saveQuote.bind(this);
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchQuote(this.props.match.params.quote_id);
   }
 
   saveQuote(e) {
     e.preventDefault();
-    // this.props.composeTweet({ text: this.state.text });
-    // this.setState({ text: "" });
+    let data = {
+      contentType: "quoteSave",
+      contentId: this.props.match.params.quote_id,
+      userId: this.props.currentUser.id
+    };
+    this.props.saveContent(data);
   }
-
 
   render() {
     if (!this.props.quotes) {

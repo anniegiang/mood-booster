@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -18,18 +19,27 @@ class NavBar extends React.Component {
 
     if (loggedIn) {
       return (
-        <div>
-          <Link to={"/tweets"}> All Tweets </Link>
-          <Link to={"/profile"}> Profile </Link>
-          <Link to={"/new_tweet"}> Write a Tweet </Link>
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className="nav-links">
+          <Link className="nav-boost" to={"/photos/5d8aa5006f2ead30dc456c35"}>
+            Boost your mood
+          </Link>
+          <Link className="nav-profile" to={"/profile"}>
+            Profile
+          </Link>
+          <a className="nav-logout" onClick={this.logoutUser}>
+            Logout
+          </a>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+        <div className="nav-links">
+          <Link className="nav-signup" to={"/signup"}>
+            Signup
+          </Link>
+          <Link className="nav-login" to={"/login"}>
+            Login
+          </Link>
         </div>
       );
     }
@@ -37,8 +47,10 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Chirpers</h1>
+      <div className="nav-container">
+        <a href="/#" className="nav-logo">
+          Mood Booster
+        </a>
         {this.getLinks()}
       </div>
     );
