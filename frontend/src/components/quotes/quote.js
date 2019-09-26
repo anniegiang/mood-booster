@@ -28,13 +28,14 @@ class Quote extends React.Component {
       return null
   }
       return (
-        <div className="quote-box">
-            <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
-            <h3 className="author">- {this.props.quotes.author}</h3>
-            {/* <p>Quote will go here</p> */}
-            <button onClick={this.saveQuote}>Save to Favorites</button>
+        <div className="quote-background">
+          <div className="quote-box">
+              <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
+              <h3 className="author">- {this.props.quotes.author}</h3>
+              {/* <p>Quote will go here</p> */}
+              <button onClick={this.saveQuote}>Save to Favorites</button>
+          </div>
         </div>
-
       );
     
   }
