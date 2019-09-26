@@ -26,15 +26,18 @@ class Photo extends React.Component {
 
   render() {
     if (!this.props.photo) {
-      return null;
-    }
-    return (
-      <div className="photo-container">
-        <button onClick={this.savePhoto}>Save to Favorites</button>
-        <h3>{this.props.photo.title}</h3>
-        <img src={this.props.photo.photoUrl}></img>
-      </div>
-    );
+      return null
+  }
+      return (
+        <div className="photo-div">
+          <h1>{this.props.photo.title}</h1>
+          <img src={this.props.photo.photoUrl}></img>
+          {/* <p>Photo will go here</p> */}
+          <button onClick={this.savePhoto}>Save to Favorites</button>
+        </div>
+
+      );
+    
   }
 }
 

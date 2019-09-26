@@ -1,4 +1,5 @@
 import React from "react";
+import "./quote.css";
 
 class Quote extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Quote extends React.Component {
 
   render() {
     if (!this.props.quotes) {
+<<<<<<< HEAD
       return null;
     }
     return (
@@ -37,6 +39,20 @@ class Quote extends React.Component {
         <button onClick={this.saveQuote}>Save to Favorites</button>
       </div>
     );
+=======
+      return null
+  }
+      return (
+        <div className="quote-box">
+            <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
+            <h3 className="author">- {this.props.quotes.author}</h3>
+            {/* <p>Quote will go here</p> */}
+            <button onClick={this.saveQuote}>Save to Favorites</button>
+        </div>
+
+      );
+    
+>>>>>>> master
   }
 }
 
