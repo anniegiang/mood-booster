@@ -14,14 +14,14 @@ import PhotoContainer from "./photos/photo_container";
 import VideoContainer from "./video/video_container";
 
 const App = () => (
-  <div>
+  <div className="app">
     <NavBarContainer />
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
+      <Route exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-      <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
+      {/* <ProtectedRoute exact path="/tweets" component={TweetsContainer} /> */}
       <Route exact path="/quotes/:quote_id" component={QuoteContainer} />
       <Route exact path="/photos/:photo_id" component={PhotoContainer} />
       <Route exact path="/videos/:video_id" component={VideoContainer} />

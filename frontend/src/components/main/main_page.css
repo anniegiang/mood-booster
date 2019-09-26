@@ -1,3 +1,14 @@
 .mainpage-container {
-  margin-top: 7%;
+  margin-top: 20%;
 }
+
+.content-otd-container {
+  background-color: #fff;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.content h3 {
+  text-align: center;
+}
+
