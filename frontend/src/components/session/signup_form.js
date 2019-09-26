@@ -64,9 +64,7 @@ class SignupForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Email")) {
         return (
-          <div className="errors-container">
-            <p className="error">{err}</p>
-          </div>
+            <div>{err}</div>
         );
       }
     }
@@ -76,9 +74,7 @@ class SignupForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Handle")) {
         return (
-          <div className="errors-container">
-            <p className="error">{err}</p>
-          </div>
+            <div>{err}</div>
         );
       }
     }
@@ -88,9 +84,7 @@ class SignupForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Password")) {
         return (
-          <div className="errors-container">
-            <p className="error">{err}</p>
-          </div>
+            <div>{err}</div>
         );
       }
     }
@@ -100,9 +94,7 @@ class SignupForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Confirm")) {
         return (
-          <div className="errors-container">
-            <p className="error">{err}</p>
-          </div>
+            <div>{err}</div>
         );
       }
     }
@@ -121,7 +113,9 @@ class SignupForm extends React.Component {
               onChange={this.update("email")}
               placeholder="Email"
             />
-            {this.renderEmailErrors()}
+            <div className="errors-container">
+              {this.renderEmailErrors()}
+            </div>
             <input
               className="input-handle"
               type="text"
@@ -129,7 +123,9 @@ class SignupForm extends React.Component {
               onChange={this.update("handle")}
               placeholder="Handle"
             />
-            {this.renderHandleErrors()}
+            <div className="errors-container">
+              {this.renderHandleErrors()}
+            </div>
             <input
               className="input-password"
               type="password"
@@ -137,7 +133,9 @@ class SignupForm extends React.Component {
               onChange={this.update("password")}
               placeholder="Password"
             />
-            {this.renderPasswordErrors()}
+            <div className="errors-container">
+              {this.renderPasswordErrors()}
+            </div>
             <input
               className="input-password"
               type="password"
@@ -145,7 +143,9 @@ class SignupForm extends React.Component {
               onChange={this.update("password2")}
               placeholder="Confirm Password"
             />
-            {this.renderConfirmPasswordErrors()}
+            <div className="errors-container">
+              {this.renderConfirmPasswordErrors()}
+            </div>
             <br />
             <input className="submit-btn" type="submit" value="Submit" />
           </form>

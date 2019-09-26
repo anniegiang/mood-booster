@@ -5,7 +5,7 @@
   max-width: 390px;
   max-height: 600px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 10%;
   background-color: #e6eeff;
   border-radius: 50px;
   height: 400px;
@@ -13,7 +13,7 @@
 }
 
 .signup {
-  height: 500px;
+  height: 100%;
 }
 
 .form-container h1 {
@@ -23,7 +23,7 @@
 }
 
 .form-inner {
-  padding: 60px;
+  padding: 60px 0 40px;
 }
 
 .form {
@@ -36,7 +36,7 @@
 .input-password,
 .input-handle {
   padding: 10px;
-  margin-bottom: 20px;
+  margin-top: 2%;
   width: 280px;
   max-height: 30px;
   background-color: #fff;
@@ -47,6 +47,8 @@
   content: "";
   height: 20px;
   margin: 10px 0px;
+  padding: 0 5px;
+  font-size: 14px;
 }
 
 .submit-btn {
