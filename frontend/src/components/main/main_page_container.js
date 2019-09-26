@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import { fetchRandomContent } from "../../actions/random_content_actions";
-import NavBar from "./navbar";
+import MainPage from "./main_page";
 
 const msp = state => {
   return {
-    randomContent: this.state.content.randomContent
+    randomContent: state.content.randomContent.content
   };
 };
 
@@ -17,4 +17,4 @@ const mdp = dispatch => {
 export default connect(
   msp,
   mdp
-)(NavBar);
+)(MainPage);

@@ -10,6 +10,7 @@ import axios from "axios";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
+  const currentDay = new Date().getDate();
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
@@ -18,26 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
       session: { isAuthenticated: true, user: decodedUser },
       content: {
         randomContent: {
-          videos: {},
-          photos: {},
-          quote: {},
-          expiresIn: Date.now() + 8.64e7 // 24 hours in ms
+          content: {},
+          expiresIn: new Date().getDate() + 1 // 24 hours in ms
         }
       }
     };
     store = configureStore(preloadedState);
-
     const currentTime = Date.now() / 1000;
+
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
       window.location.href = "/login";
     }
-
-    if (store.content.randomState.expiresIn >= currentTime) {
-      store.dispatch(fetchRandomContent());
-    }
   } else {
     store = configureStore({});
+  }
+
+  if (
+    store.getState().content.randomContent.expiresIn >= currentDay ||
+    store.getState().content.randomContent.content === {}
+  ) {
+    store.dispatch(fetchRandomContent());
   }
 
   window.store = store;
