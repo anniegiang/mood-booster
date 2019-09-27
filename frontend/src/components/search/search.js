@@ -5,8 +5,13 @@ class Search extends React.Component {
         if (this.props.location.state.videos) {
             this.props.fetchVideos(this.props.location.search)
         }
+
         if (this.props.location.state.photos) {
             this.props.fetchPhotos(this.props.location.search)
+        }
+
+        if (this.props.location.state.quotes) {
+            this.props.fetchQuotes(this.props.location.search)
         }
     }
     render() {
@@ -28,6 +33,13 @@ class Search extends React.Component {
                 {this.props.photos ? (
                     this.props.photos.map(photo => {
                     return <li>{photo.title}</li>
+                    })
+                ): ("")
+                }
+
+                {this.props.quotes ? (
+                    this.props.quotes.map(quote => {
+                    return <li>{quote.title}</li>
                     })
                 ): ("")
                 }

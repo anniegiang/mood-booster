@@ -1,5 +1,6 @@
 const Video = require("./models/Video");
-const Photo = require('./models/Photo')
+const Photo = require('./models/Photo');
+const Quote = require('./models/Quote');
 const Seed = () => {
     const video1 = new Video({
         "title": "Vine",
@@ -175,6 +176,104 @@ const Seed = () => {
         "mood7": true
     })
     photo7.save()
+
+    const quote1 = new Quote({
+        "title": "quote1",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": true,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    quote1.save()
+
+    const quote2 = new Quote({
+        "title": "quote2",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": false,
+        "mood2": true,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    quote2.save()
+
+    const quote3 = new Quote({
+        "title": "quote3",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": false,
+        "mood2": false,
+        "mood3": true,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    quote3.save()
+
+    const quote4 = new Quote({
+        "title": "quote4",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": true,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    quote4.save()
+
+    const quote5 = new Quote({
+        "title": "quote5",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": true,
+        "mood6": false,
+        "mood7": false
+    })
+    quote5.save()
+
+    const quote6 = new Quote({
+        "title": "quote6",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": true,
+        "mood7": false
+    })
+    quote6.save()
+
+    const quote7 = new Quote({
+        "title": "quote7",
+        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        'author': 'monkey',
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": true
+    })
+    quote7.save()
 }
 
 module.exports = Seed
