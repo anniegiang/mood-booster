@@ -1,10 +1,6 @@
 import { RECEIVE_RANDOM_CONTENT } from "../actions/random_content_actions";
 
-const _defaultState = {
-  content: {},
-  expiresIn: new Date().getDate() + 1 // 24 hours in ms
-};
-const randomContentReducer = (state = _defaultState, action) => {
+const randomContentReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {
