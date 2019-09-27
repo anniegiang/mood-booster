@@ -1,13 +1,14 @@
-import { RECEIVE_PHOTO } from "../actions/photo_actions";
+import { RECEIVE_PHOTO, RECEIVE_FILTERED_PHOTOS } from '../actions/photo_actions';
 
 const PhotosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
-    // debugger
     switch (action.type) {
         case RECEIVE_PHOTO:
             newState = Object.assign({}, state, { [action.photo.data._id]: action.photo.data })
             return newState;
+        case RECEIVE_FILTERED_PHOTOS:
+            return action.photos
         default:
             return state
     }

@@ -24,6 +24,9 @@ mongoose // connect to MongoDB using Mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // tell Express to use imported routes
 app.use("/api/users", users);
 app.use("/api/quotes", quotes);
@@ -32,8 +35,6 @@ app.use("/api/videos", videos);
 app.use("/api/random", randomContent);
 
 // tell express to use middleware to parse JSON that's sent to frontend
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // tell express to use middleware to initialize the authentication module
 app.use(passport.initialize());

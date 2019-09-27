@@ -11,7 +11,9 @@ import TweetComposeContainer from "./tweets/tweet_compose_container";
 import ProfileContainer from "./profile/profile_container";
 import QuoteContainer from "./quotes/quote_container";
 import PhotoContainer from "./photos/photo_container";
-import VideoContainer from "./video/video_container";
+import VideoContainer from './video/video_container';
+import FormContainer  from './form/form_container';
+import SearchContainer from './search/search_container';
 import AboutPage from "./main/about_page";
 
 const App = () => (
@@ -26,6 +28,8 @@ const App = () => (
       <Route exact path="/about" component={AboutPage} />
       <Route exact path="/quotes/:quote_id" component={QuoteContainer} />
       <Route exact path="/photos/:photo_id" component={PhotoContainer} />
+      <Route exact path="/form" component={FormContainer} />
+      <Route exact path="/search" component={SearchContainer} />
       <Route exact path="/videos/:video_id" component={VideoContainer} />
       <ProtectedRoute
         exact
