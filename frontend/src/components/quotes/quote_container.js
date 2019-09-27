@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-import { fetchQuote } from "../../actions/quote_action";
+import { fetchQuote } from "../../actions/quote_actions";
+import { saveContent } from "../../actions/user_actions";
 import Quote from "./quote";
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchQuote: id => dispatch(fetchQuote(id))
+    fetchQuote: id => dispatch(fetchQuote(id)),
+    saveContent: data => dispatch(saveContent(data))
   };
 };
 

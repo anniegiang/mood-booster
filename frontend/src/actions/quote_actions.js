@@ -20,7 +20,6 @@ const receiveQuotes = quotes => {
 
 //THUNK ACTION CREATOR
 export const fetchQuote = id => dispatch => {
-    // debugger
     return APIUtil.getQuote(id).then(quote => dispatch(receiveQuote(quote)))
 }
 
