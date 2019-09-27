@@ -10,25 +10,27 @@ class Search extends React.Component {
         }
     }
     render() {
-    //    debugger
+       debugger
         if (!this.props.videos) {
             return null
         }
         return(
             
             <div>
-                <h1>
-                    hello
-                    {this.props.videos.map(video => {
-                       return <li>{video.title}</li>
-                    })}
-                </h1>
-                <h1>
-                    hello
-                    {this.props.photos.map(photo => {
-                       return <li>{photo.title}</li>
-                    })}
-                </h1>
+                {this.props.videos ? (
+                    this.props.videos.map(video => {
+                    return <li>{video.title}</li>
+                    })
+                    
+                ): ("")
+                }
+
+                {this.props.photos ? (
+                    this.props.photos.map(photo => {
+                    return <li>{photo.title}</li>
+                    })
+                ): ("")
+                }
 
             </div>
         )
