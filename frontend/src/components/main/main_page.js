@@ -1,11 +1,45 @@
 import React from "react";
+import "./main_page.css";
 
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderRandomContentType = this.renderRandomContentType.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchRandomContent();
+  }
+
+  renderRandomContentType() {
+    const { randomContent } = this.props;
+    if ("quoteText" in randomContent) {
+      return <p>{randomContent.quoteText}</p>;
+    }
+
+    if ("videoUrl" in randomContent) {
+      return <video src={randomContent.videoUrl}></video>;
+    }
+
+    if ("photoUrl" in randomContent) {
+      return <img src={randomContent.photoUrl} alt="random-pic" />;
+    }
+  }
+
   render() {
+    if (!this.props.randomContent) {
+      return null;
+    }
+
     return (
-      <div>
-        <h1>Twitter Clone</h1>
-        <footer>Copyright &copy; 2019 Chirper</footer>
+      <div className="mainpage-container">
+        <div className="splash-window">
+          <h2>Welcome to</h2>
+          <div className="logo-main"></div>
+          <p>Content of the day</p>
+          {this.renderRandomContentType()}
+          <button className="main_button">Boost your mood!</button>
+        </div>
       </div>
     );
   }

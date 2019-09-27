@@ -1,0 +1,57 @@
+
+
+/* .quote-background {
+    background-image: url("https://wallpapercave.com/wp/KF1bzyB.jpg");
+    width: 100%;
+    z-index: 2;
+} */
+
+.quote-box {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    opacity: .8;
+    width: 700px;
+    height: 500px;
+    border-radius: 6px;
+    
+}
+
+.quote-text {
+    z-index: 2;
+    margin: 20% 10% 10% 10%;
+    font-family: Georgia, serif;
+
+}
+
+.author {
+    z-index: 2;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Sanchez', serif;
+
+}
+
+button {
+    z-index: 2;
+    background-color: rgb(3, 150, 199); 
+    border:  rgb(1, 134, 179);
+    border: none;
+    color: white;
+    padding: 0 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+   
+    cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(2, 167, 223);
+}

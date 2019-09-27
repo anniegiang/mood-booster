@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import "./session_form.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -12,13 +13,14 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    this.renderEmailErrors = this.renderEmailErrors.bind(this);
+    this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push("/tweets");
+      this.props.history.push("/");
     }
 
     // Set or clear errors
@@ -46,39 +48,56 @@ class LoginForm extends React.Component {
   }
 
   // Render the session errors if there are any
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
-        ))}
-      </ul>
-    );
+  renderEmailErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Email")) {
+        return (
+            <div className="error">{err}</div>
+        );
+      }
+    }
+  }
+
+  renderPasswordErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Password")) {
+        return (
+            <div>{err}</div>
+        );
+      }
+    }
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+      <div className="form-container">
+        <div className="form-inner">
+          <h1>Log In</h1>
+          <form className="form" onSubmit={this.handleSubmit}>
             <input
+              className="input-email"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"
             />
-            <br />
+            <div className='errors-container'>
+              {this.renderEmailErrors()}  
+            </div>
             <input
+              className="input-password"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
             />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+            <div className='errors-container'>
+              {this.renderPasswordErrors()}
+            </div>
+            <br></br>
+            <input className="submit-btn" type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     );
   }

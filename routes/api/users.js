@@ -23,6 +23,31 @@ router.get(
   }
 );
 
+// USER PROFILE
+router.get("/:user_id", (req, res) => {
+  User.findOne({ _id: req.params.user_id })
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json({ nouserfound: "No user found" }));
+});
+
+// SAVE CONTENT (protected)
+router.post(
+  "/content/like",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    let { contentType, contentId, userId } = req.body;
+    User.findOne({ _id: userId })
+      .then(user => {
+        if (!user[contentType].includes(contentId)) {
+          user[contentType].push(contentId);
+          user.save();
+        }
+        res.json(user);
+      })
+      .catch(err => res.status(400).json(err));
+  }
+);
+
 // REGISTER
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);

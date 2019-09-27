@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import "./session_form.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -41,6 +42,12 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user, this.props.history);
+    this.renderEmailErrors = this.renderEmailErrors.bind(this);
+    this.renderHandleErrors = this.renderHandleErrors.bind(this);
+    this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
+    this.renderConfirmPasswordErrors = this.renderConfirmPasswordErrors.bind(
+      this
+    );
   }
 
   renderErrors() {
@@ -53,44 +60,96 @@ class SignupForm extends React.Component {
     );
   }
 
+  renderEmailErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Email")) {
+        return (
+            <div>{err}</div>
+        );
+      }
+    }
+  }
+
+  renderHandleErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Handle")) {
+        return (
+            <div>{err}</div>
+        );
+      }
+    }
+  }
+
+  renderPasswordErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Password")) {
+        return (
+            <div>{err}</div>
+        );
+      }
+    }
+  }
+
+  renderConfirmPasswordErrors() {
+    for (let err of Object.values(this.state.errors)) {
+      if (err.includes("Confirm")) {
+        return (
+            <div>{err}</div>
+        );
+      }
+    }
+  }
+
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="login-form">
-            <br />
+      <div className="form-container signup">
+        <div className="form-inner">
+          <h1>Sign Up</h1>
+          <form className="form" onSubmit={this.handleSubmit}>
             <input
+              className="input-email"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"
             />
-            <br />
+            <div className="errors-container">
+              {this.renderEmailErrors()}
+            </div>
             <input
+              className="input-handle"
               type="text"
               value={this.state.handle}
               onChange={this.update("handle")}
               placeholder="Handle"
             />
-            <br />
+            <div className="errors-container">
+              {this.renderHandleErrors()}
+            </div>
             <input
+              className="input-password"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
             />
-            <br />
+            <div className="errors-container">
+              {this.renderPasswordErrors()}
+            </div>
             <input
+              className="input-password"
               type="password"
               value={this.state.password2}
               onChange={this.update("password2")}
               placeholder="Confirm Password"
             />
+            <div className="errors-container">
+              {this.renderConfirmPasswordErrors()}
+            </div>
             <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+            <input className="submit-btn" type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     );
   }
