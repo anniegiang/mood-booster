@@ -52,9 +52,7 @@ class LoginForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Email")) {
         return (
-          <div className="errors-container">
             <div className="error">{err}</div>
-          </div>
         );
       }
     }
@@ -64,9 +62,7 @@ class LoginForm extends React.Component {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Password")) {
         return (
-          <div className="errors-container">
-            <div className="error-pr">{err}</div>
-          </div>
+            <div>{err}</div>
         );
       }
     }
@@ -85,7 +81,9 @@ class LoginForm extends React.Component {
               onChange={this.update("email")}
               placeholder="Email"
             />
-            {this.renderEmailErrors()}
+            <div className='errors-container'>
+              {this.renderEmailErrors()}  
+            </div>
             <input
               className="input-password"
               type="password"
@@ -93,7 +91,10 @@ class LoginForm extends React.Component {
               onChange={this.update("password")}
               placeholder="Password"
             />
-            {this.renderPasswordErrors()}
+            <div className='errors-container'>
+              {this.renderPasswordErrors()}
+            </div>
+            <br></br>
             <input className="submit-btn" type="submit" value="Submit" />
           </form>
         </div>

@@ -5,8 +5,12 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="mainpage-container">
-        <h1>Mood Booster</h1>
-        <button>Boost your mood</button>
+        <div className="splash-window">
+          <h2>Welcome to</h2>
+          <div className="logo-main"></div>
+          <p>Content of the day</p>
+          <button className="main_button">Boost your mood!</button>
+        </div>
       </div>
     );
   }
