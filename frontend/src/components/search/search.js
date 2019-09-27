@@ -26,6 +26,8 @@ class Search extends React.Component {
                     <h1>Sorry no Content!! Go to form page ya mankey</h1>
                 </div>
             )
+
+            
         } else {
             return(
                 
