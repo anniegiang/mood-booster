@@ -88,7 +88,7 @@ const Seed = () => {
     video7.save()
     const photo1 = new Photo({
         "title": "photo1",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": true,
         "mood2": false,
         "mood3": false,
@@ -101,7 +101,7 @@ const Seed = () => {
 
     const photo2 = new Photo({
         "title": "photo2",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": false,
         "mood2": true,
         "mood3": false,
@@ -114,7 +114,7 @@ const Seed = () => {
 
     const photo3 = new Photo({
         "title": "photo3",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": false,
         "mood2": false,
         "mood3": true,
@@ -127,7 +127,7 @@ const Seed = () => {
 
     const photo4 = new Photo({
         "title": "photo4",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -140,7 +140,7 @@ const Seed = () => {
 
     const photo5 = new Photo({
         "title": "photo5",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -153,7 +153,7 @@ const Seed = () => {
 
     const photo6 = new Photo({
         "title": "photo6",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -166,7 +166,7 @@ const Seed = () => {
 
     const photo7 = new Photo({
         "title": "photo7",
-        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://cdn1.tedsby.com/tb/large/storage/1/4/3/143646/collectible-dog-husky-puppy-hector.jpg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -179,7 +179,7 @@ const Seed = () => {
 
     const quote1 = new Quote({
         "title": "quote1",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": true,
         "mood2": false,
@@ -193,7 +193,7 @@ const Seed = () => {
 
     const quote2 = new Quote({
         "title": "quote2",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": false,
         "mood2": true,
@@ -207,7 +207,7 @@ const Seed = () => {
 
     const quote3 = new Quote({
         "title": "quote3",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": false,
         "mood2": false,
@@ -221,7 +221,7 @@ const Seed = () => {
 
     const quote4 = new Quote({
         "title": "quote4",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": false,
         "mood2": false,
@@ -235,7 +235,7 @@ const Seed = () => {
 
     const quote5 = new Quote({
         "title": "quote5",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": false,
         "mood2": false,
@@ -249,7 +249,7 @@ const Seed = () => {
 
     const quote6 = new Quote({
         "title": "quote6",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": false,
         "mood2": false,
@@ -263,7 +263,7 @@ const Seed = () => {
 
     const quote7 = new Quote({
         "title": "quote7",
-        "quoteText": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "quoteText": "Youre bananas B A N A N A",
         'author': 'monkey',
         "mood1": false,
         "mood2": false,

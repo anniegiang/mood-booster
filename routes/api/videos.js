@@ -21,22 +21,21 @@ router.get("/", (req,res) => {
     req.query.mood5 = JSON.parse(req.query.mood5)
     req.query.mood6 = JSON.parse(req.query.mood6)
     req.query.mood7 = JSON.parse(req.query.mood7)
-    // req.query.videos = JSON.parse(req.query.videos)
-    // req.query.photos = JSON.parse(req.query.photos)
-    // req.query.quotes = JSON.parse(req.query.quotes)
+    req.query.videos = JSON.parse(req.query.videos)
+   
 
     
     Video.find()
     .then(videos => {
         let videoArr = []
         videos.forEach(video => {
-            if ( (video.mood1 === true && req.query.mood1 === true) || 
-                 (video.mood2 === true && req.query.mood2 === true) || 
-                 (video.mood3 === true && req.query.mood3 === true) || 
-                 (video.mood4 === true && req.query.mood4 === true) || 
-                 (video.mood5 === true && req.query.mood5 === true) || 
-                 (video.mood6 === true && req.query.mood6 === true) || 
-                 (video.mood7 === true && req.query.mood7 === true) ) 
+            if ( (video.mood1 === true && req.query.mood1 === true && req.query.videos === true) || 
+                 (video.mood2 === true && req.query.mood2 === true && req.query.videos === true) || 
+                 (video.mood3 === true && req.query.mood3 === true && req.query.videos === true) || 
+                 (video.mood4 === true && req.query.mood4 === true && req.query.videos === true) || 
+                 (video.mood5 === true && req.query.mood5 === true && req.query.videos === true) || 
+                 (video.mood6 === true && req.query.mood6 === true && req.query.videos === true) || 
+                 (video.mood7 === true && req.query.mood7 === true && req.query.videos === true) ) 
             {
                 videoArr.push(video)
             }
