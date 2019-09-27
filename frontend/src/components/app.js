@@ -12,6 +12,8 @@ import ProfileContainer from "./profile/profile_container";
 import QuoteContainer from "./quotes/quote_container";
 import PhotoContainer from "./photos/photo_container";
 import VideoContainer from './video/video_container';
+import FormContainer  from './form/form_container';
+import SearchContainer from './search/search_container';
 
 const App = () => (
   <div>
@@ -24,6 +26,8 @@ const App = () => (
       <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
       <Route exact path="/quotes/:quote_id" component={QuoteContainer} />
       <Route exact path="/photos/:photo_id" component={PhotoContainer} />
+      <Route exact path="/form" component={FormContainer} />
+      <Route exact path="/search" component={SearchContainer} />
       <ProtectedRoute
         exact
         path="/new_tweet"
