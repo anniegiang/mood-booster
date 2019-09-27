@@ -26,7 +26,7 @@ class Form extends React.Component {
         this.handlemood7 = this.handlemood7.bind(this) 
         this.handlevideos = this.handlevideos.bind(this) 
         this.handlephotos = this.handlephotos.bind(this) 
-        this.handlequotes = this.handlemood7.bind(this) 
+        this.handlequotes = this.handlequotes.bind(this) 
         this.handleSubmit = this.handleSubmit.bind(this)
         
     }
@@ -167,7 +167,7 @@ class Form extends React.Component {
 
 
     render() {
-        
+        // debugger
         return (
             <div className='form-container'>
                 <form onSubmit={this.handleSubmit}>
