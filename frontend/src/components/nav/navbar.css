@@ -49,38 +49,41 @@
 
 
 @media screen and (max-width: 600px) {
-  .dropdown {
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
 
   .nav-container {
+    position: relative;
     display: flex;
-    align-content: center;
-    justify-content: space-between;
-    align-items:center;
+    flex-direction: column;
+    height: 70px;
   }
 
   .nav-links {
-    display: none;
-    position: absolute;
+    margin: 3% 0;
+  }
+  /* .nav-links {
     background-color: #f9f9f9;
     min-width: 160px;
+    width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
+    background-color: e6eeff;
+    padding: 10px;
+  } */
   
-  .icon {
+  /* .icon {
     margin: 0;
     padding: 0;
     display: block;
     color: darkblue;
     background-color: transparent;
     font-size: 20px;
-  }
+  } */
 
+  
 
 
 
 }
+/* .dropdown:hover {
+    display: inline-block;
+  } */
