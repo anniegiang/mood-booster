@@ -41,13 +41,8 @@ router.get("/", (req,res) => {
                 videoArr.push(video)
             }
         })
-      
-        
         return res.json(videoArr)
     })
-  
-        
-    
 })
 
 module.exports = router;

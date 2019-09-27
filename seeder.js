@@ -1,4 +1,5 @@
 const Video = require("./models/Video");
+const Photo = require('./models/Photo')
 const Seed = () => {
     const video1 = new Video({
         "title": "Vine",
@@ -84,6 +85,83 @@ const Seed = () => {
         "mood7": true
     })
     video7.save()
+    const photo1 = new Photo({
+        "title": "photo1",
+        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": true,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    photo1.save()
+
+    const photo2 = new Photo({
+        "title": "photo2",
+        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": false,
+        "mood2": true,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    photo2.save()
+
+    const photo3 = new Photo({
+        "title": "photo3",
+        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": false,
+        "mood2": false,
+        "mood3": true,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    photo3.save()
+
+    const photo4 = new Photo({
+        "title": "photo4",
+        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": true,
+        "mood5": false,
+        "mood6": false,
+        "mood7": false
+    })
+    photo4.save()
+
+    const photo5 = new Photo({
+        "title": "photo5",
+        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": true,
+        "mood6": false,
+        "mood7": false
+    })
+    photo5.save()
+
+    const photo6 = new Photo({
+        "title": "photo6",
+        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": true,
+        "mood7": false
+    })
+    photo6.save()
 }
 
 module.exports = Seed
