@@ -87,7 +87,7 @@ const Seed = () => {
     video7.save()
     const photo1 = new Photo({
         "title": "photo1",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
         "mood1": true,
         "mood2": false,
         "mood3": false,
@@ -100,7 +100,7 @@ const Seed = () => {
 
     const photo2 = new Photo({
         "title": "photo2",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
         "mood1": false,
         "mood2": true,
         "mood3": false,
@@ -113,7 +113,7 @@ const Seed = () => {
 
     const photo3 = new Photo({
         "title": "photo3",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
         "mood1": false,
         "mood2": false,
         "mood3": true,
@@ -126,7 +126,7 @@ const Seed = () => {
 
     const photo4 = new Photo({
         "title": "photo4",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -139,7 +139,7 @@ const Seed = () => {
 
     const photo5 = new Photo({
         "title": "photo5",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -152,7 +152,7 @@ const Seed = () => {
 
     const photo6 = new Photo({
         "title": "photo6",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -162,6 +162,19 @@ const Seed = () => {
         "mood7": false
     })
     photo6.save()
+
+    const photo7 = new Photo({
+        "title": "photo7",
+        "photoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "mood1": false,
+        "mood2": false,
+        "mood3": false,
+        "mood4": false,
+        "mood5": false,
+        "mood6": false,
+        "mood7": true
+    })
+    photo7.save()
 }
 
 module.exports = Seed
