@@ -2,7 +2,7 @@ import React from 'react';
 
 class Search extends React.Component {
     componentDidMount(){
-        // USE IF STATEMENT TO KEEP IN GLOBAL STATE GOING TO NEXT PAGE IF YOU WANT TO SHOW SAME VIDEOS WHEN THEY PRESS BACK BUTTON ON SHOW PAGE
+        // USE IF STATEMENT TO KEEP IN GLOBAL STATE GOING TO NEXT PAGE IF YOU WANT TO SHOW SAME VIDEOS WHEN THEY PRESS BACK BUTTON ON SHOW PAGE WITH FETCHING NOTHING
         // if (this.props.location.state.videos) {
             this.props.fetchVideos(this.props.location.search)
         // }
@@ -27,7 +27,7 @@ class Search extends React.Component {
                 </div>
             )
 
-            
+
         } else {
             return(
                 
