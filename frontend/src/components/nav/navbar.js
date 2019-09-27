@@ -54,12 +54,7 @@ class NavBar extends React.Component {
         <a href="/#" className="nav-logo">
           <div className="logo"></div>
         </a>
-        <button className="icon">&#9776;</button>
-        <div className="dropdown">
-          
           {this.getLinks()}
-        </div>
-        {/* <a href="javascript:void(0);" className="icon" onclick="myFunction()">&#9776;</a> */}
       </div>
     );
   }
