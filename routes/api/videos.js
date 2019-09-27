@@ -28,8 +28,8 @@ router.delete(
   "/:video_id/comment/:comment_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let id = req.params.video_id;
-    Video.findOne({ _id: id }).then(video => {
+    let videoId = req.params.video_id;
+    Video.findOne({ _id: videoId }).then(video => {
       video.comments.pull({ _id: req.params.comment_id });
       video.save();
       res.json(video);
@@ -42,14 +42,19 @@ router.delete(
 //   "/:video_id/comment/:comment_id",
 //   passport.authenticate("jwt", { session: false }),
 //   (req, res) => {
-//     let id = req.params.video_id;
-//     Video.findOne({ _id: id }).then(video => {
-//       video.comments.pull({ _id: req.params.comment_id });
-//       video.save();
-//       res.json(video);
+//     let videoId = req.params.video_id;
+//     Video.findOne({ _id: videoId }).then(video => {
+//       video.comments.forEach(comment => {
+//         if (comment._id === req.params.comment_id) {
+//           comment.text.set(req.body.text);
+//           video.save();
+//           res.json(comment);
+//         }
+//       });
 //     });
 //   }
 // );
+
 // GET VIDEO
 router.get("/:video_id", (req, res) => {
   Video.findOne({ _id: req.params.video_id })
