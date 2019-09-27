@@ -42,6 +42,9 @@ mongoose // connect to MongoDB using Mongoose
 .then(() => console.log("Connected to MongoDB successfully"))
 .catch(err => console.log(err));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // tell Express to use imported routes
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
@@ -53,8 +56,6 @@ app.use("/api/videos", videos)
 // seed();
 
 // tell express to use middleware to parse JSON that's sent to frontend
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // tell express to use middleware to initialize the authentication module
 app.use(passport.initialize());
@@ -68,5 +69,5 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
 
-seed1()
-seed2()
+// seed1()
+// seed2()
