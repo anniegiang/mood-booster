@@ -1,8 +1,8 @@
 import Search from './search'
 import { connect } from "react-redux";
-import { fetchVideos } from '../../actions/video_action';
-import { fetchPhotos } from '../../actions/photo_action';
-import { fetchQuotes } from '../../actions/quote_action';
+import { fetchVideos } from '../../actions/video_actions';
+import { fetchPhotos } from '../../actions/photo_actions';
+import { fetchQuotes } from '../../actions/quote_actions';
 
 const msp = (state,ownProps) => {
     return({
