@@ -38,6 +38,20 @@ router.delete(
   }
 );
 
+// UPDATE COMMENT (protected)
+router.put(
+  "/:quote_id/comment/:comment_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Quote.findOne({ _id: req.params.quote_id }).then(quote => {
+      let comment = quote.comments.id(req.params.comment_id);
+      comment.text = req.body.text;
+      quote.save();
+      res.json(quote);
+    });
+  }
+);
+
 // GET QUOTE
 router.get("/:quote_id", (req, res) => {
   // console.log(req.params)
