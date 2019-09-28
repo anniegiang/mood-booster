@@ -37,6 +37,20 @@ router.delete(
   }
 );
 
+// UPDATE COMMENT (protected)
+router.put(
+  "/:photo_id/comment/:comment_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Photo.findOne({ _id: req.params.photo_id }).then(photo => {
+      let comment = photo.comments.id(req.params.comment_id);
+      comment.text = req.body.text;
+      photo.save();
+      res.json(photo);
+    });
+  }
+);
+
 // GET PHOTO
 router.get("/:photo_id", (req, res) => {
   Photo.findOne({ _id: req.params.photo_id })
