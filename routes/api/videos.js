@@ -4,6 +4,19 @@ const mongoose = require("mongoose");
 const Video = require("../../models/Video");
 const router = express.Router();
 
+// GET ALL COMMENTS (protected)
+router.get(
+  "/:video_id/comments",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Video.findOne({ _id: req.params.video_id })
+      .then(video => {
+        res.json(video.comments);
+      })
+      .catch(err => res.status(404).json({ novideofound: "No video found" }));
+  }
+);
+
 // CREATE COMMENT (protected)
 router.post(
   "/:video_id/comment",
@@ -48,8 +61,9 @@ router.put(
     Video.findOne({ _id: req.params.video_id }).then(video => {
       let comment = video.comments.id(req.params.comment_id);
       comment.text = req.body.text;
-      video.save();
-      res.json(comment);
+      video.save((err, video) => {
+        res.json(video.comments.id(comment._id));
+      });
     });
   }
 );

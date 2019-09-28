@@ -1,8 +1,21 @@
 const express = require("express");
 const passport = require("passport");
+const mongoose = require("mongoose");
 const Quote = require("../../models/Quote");
 const router = express.Router();
-const Video = require("../../models/Video");
+
+// GET ALL COMMENTS (protected)
+router.get(
+  "/:quote_id/comments",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Quote.findOne({ _id: req.params.quote_id })
+      .then(quote => {
+        res.json(quote.comments);
+      })
+      .catch(err => res.status(404).json({ noquotefound: "No quote found" }));
+  }
+);
 
 // CREATE COMMENT (protected)
 router.post(
@@ -13,12 +26,14 @@ router.post(
     Quote.findOne({ _id: req.params.quote_id })
       .then(quote => {
         let newComment = {
+          _id: mongoose.Types.ObjectId(),
           text,
           userId
         };
         quote.comments.push(newComment);
-        quote.save();
-        res.json(quote);
+        quote.save((err, quote) => {
+          res.json(quote.comments.id(newComment._id));
+        });
       })
       .catch(err => res.status(400).json(err));
   }
@@ -33,7 +48,7 @@ router.delete(
     Quote.findOne({ _id: quoteId }).then(quote => {
       quote.comments.pull({ _id: req.params.comment_id });
       quote.save();
-      res.json(quote);
+      res.json(quote.comments);
     });
   }
 );
@@ -46,8 +61,9 @@ router.put(
     Quote.findOne({ _id: req.params.quote_id }).then(quote => {
       let comment = quote.comments.id(req.params.comment_id);
       comment.text = req.body.text;
-      quote.save();
-      res.json(quote);
+      quote.save((err, quote) => {
+        res.json(quote.comments.id(comment._id));
+      });
     });
   }
 );

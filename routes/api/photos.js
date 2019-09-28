@@ -1,7 +1,21 @@
 const express = require("express");
 const passport = require("passport");
+const mongoose = require("mongoose");
 const Photo = require("../../models/Photo");
 const router = express.Router();
+
+// GET ALL COMMENTS (protected)
+router.get(
+  "/:photo_id/comments",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Photo.findOne({ _id: req.params.photo_id })
+      .then(photo => {
+        res.json(photo.comments);
+      })
+      .catch(err => res.status(404).json({ nophotofound: "No photo found" }));
+  }
+);
 
 // CREATE COMMENT (protected)
 router.post(
@@ -12,12 +26,14 @@ router.post(
     Photo.findOne({ _id: req.params.photo_id })
       .then(photo => {
         let newComment = {
+          _id: mongoose.Types.ObjectId(),
           text,
           userId
         };
         photo.comments.push(newComment);
-        photo.save();
-        res.json(photo);
+        photo.save((err, photo) => {
+          res.json(photo.comments.id(newComment._id));
+        });
       })
       .catch(err => res.status(400).json(err));
   }
@@ -32,7 +48,7 @@ router.delete(
     Photo.findOne({ _id: photoId }).then(photo => {
       photo.comments.pull({ _id: req.params.comment_id });
       photo.save();
-      res.json(photo);
+      res.json(photo.comments);
     });
   }
 );
@@ -45,8 +61,9 @@ router.put(
     Photo.findOne({ _id: req.params.photo_id }).then(photo => {
       let comment = photo.comments.id(req.params.comment_id);
       comment.text = req.body.text;
-      photo.save();
-      res.json(photo);
+      photo.save((err, photo) => {
+        res.json(photo.comments.id(comment._id));
+      });
     });
   }
 );
