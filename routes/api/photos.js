@@ -5,17 +5,13 @@ const Photo = require("../../models/Photo");
 const router = express.Router();
 
 // GET ALL COMMENTS (protected)
-router.get(
-  "/:photo_id/comments",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    Photo.findOne({ _id: req.params.photo_id })
-      .then(photo => {
-        res.json(photo.comments);
-      })
-      .catch(err => res.status(404).json({ nophotofound: "No photo found" }));
-  }
-);
+router.get("/:photo_id/comments", (req, res) => {
+  Photo.findOne({ _id: req.params.photo_id })
+    .then(photo => {
+      res.json(photo.comments);
+    })
+    .catch(err => res.status(404).json({ nophotofound: "No photo found" }));
+});
 
 // CREATE COMMENT (protected)
 router.post(

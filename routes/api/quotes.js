@@ -5,17 +5,13 @@ const Quote = require("../../models/Quote");
 const router = express.Router();
 
 // GET ALL COMMENTS (protected)
-router.get(
-  "/:quote_id/comments",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    Quote.findOne({ _id: req.params.quote_id })
-      .then(quote => {
-        res.json(quote.comments);
-      })
-      .catch(err => res.status(404).json({ noquotefound: "No quote found" }));
-  }
-);
+router.get("/:quote_id/comments", (req, res) => {
+  Quote.findOne({ _id: req.params.quote_id })
+    .then(quote => {
+      res.json(quote.comments);
+    })
+    .catch(err => res.status(404).json({ noquotefound: "No quote found" }));
+});
 
 // CREATE COMMENT (protected)
 router.post(

@@ -5,17 +5,13 @@ const Video = require("../../models/Video");
 const router = express.Router();
 
 // GET ALL COMMENTS (protected)
-router.get(
-  "/:video_id/comments",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    Video.findOne({ _id: req.params.video_id })
-      .then(video => {
-        res.json(video.comments);
-      })
-      .catch(err => res.status(404).json({ novideofound: "No video found" }));
-  }
-);
+router.get("/:video_id/comments", (req, res) => {
+  Video.findOne({ _id: req.params.video_id })
+    .then(video => {
+      res.json(video.comments);
+    })
+    .catch(err => res.status(404).json({ novideofound: "No video found" }));
+});
 
 // CREATE COMMENT (protected)
 router.post(
@@ -66,7 +62,7 @@ router.put(
         comment.text = req.body.text;
         video.save((err, video) => {
           res.json(video.comments.id(comment._id));
-        })
+        });
       })
       .catch(err => res.status(404).json({ novideofound: "No video found" }));
   }
