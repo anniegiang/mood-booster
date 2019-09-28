@@ -38,22 +38,18 @@ router.delete(
 );
 
 // UPDATE COMMENT (protected)
-// router.put(
-//   "/:video_id/comment/:comment_id",
-//   passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     let videoId = req.params.video_id;
-//     Video.findOne({ _id: videoId }).then(video => {
-//       video.comments.forEach(comment => {
-//         if (comment._id === req.params.comment_id) {
-//           comment.text.set(req.body.text);
-//           video.save();
-//           res.json(comment);
-//         }
-//       });
-//     });
-//   }
-// );
+router.put(
+  "/:video_id/comment/:comment_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Video.findOne({ _id: req.params.video_id }).then(video => {
+      let comment = video.comments.id(req.params.comment_id);
+      comment.text = req.body.text;
+      video.save();
+      res.json(video);
+    });
+  }
+);
 
 // GET VIDEO
 router.get("/:video_id", (req, res) => {
