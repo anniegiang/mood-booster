@@ -8,6 +8,10 @@ export const createPhotoComment = data => {
   return axios.post(`/api/photos/comment`, data);
 };
 
+export const updatePhotoComment = data => {
+  return axios.delete(`/api/photos/comment/update`, data);
+};
+
 export const deletePhotoComment = data => {
   return axios.delete(`/api/photos/comment/delete`, data);
 };

@@ -4,32 +4,22 @@ const mongoose = require("mongoose");
 const Video = require("../../models/Video");
 const router = express.Router();
 
-// GET ALL COMMENTS (protected)
-router.get("/:video_id/comments", (req, res) => {
-  Video.findOne({ _id: req.params.video_id })
-    .then(video => {
-      res.json(video.comments);
-    })
-    .catch(err => res.status(404).json({ novideofound: "No video found" }));
-});
-
 // CREATE COMMENT (protected)
 router.post(
-  "/:video_id/comment",
+  "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { userId, text } = req.body;
-    Video.findOne({ _id: req.params.video_id })
+    const { videoId, text } = req.body;
+    Video.findOne({ _id: videoId })
       .then(video => {
         let newComment = {
           _id: mongoose.Types.ObjectId(),
-          text,
-          userId
+          userId: req.user.id,
+          text
         };
         video.comments.push(newComment);
-        video.save((err, video) => {
-          res.json(video.comments.id(newComment._id));
-        });
+        video.save();
+        res.json(video);
       })
       .catch(err => res.status(400).json(err));
   }
@@ -37,15 +27,15 @@ router.post(
 
 // DELETE COMMENT (protected)
 router.delete(
-  "/:video_id/comment/:comment_id",
+  "/comment/delete",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let videoId = req.params.video_id;
+    let { commentId, videoId } = req.body;
     Video.findOne({ _id: videoId })
       .then(video => {
-        video.comments.pull({ _id: req.params.comment_id });
+        video.comments.pull({ _id: commentId });
         video.save();
-        res.json(video.comments);
+        res.json(video);
       })
       .catch(err => res.status(404).json({ novideofound: "No video found" }));
   }
@@ -53,21 +43,20 @@ router.delete(
 
 // UPDATE COMMENT (protected)
 router.put(
-  "/:video_id/comment/:comment_id",
+  "/comment/update",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Video.findOne({ _id: req.params.video_id })
+    let { commentId, videoId, text } = req.body;
+    Video.findOne({ _id: videoId })
       .then(video => {
-        let comment = video.comments.id(req.params.comment_id);
-        comment.text = req.body.text;
-        video.save((err, video) => {
-          res.json(video.comments.id(comment._id));
-        });
+        let comment = video.comments.id(commentId);
+        comment.text = text;
+        video.save();
+        res.json(video);
       })
       .catch(err => res.status(404).json({ novideofound: "No video found" }));
   }
 );
-
 // GET VIDEO
 router.get("/:video_id", (req, res) => {
   Video.findOne({ _id: req.params.video_id })

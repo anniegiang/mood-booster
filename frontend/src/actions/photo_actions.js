@@ -21,6 +21,12 @@ export const createPhotoComment = data => dispatch => {
   );
 };
 
+export const updatePhotoComment = data => dispatch => {
+  return APIUtil.updatePhotoComment(data).then(photo =>
+    dispatch(receivePhoto(photo))
+  );
+};
+
 export const deletePhotoComment = data => dispatch => {
   return APIUtil.deletePhotoComment(data).then(photo =>
     dispatch(receivePhoto(photo))
