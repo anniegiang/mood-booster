@@ -32,7 +32,7 @@ class Photo extends React.Component {
       photoId: this.props.match.params.photo_id,
       text: this.state.comment
     };
-    this.props.saveContent(data);
+    this.props.createPhotoComment(data);
   }
 
   renderComments() {
@@ -61,7 +61,7 @@ class Photo extends React.Component {
         <img src={this.props.photo.photoUrl}></img>
         {/* <p>Photo will go here</p> */}
         <button onClick={this.savePhoto}>Save to Favorites</button>
-        
+
         <form onSubmit={this.createComment}>
           <input
             type="text"
