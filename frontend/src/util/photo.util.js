@@ -9,9 +9,9 @@ export const createPhotoComment = data => {
 };
 
 export const updatePhotoComment = data => {
-  return axios.delete(`/api/photos/comment/update`, data);
+  return axios.delete(`/api/photos/comment`, data);
 };
 
 export const deletePhotoComment = data => {
-  return axios.delete(`/api/photos/comment/delete`, data);
+  return axios.delete(`/api/photos/comment`, data);
 };

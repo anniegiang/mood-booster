@@ -27,7 +27,7 @@ router.post(
 
 // DELETE COMMENT (protected)
 router.delete(
-  "/comment/delete",
+  "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     let { commentId, photoId } = req.body;
@@ -43,7 +43,7 @@ router.delete(
 
 // UPDATE COMMENT (protected)
 router.put(
-  "/comment/update",
+  "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     let { commentId, photoId, text } = req.body;
