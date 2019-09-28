@@ -1,5 +1,6 @@
 const express = require("express");
 const passport = require("passport");
+const mongoose = require("mongoose");
 const Video = require("../../models/Video");
 const router = express.Router();
 
@@ -12,12 +13,14 @@ router.post(
     Video.findOne({ _id: req.params.video_id })
       .then(video => {
         let newComment = {
+          _id: mongoose.Types.ObjectId(),
           text,
           userId
         };
         video.comments.push(newComment);
-        video.save();
-        res.json(video);
+        video.save((err, video) => {
+          res.json(video.comments.id(newComment._id));
+        });
       })
       .catch(err => res.status(400).json(err));
   }
@@ -32,7 +35,7 @@ router.delete(
     Video.findOne({ _id: videoId }).then(video => {
       video.comments.pull({ _id: req.params.comment_id });
       video.save();
-      res.json(video);
+      res.json(video.comments);
     });
   }
 );
@@ -46,7 +49,7 @@ router.put(
       let comment = video.comments.id(req.params.comment_id);
       comment.text = req.body.text;
       video.save();
-      res.json(video);
+      res.json(comment);
     });
   }
 );
