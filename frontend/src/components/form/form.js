@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Redirect } from 'react-router-dom'
+import './form.css'
 
 class Form extends React.Component {
     constructor(props) {
@@ -168,56 +167,62 @@ class Form extends React.Component {
     render() {
         // debugger
         return (
-            <div className='form-container'>
-                <form onSubmit={this.handleSubmit}>
-                    <div className='category-checkbox'>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood1}/>
-                            Lost of motivation
-                        </label>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood2}/>
-                            Stressed
-                        </label>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood3}/>
-                            Imposter syndrome
-                        </label>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood4}/>
-                            Test anxiety
-                        </label>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood5}/>
-                            Social anxiety
-                        </label>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood6}/>
-                            Pressure
-                        </label>
-                        <label> 
-                            <input type='checkbox' onClick={this.handlemood7}/>
-                            Mental fatigue
-                        </label>
-                    </div>
+            <form onSubmit={this.handleSubmit}>
+                <div className='form-transparent'>
 
-                    <div className='content-checkbox'>
-                        <label>
-                            <input type='checkbox' onClick={this.handlevideos}/>
-                            Videos
-                        </label>
-                        <label>
-                            <input type='checkbox' onClick={this.handlephotos}/>
-                            Photos
-                        </label>
-                        <label>
-                            <input type='checkbox' onClick={this.handlequotes}/>
-                            Quotes
-                        </label>
-                    </div>
-                    <button>Submit</button>
-                </form>
-            </div>
+                </div>
+                 <div className='form-mood-container'>
+                     <div className='checkbox-container'>
+                        <div className='category-checkbox'>
+                            <h3>What are you feeling?</h3>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood1}/>
+                                Lost of motivation
+                            </label>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood2}/>
+                                Stressed
+                            </label>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood3}/>
+                                Imposter syndrome
+                            </label>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood4}/>
+                                Test anxiety
+                            </label>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood5}/>
+                                Social anxiety
+                            </label>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood6}/>
+                                Pressure
+                            </label>
+                            <label> 
+                                <input type='checkbox' onClick={this.handlemood7}/>
+                                Mental fatigue
+                            </label>
+                        </div>
+                        <div className='content-checkbox'>
+                            <h3>What do you want to see?</h3>
+                            <label>
+                                <input type='checkbox' onClick={this.handlevideos}/>
+                                Videos
+                            </label>
+                            <label>
+                                <input type='checkbox' onClick={this.handlephotos}/>
+                                Photos
+                            </label>
+                            <label>
+                                <input type='checkbox' onClick={this.handlequotes}/>
+                                Quotes
+                            </label>
+                        </div>
+                     </div>
+                <button className='form-btn'>Submit</button>
+                </div>
+            </form>
         )
     }
 }

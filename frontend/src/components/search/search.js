@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import './search.css'
 
 class Search extends React.Component {
     componentDidMount(){
@@ -31,29 +33,50 @@ class Search extends React.Component {
         } else {
             return(
                 
-                <div>
-                    
-                    {this.props.videos ? (
-                        this.props.videos.map(video => {
-                        return <li>{video.title}</li>
-                        })
-                        
-                    ): ("")
-                    }
+                <div className='search-container'>
+                    <div className='result-container'>
+                        {this.props.videos ? (
+                            this.props.videos.map(video => {
+                            return <Link to={`/videos/${video._id}`}>
+                                <li className='content'>
+                                    <h1>{video.title}</h1>
+                                    <video controls >
+                                        <source src={video.videoUrl} ></source>
+                                    </video>                     
+                                </li>
+                            </Link>
+                            })               
+                        ): ("")
+                        }
+                    </div>
     
-                    {this.props.photos ? (
-                        this.props.photos.map(photo => {
-                        return <li>{photo.title}</li>
-                        })
-                    ): ("")
-                    }
+                    <div className='result-container'>
+                        {this.props.photos ? (
+                            this.props.photos.map(photo => {
+                                return <li className='content'>
+                                    <h1>{photo.title}</h1>
+                                <img src={photo.photoUrl} ></img>
+                            </li>
+                            })
+                        ): ("")
+                        }
+                    </div>
     
-                    {this.props.quotes ? (
-                        this.props.quotes.map(quote => {
-                        return <li>{quote.title}</li>
-                        })
-                    ): ("")
-                    }
+                    <div className='result-container'>
+                        {this.props.quotes ? (
+                            this.props.quotes.map(quote => {
+                                return <Link to={`/quotes/${quote._id}`}>
+                                    <li className='content'>
+                                    <h1>{quote.title}</h1> 
+                                    <blockquote>
+                                        {quote.quoteText}
+                                    </blockquote>
+                                </li>
+                                </Link>
+                            })
+                        ): ("")
+                        }
+                    </div>
     
                 </div>
             )
