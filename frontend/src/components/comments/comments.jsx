@@ -1,6 +1,6 @@
 import React from "react";
 
-class PhotoComments extends React.Component {
+class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -71,4 +71,4 @@ class PhotoComments extends React.Component {
   }
 }
 
-export default PhotoComments;
+export default Comments;

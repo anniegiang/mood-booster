@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import { fetchPhoto } from "../../actions/photo_actions";
 import { saveContent } from "../../actions/user_actions";
-import { createPhotoComment } from "../../actions/photo_actions";
+// import { createPhotoComment } from "../../actions/photo_actions";
+import { createComment } from "../../actions/comment_actions";
 import Photo from "./photo";
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchPhoto: id => dispatch(fetchPhoto(id)),
     saveContent: data => dispatch(saveContent(data)),
-    createPhotoComment: data => dispatch(createPhotoComment(data))
+    createComment: data => dispatch(createComment(data))
   };
 };
 

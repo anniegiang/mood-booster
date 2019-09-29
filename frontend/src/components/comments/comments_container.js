@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { updateComment, deleteComment } from "../../actions/comment_actions";
-import PhotoComments from "./photo_comments";
+import Comments from "./comments";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps
-)(PhotoComments);
+)(Comments);

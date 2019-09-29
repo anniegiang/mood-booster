@@ -3,7 +3,7 @@ import * as APIUtil from "../util/video_util";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 
 //REGULAR ACTION CREATOR
-const receiveVideo = video => {
+export const receiveVideo = video => {
     return{
         type: RECEIVE_VIDEO,
         video

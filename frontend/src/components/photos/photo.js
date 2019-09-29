@@ -30,9 +30,10 @@ class Photo extends React.Component {
     let data = {
       userId: this.props.currentUser.id,
       photoId: this.props.match.params.photo_id,
-      text: this.state.comment
+      text: this.state.comment,
+      type: "photo"
     };
-    this.props.createPhotoComment(data);
+    this.props.createComment(data);
   }
 
   renderComments() {
