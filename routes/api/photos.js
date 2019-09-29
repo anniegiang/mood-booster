@@ -30,7 +30,7 @@ router.delete(
   "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let { commentId, photoId } = req.body;
+    let { commentId, photoId } = req.query;
     Photo.findOne({ _id: photoId })
       .then(photo => {
         photo.comments.pull({ _id: commentId });

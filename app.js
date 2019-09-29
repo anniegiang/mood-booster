@@ -16,13 +16,15 @@ const randomContent = require("./routes/api/randomContent");
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 mongoose // connect to MongoDB using Mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
+
+// tell express to use middleware to parse JSON that's sent to frontend
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // tell Express to use imported routes
 app.use("/api/users", users);
@@ -30,10 +32,6 @@ app.use("/api/quotes", quotes);
 app.use("/api/photos", photos);
 app.use("/api/videos", videos);
 app.use("/api/random", randomContent);
-
-// tell express to use middleware to parse JSON that's sent to frontend
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // tell express to use middleware to initialize the authentication module
 app.use(passport.initialize());

@@ -13,5 +13,5 @@ export const updatePhotoComment = data => {
 };
 
 export const deletePhotoComment = data => {
-  return axios.delete(`/api/photos/comment`, data);
+  return axios.delete(`/api/photos/comment?photoId=${data.photoId}&commentId=${data.commentId}`, data);
 };
