@@ -1,5 +1,5 @@
 import React from "react";
-import PhotoCommentsContainer from "./photo_comments_container";
+import CommentsContainer from "../comments/comments_container";
 import "./photo.css";
 
 class Photo extends React.Component {
@@ -38,7 +38,7 @@ class Photo extends React.Component {
 
   renderComments() {
     if (this.props.photo.comments !== undefined) {
-      return <PhotoCommentsContainer photo={this.props.photo} />;
+      return <CommentsContainer type="photo" content={this.props.photo} />;
     }
   }
 

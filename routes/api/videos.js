@@ -30,8 +30,8 @@ router.delete(
   "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let { commentId, videoId } = req.body;
-    Video.findOne({ _id: videoId })
+    let { commentId, contentId } = req.query;
+    Video.findOne({ _id: contentId })
       .then(video => {
         video.comments.pull({ _id: commentId });
         video.save();
