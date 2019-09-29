@@ -13,5 +13,8 @@ export const updateQuoteComment = data => {
 };
 
 export const deleteQuoteComment = data => {
-  return axios.delete(`/api/quotes/comment`, data);
+  return axios.delete(
+    `/api/quotes/comment?quoteId=${data.quoteId}&commentId=${data.commentId}`,
+    data
+  );
 };

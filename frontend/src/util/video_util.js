@@ -13,5 +13,8 @@ export const updateVideoComment = data => {
 };
 
 export const deleteVideoComment = data => {
-  return axios.delete(`/api/videos/comment`, data);
+  return axios.delete(
+    `/api/videos/comment?videoId=${data.videoId}&commentId=${data.commentId}`,
+    data
+  );
 };
