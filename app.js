@@ -9,10 +9,10 @@ const photos = require("./routes/api/photos");
 const videos = require("./routes/api/videos");
 const randomContent = require("./routes/api/randomContent");
 
-// const photosSeed = require("./photos_seed");
-// const quotesSeed = require("./quotes_seed");
+const photosSeed = require("./photos_seed");
+const quotesSeed = require("./quotes_seed");
+const videosSeed = require("./videos_seed");
 // const usersSeed = require("./users_seed");
-// const videosSeed = require("./seeder");
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
@@ -47,7 +47,7 @@ const port = process.env.PORT || 5000;
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
-// photosSeed();
-// quotesSeed();
+photosSeed();
+quotesSeed();
+videosSeed();
 // usersSeed();
-// videosSeed();

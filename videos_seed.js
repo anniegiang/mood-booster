@@ -3,7 +3,7 @@ const Video = require("./models/Video");
 const videoSeed = () => {
     const video1 = new Video({
         "title": "The Science Of Motivation",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=pZT-FZqfxZA&t=3s",
         "mood1": true,
         "mood2": false,
         "mood3": false,
@@ -15,7 +15,7 @@ const videoSeed = () => {
     video1.save()
     const video2 = new Video({
         "title": "When Life Hits You",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=zYsg6l29HKE&t=2s",
         "mood1": true,
         "mood2": false,
         "mood3": false,
@@ -28,7 +28,7 @@ const videoSeed = () => {
 
     const video3 = new Video({
         "title": "Managing Stress",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=hnpQrMqDoqE",
         "mood1": false,
         "mood2": true,
         "mood3": false,
@@ -41,7 +41,7 @@ const videoSeed = () => {
 
     const video4 = new Video({
         "title": "The Stress Response",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=mtRrxNTnyh8",
         "mood1": false,
         "mood2": true,
         "mood3": false,
@@ -54,7 +54,7 @@ const videoSeed = () => {
 
     const video5 = new Video({
         "title": "What Is Imposter Syndrome",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=ZQUxL4Jm1Lo",
         "mood1": false,
         "mood2": false,
         "mood3": true,
@@ -67,7 +67,7 @@ const videoSeed = () => {
 
     const video6 = new Video({
         "title": "The Impostor Syndrome",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=eqhUHyVpAwE&t=61s",
         "mood1": false,
         "mood2": false,
         "mood3": true,
@@ -80,7 +80,7 @@ const videoSeed = () => {
 
     const video7 = new Video({
         "title": "7 Tips To Beat Exam Anxiety",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=FyBdA61GmJ0",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -92,8 +92,8 @@ const videoSeed = () => {
     video7.save()
 
     const video8 = new Video({
-        "title": "Exam Stress Releasing Tips  and Techniques",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "title": "Exam Stress Releasing Tips and Techniques",
+        "videoUrl": "https://www.youtube.com/watch?v=VZTGBj7Zyvk",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -106,7 +106,7 @@ const videoSeed = () => {
 
     const video9 = new Video({
         "title": "What Is Social Anxiety",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=-Gjn9N5vfmc&t=2s",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -119,7 +119,7 @@ const videoSeed = () => {
 
     const video10 = new Video({
         "title": "How To Overcome Social Anxiety",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=_NQGQImrpx4",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -132,7 +132,7 @@ const videoSeed = () => {
 
     const video11 = new Video({
         "title": "Struggle Makes You Stronger",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=Wcf5b3mENJU",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -145,7 +145,7 @@ const videoSeed = () => {
 
     const video12 = new Video({
         "title": "Unbroken",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=26U_seo0a1g&t=210s",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -158,7 +158,7 @@ const videoSeed = () => {
 
     const video13 = new Video({
         "title": "Mental Toughness",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=XbXoXMvQjOk",
         "mood1": false,
         "mood2": false,
         "mood3": false,
@@ -171,7 +171,7 @@ const videoSeed = () => {
 
     const video14 = new Video({
         "title": "5 Signs You're Tired",
-        "videoUrl": "https://www.youtube.com/watch?v=MMXAjhAopyg",
+        "videoUrl": "https://www.youtube.com/watch?v=rVd2lsHE7Nc&t=268s",
         "mood1": false,
         "mood2": false,
         "mood3": false,
