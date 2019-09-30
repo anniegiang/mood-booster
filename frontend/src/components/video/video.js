@@ -60,7 +60,6 @@ class Video extends React.Component {
     if (!this.props.video) {
       return null;
     }
-    // debugger
     return (
       <div className="video-div">
         <h1 className="title">{this.props.video.title}</h1>
