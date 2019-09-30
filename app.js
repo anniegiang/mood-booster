@@ -24,6 +24,7 @@ mongoose // connect to MongoDB using Mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
+// tell express to use middleware to parse JSON that's sent to frontend
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -47,7 +48,7 @@ const port = process.env.PORT || 5000;
 // start a socket and listen for connections on the port
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
-photosSeed();
-quotesSeed();
-videosSeed();
+// photosSeed();
+// quotesSeed();
+// videosSeed();
 // usersSeed();

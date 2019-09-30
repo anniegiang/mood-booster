@@ -4,7 +4,7 @@ export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_FILTERED_VIDEOS = "RECEIVE_FILTERED_VIDEOS"
 
 //REGULAR ACTION CREATOR
-const receiveVideo = video => {
+export const receiveVideo = video => {
     return{
         type: RECEIVE_VIDEO,
         video

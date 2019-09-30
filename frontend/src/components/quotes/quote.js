@@ -1,4 +1,5 @@
 import React from "react";
+import CommentsContainer from "../comments/comments_container";
 import "./quote.css";
 
 class Quote extends React.Component {
@@ -8,11 +9,40 @@ class Quote extends React.Component {
 
     //    this.text = this.props.text;
     //    this.author = this.props.author;
+
+    this.state = {
+      comment: ""
+    };
+
     this.saveQuote = this.saveQuote.bind(this);
+    this.createComment = this.createComment.bind(this);
+    this.handleComment = this.handleComment.bind(this);
+    this.renderComments = this.renderComments.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchQuote(this.props.match.params.quote_id);
+  }
+
+  handleComment(e) {
+    this.setState({ comment: e.target.value });
+  }
+
+  createComment(e) {
+    e.preventDefault();
+    let data = {
+      userId: this.props.currentUser.id,
+      quoteId: this.props.match.params.quote_id,
+      text: this.state.comment,
+      type: "quote"
+    };
+    this.props.createComment(data);
+  }
+
+  renderComments() {
+    if (this.props.quotes.comments !== undefined) {
+      return <CommentsContainer type="quote" content={this.props.quotes} />;
+    }
   }
 
   saveQuote(e) {
@@ -27,19 +57,27 @@ class Quote extends React.Component {
 
   render() {
     if (!this.props.quotes) {
-      return null
-  }
-      return (
-        <div className="quote-background">
-          <div className="quote-box">
-              <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
-              <h3 className="author">- {this.props.quotes.author}</h3>
-              {/* <p>Quote will go here</p> */}
-              <button onClick={this.saveQuote}>Save to Favorites</button>
-          </div>
+      return null;
+    }
+    return (
+      <div className="quote-background">
+        <div className="quote-box">
+          <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
+          <h3 className="author">- {this.props.quotes.author}</h3>
+          {/* <p>Quote will go here</p> */}
+          <button onClick={this.saveQuote}>Save to Favorites</button>
+          <form onSubmit={this.createComment}>
+            <input
+              type="text"
+              onChange={this.handleComment}
+              value={this.state.comment}
+            />
+            <input type="submit" value="Comment" />
+          </form>
         </div>
-      );
-    
+        {this.renderComments()}
+      </div>
+    );
   }
 }
 

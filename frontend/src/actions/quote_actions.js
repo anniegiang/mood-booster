@@ -4,7 +4,7 @@ export const RECEIVE_QUOTE = "RECEIVE_QUOTE";
 export const RECEIVE_FILTERED_QUOTES = "RECEIVE_FILTERED_QUOTES"
 
 //REGULAR ACTION CREATOR
-const receiveQuote = quote => {
+export const receiveQuote = quote => {
     return {
         type: RECEIVE_QUOTE,
         quote

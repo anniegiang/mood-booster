@@ -1,6 +1,7 @@
 import { RECEIVE_PHOTO, RECEIVE_FILTERED_PHOTOS } from '../actions/photo_actions';
 
 const PhotosReducer = (state = {}, action) => {
+
     Object.freeze(state);
     let newState;
     switch (action.type) {

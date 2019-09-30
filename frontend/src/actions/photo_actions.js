@@ -4,12 +4,12 @@ export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const RECEIVE_FILTERED_PHOTOS = "RECEIVE_FILTERED_PHOTOS"
 
 //REGULAR ACTION CREATOR
-const receivePhoto = photo => {
-    return {
-        type: RECEIVE_PHOTO,
-        photo
-    }
-}
+export const receivePhoto = photo => {
+  return {
+    type: RECEIVE_PHOTO,
+    photo
+  };
+};
 
 const receivePhotos = photos => {
     return {

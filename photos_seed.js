@@ -98,7 +98,6 @@ const photoSeed = () => {
     mood7: false
   });
   photo7.save();
-
   const photo8 = new Photo({
     title: "To consider others before oneself is the ultimate selfless action",
     photoUrl:
@@ -112,7 +111,6 @@ const photoSeed = () => {
     mood7: false
   });
   photo8.save();
-
   const photo9 = new Photo({
     title: "I choose 2!",
     photoUrl: "https://i.redd.it/imcdoatek6o31.jpg",
@@ -125,7 +123,6 @@ const photoSeed = () => {
     mood7: false
   });
   photo9.save();
-
   const photo10 = new Photo({
     title: "Dont judge others. We all gotta pop someday.",
     photoUrl:
