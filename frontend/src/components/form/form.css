@@ -5,7 +5,7 @@
     height: 100vh;
     font-size: 140%;
     color: black;
-    margin-top: 3%;
+    margin-top: 3.5%;
     /* z-index: -1; */
 }
 
@@ -24,7 +24,7 @@
     background-color: #e6eeffd8;
     
     width: 20vw;
-    height: 70vh;
+    height: 75vh;
     padding: 2em;
 
     border-radius: 6px;
@@ -50,7 +50,7 @@
     
     padding: 2em;
     width: 20vw;
-    height: 70vh;
+    height: 75vh;
     
     
     
@@ -65,7 +65,7 @@
 .form-btn {
     align-self: center;
     position: absolute;
-    margin-top: 17%;
+    margin-top: 18%;
     /* font-family: cursive; */
     /* font-size: 70%; */
 }

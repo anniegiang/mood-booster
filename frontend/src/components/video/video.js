@@ -12,9 +12,9 @@ class Video extends React.Component {
         this.props.fetchVideo(this.props.match.params.video_id)
     }
 
-  componentDidMount() {
-    this.props.fetchVideo(this.props.match.params.video_id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchVideo(this.props.match.params.video_id);
+  // }
 
   saveVideo(e) {
     e.preventDefault();
@@ -34,8 +34,9 @@ class Video extends React.Component {
         return(
             <div className="video-div">
                  <h1 className="title">{this.props.video.title}</h1>
-                 <video className="video" controls height="576" width="1024">
-                    <source src={this.props.video.videoUrl}></source>  
+                <video className="video" height="576" width="1024" controls>
+                  <source src={this.props.video.videoUrl} type="video/mp4"/>
+  
                 </video>
                
                     <button>

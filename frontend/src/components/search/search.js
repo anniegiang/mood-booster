@@ -40,7 +40,7 @@ class Search extends React.Component {
                                 <li className='content'>
                                     <h1>{video.title}</h1>
                                     <video controls >
-                                        <source src={video.videoUrl} ></source>
+                                        <source src={video.videoUrl} type="video/mp4"></source>
                                     </video>                     
                                 </li>
                             </Link>
