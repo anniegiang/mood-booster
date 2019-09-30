@@ -32,7 +32,6 @@ class Search extends React.Component {
 
         } else {
             return(
-                
                 <div className='search-container'>
                     <div className='result-container'>
                         {this.props.videos ? (
