@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     if (loggedIn) {
       return (
         <div className="nav-links">
-          <Link className="nav-boost" to={"/"}>
+          <Link className="nav-boost" to={"/form"}>
             Boost your mood
           </Link>
           <Link className="nav-profile" to={"/profile"}>
@@ -34,6 +34,9 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="nav-links">
+          <Link className="nav-boost" to={"/form"}>
+            Boost your mood
+          </Link>
           <Link className="nav-signup" to={"/signup"}>
             Signup
           </Link>

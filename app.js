@@ -9,13 +9,15 @@ const photos = require("./routes/api/photos");
 const videos = require("./routes/api/videos");
 const randomContent = require("./routes/api/randomContent");
 
-// const photosSeed = require("./photos_seed");
-// const quotesSeed = require("./quotes_seed");
+const photosSeed = require("./photos_seed");
+const quotesSeed = require("./quotes_seed");
+const videosSeed = require("./videos_seed");
 // const usersSeed = require("./users_seed");
-// const videosSeed = require("./seeder");
 
 const app = express(); // object, creates a new express server
 const db = require("./config/keys").mongoURI;
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 mongoose // connect to MongoDB using Mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -33,6 +35,8 @@ app.use("/api/photos", photos);
 app.use("/api/videos", videos);
 app.use("/api/random", randomContent);
 
+// tell express to use middleware to parse JSON that's sent to frontend
+
 // tell express to use middleware to initialize the authentication module
 app.use(passport.initialize());
 require("./config/passport")(passport);
@@ -46,5 +50,5 @@ app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
 // photosSeed();
 // quotesSeed();
-// usersSeed();
 // videosSeed();
+// usersSeed();

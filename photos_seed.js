@@ -1,11 +1,12 @@
 const Photo = require("./models/Photo");
 
-const seed1 = () => {
+const photoSeed = () => {
+
   const photo1 = new Photo({
-    title: "Manchester, Uk",
+    title: "Thank you",
     photoUrl:
-      "https://preview.redd.it/uazw3ciegin31.jpg?width=640&height=853&crop=smart&auto=webp&s=dda09685e14d1a9a16a98fbda4b645153e586e8d",
-    mood1: false,
+      "https://pm1.narvii.com/6487/0751486a15ce949cb2870b7c26fdd8e0ef98d6ef_hq.jpg",
+    mood1: true,
     mood2: false,
     mood3: false,
     mood4: false,
@@ -16,10 +17,10 @@ const seed1 = () => {
   photo1.save();
 
   const photo2 = new Photo({
-    title: "Become a meme",
+    title: "ANGTFT",
     photoUrl:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/when-your-kid-becomes-a-meme-1024x576-1497986561.jpg",
-    mood1: false,
+      "https://miro.medium.com/max/1000/1*FEm8g2efQHWS38n7VvqaWQ.jpeg",
+    mood1: true,
     mood2: false,
     mood3: false,
     mood4: false,
@@ -32,7 +33,7 @@ const seed1 = () => {
   const photo3 = new Photo({
     title: "Advice from a tree",
     photoUrl: "https://i.redd.it/hn4h7psxt5o31.jpg",
-    mood1: false,
+    mood1: true,
     mood2: false,
     mood3: false,
     mood4: false,
@@ -47,7 +48,7 @@ const seed1 = () => {
     photoUrl:
       "https://preview.redd.it/eihhjg3veeo31.jpg?width=640&height=551&crop=smart&auto=webp&s=e912155b77d0fafd984f85b01b24539e8a3d57e7",
     mood1: false,
-    mood2: false,
+    mood2: true,
     mood3: false,
     mood4: false,
     mood5: false,
@@ -61,7 +62,7 @@ const seed1 = () => {
     photoUrl:
       "https://preview.redd.it/iwkh43tsq4p31.jpg?width=640&height=627&crop=smart&auto=webp&s=ac1b7656ac1ce79c0998d16feeab957c9646cabb",
     mood1: false,
-    mood2: false,
+    mood2: true,
     mood3: false,
     mood4: false,
     mood5: false,
@@ -75,7 +76,7 @@ const seed1 = () => {
     photoUrl:
       "https://preview.redd.it/tm2mm7halko31.jpg?width=640&height=640&crop=smart&auto=webp&s=0708eba63a15cbcb12b71f166e8be7ce5b38cffe",
     mood1: false,
-    mood2: false,
+    mood2: true,
     mood3: false,
     mood4: false,
     mood5: false,
@@ -90,7 +91,7 @@ const seed1 = () => {
       "https://preview.redd.it/al8li9pquzo31.jpg?width=640&height=716&crop=smart&auto=webp&s=1c60a81d1a142d8f24cebb6ca1600c47fa12f67b",
     mood1: false,
     mood2: false,
-    mood3: false,
+    mood3: true,
     mood4: false,
     mood5: false,
     mood6: false,
@@ -103,7 +104,7 @@ const seed1 = () => {
       "https://preview.redd.it/b04p0zj117o31.jpg?width=640&height=590&crop=smart&auto=webp&s=008be4e014ff9b2618841c00d71172254e4d7437",
     mood1: false,
     mood2: false,
-    mood3: false,
+    mood3: true,
     mood4: false,
     mood5: false,
     mood6: false,
@@ -115,7 +116,7 @@ const seed1 = () => {
     photoUrl: "https://i.redd.it/imcdoatek6o31.jpg",
     mood1: false,
     mood2: false,
-    mood3: false,
+    mood3: true,
     mood4: false,
     mood5: false,
     mood6: false,
@@ -129,7 +130,7 @@ const seed1 = () => {
     mood1: false,
     mood2: false,
     mood3: false,
-    mood4: false,
+    mood4: true,
     mood5: false,
     mood6: false,
     mood7: false
@@ -142,7 +143,7 @@ const seed1 = () => {
     mood1: false,
     mood2: false,
     mood3: false,
-    mood4: false,
+    mood4: true,
     mood5: false,
     mood6: false,
     mood7: false
@@ -150,13 +151,13 @@ const seed1 = () => {
   photo11.save();
 
   const photo12 = new Photo({
-    title: "you got this. ",
+    title: "you got this.",
     photoUrl:
       "https://preview.redd.it/zqglqaomnxo31.jpg?width=640&height=989&crop=smart&auto=webp&s=f94feff159d201dd634946bb63686ca7cf70dd95",
     mood1: false,
     mood2: false,
     mood3: false,
-    mood4: false,
+    mood4: true,
     mood5: false,
     mood6: false,
     mood7: false
@@ -164,14 +165,14 @@ const seed1 = () => {
   photo12.save();
 
   const photo13 = new Photo({
-    title: "you got this.",
+    title: "Catch errors",
     photoUrl:
-      "https://preview.redd.it/zqglqaomnxo31.jpg?width=640&height=989&crop=smart&auto=webp&s=f94feff159d201dd634946bb63686ca7cf70dd95",
+      "https://i.redd.it/atf1ietqwaxy.jpg",
     mood1: false,
     mood2: false,
     mood3: false,
     mood4: false,
-    mood5: false,
+    mood5: true,
     mood6: false,
     mood7: false
   });
@@ -185,7 +186,21 @@ const seed1 = () => {
     mood2: false,
     mood3: false,
     mood4: false,
-    mood5: false,
+    mood5: true,
+    mood6: false,
+    mood7: false
+  });
+  photo14.save();
+
+  const photo15 = new Photo({
+    title: "No errors...",
+    photoUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNoQARmvdcUrYwJke24raM9QR13j2ja8Q82AzWKq4-EaSl5E3q",
+    mood1: false,
+    mood2: false,
+    mood3: false,
+    mood4: false,
+    mood5: true,
     mood6: false,
     mood7: false
   });
@@ -200,7 +215,7 @@ const seed1 = () => {
     mood3: false,
     mood4: false,
     mood5: false,
-    mood6: false,
+    mood6: true,
     mood7: false
   });
   photo16.save();
@@ -214,7 +229,7 @@ const seed1 = () => {
     mood3: false,
     mood4: false,
     mood5: false,
-    mood6: false,
+    mood6: true,
     mood7: false
   });
   photo17.save();
@@ -228,7 +243,7 @@ const seed1 = () => {
     mood3: false,
     mood4: false,
     mood5: false,
-    mood6: false,
+    mood6: true,
     mood7: false
   });
   photo18.save();
@@ -243,7 +258,7 @@ const seed1 = () => {
     mood4: false,
     mood5: false,
     mood6: false,
-    mood7: false
+    mood7: true
   });
   photo19.save();
 
@@ -257,7 +272,7 @@ const seed1 = () => {
     mood4: false,
     mood5: false,
     mood6: false,
-    mood7: false
+    mood7: true
   });
   photo20.save();
 
@@ -270,49 +285,13 @@ const seed1 = () => {
     mood4: false,
     mood5: false,
     mood6: false,
-    mood7: false
+    mood7: true
   });
   photo21.save();
-
-  const photo22 = new Photo({
-    title: "Catch errors",
-    photoUrl: "https://i.redd.it/atf1ietqwaxy.jpg",
-    mood1: false,
-    mood2: false,
-    mood3: false,
-    mood4: false,
-    mood5: false,
-    mood6: false,
-    mood7: false
-  });
-  photo22.save();
-
-  const photo23 = new Photo({
-    title: "ANGTFT",
-    photoUrl: "https://miro.medium.com/max/1000/1*FEm8g2efQHWS38n7VvqaWQ.jpeg",
-    mood1: false,
-    mood2: false,
-    mood3: false,
-    mood4: false,
-    mood5: false,
-    mood6: false,
-    mood7: false
-  });
-  photo23.save();
-
-  const photo24 = new Photo({
-    title: "Thank you",
-    photoUrl:
-      "https://pm1.narvii.com/6487/0751486a15ce949cb2870b7c26fdd8e0ef98d6ef_hq.jpg",
-    mood1: false,
-    mood2: false,
-    mood3: false,
-    mood4: false,
-    mood5: false,
-    mood6: false,
-    mood7: false
-  });
-  photo24.save();
 };
 
-// module.exports = seed1;
+module.exports = photoSeed;
+
+
+
+

@@ -5,6 +5,7 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.renderRandomContentType = this.renderRandomContentType.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -26,6 +27,10 @@ class MainPage extends React.Component {
     }
   }
 
+  handleClick() {
+    this.props.history.push({pathname: '/form'})
+  }
+
   render() {
     if (!this.props.randomContent) {
       return null;
@@ -38,7 +43,7 @@ class MainPage extends React.Component {
           <div className="logo-main"></div>
           <p>Content of the day</p>
           {this.renderRandomContentType()}
-          <button className="main_button">Boost your mood!</button>
+          <button className="main_button" onClick={this.handleClick}>Boost your mood!</button>
         </div>
       </div>
     );

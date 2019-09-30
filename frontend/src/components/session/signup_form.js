@@ -63,7 +63,9 @@ class SignupForm extends React.Component {
   renderEmailErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Email")) {
-        return <div>{err}</div>;
+        return (
+            <div>{err}</div>
+        );
       }
     }
   }
@@ -71,7 +73,9 @@ class SignupForm extends React.Component {
   renderHandleErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Handle")) {
-        return <div>{err}</div>;
+        return (
+            <div>{err}</div>
+        );
       }
     }
   }
@@ -79,7 +83,9 @@ class SignupForm extends React.Component {
   renderPasswordErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Password")) {
-        return <div>{err}</div>;
+        return (
+            <div>{err}</div>
+        );
       }
     }
   }
@@ -87,7 +93,9 @@ class SignupForm extends React.Component {
   renderConfirmPasswordErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Confirm")) {
-        return <div>{err}</div>;
+        return (
+            <div>{err}</div>
+        );
       }
     }
   }
@@ -105,7 +113,9 @@ class SignupForm extends React.Component {
               onChange={this.update("email")}
               placeholder="Email"
             />
-            <div className="errors-container">{this.renderEmailErrors()}</div>
+            <div className="errors-container">
+              {this.renderEmailErrors()}
+            </div>
             <input
               className="input-handle"
               type="text"
@@ -113,7 +123,9 @@ class SignupForm extends React.Component {
               onChange={this.update("handle")}
               placeholder="Handle"
             />
-            <div className="errors-container">{this.renderHandleErrors()}</div>
+            <div className="errors-container">
+              {this.renderHandleErrors()}
+            </div>
             <input
               className="input-password"
               type="password"

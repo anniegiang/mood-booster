@@ -1,0 +1,43 @@
+.search-container {
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 8%;
+}
+
+.result-container {
+    align-self: center;
+    background-color: #e6eeff;
+    max-width: 25%;
+    max-height: 590px;
+    border: 1px solid black;
+    overflow: scroll;
+    list-style-type: none; 
+    border-radius: 6px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content h1 {
+    align-self: center;
+}
+
+.result-container img {
+    height: 180px;
+    width: 400px;
+    
+}
+
+.result-container video {
+    height: 180px;
+    width: 400px;
+    
+}
+.result-container blockquote {
+    height: 145px;
+    width: 250px;
+    
+}

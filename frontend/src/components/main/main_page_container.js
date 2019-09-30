@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { fetchRandomContent } from "../../actions/random_content_actions";
 import MainPage from "./main_page";
 
-const msp = state => {
+const msp = (state, ownProps) => {
   return {
     randomContent: state.content.randomContent.content
   };
