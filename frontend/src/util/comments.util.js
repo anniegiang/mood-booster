@@ -5,7 +5,7 @@ export const createComment = data => {
 };
 
 export const updateComment = data => {
-  return axios.delete(`/api/${data.type}s/comment`, data);
+  return axios.put(`/api/${data.type}s/comment`, data);
 };
 
 export const deleteComment = data => {

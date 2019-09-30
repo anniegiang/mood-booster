@@ -24,6 +24,8 @@ class Comments extends React.Component {
     };
   }
 
+  renderUpdateCommentForm(commentId) {}
+
   render() {
     return (
       <div>
@@ -31,11 +33,11 @@ class Comments extends React.Component {
           <p>
             {comment.text}
             <button onClick={this.handleDeleteComment(comment._id)}>
-              Delete Comment
+              Delete
             </button>
-            {/* <button onClick={() => this.renderUpdateCommentForm(comment._id)}>
-              Update Comment
-            </button> */}
+            <button onClick={this.renderUpdateCommentForm(comment._id)}>
+              Update
+            </button>
           </p>
         ))}
       </div>
