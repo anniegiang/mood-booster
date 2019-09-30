@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const getVideo = id => {
+<<<<<<< HEAD
   return axios.get(`/api/videos/${id}`);
 };
 
@@ -18,3 +19,11 @@ export const deleteVideoComment = data => {
     data
   );
 };
+=======
+    return axios.get(`/api/videos/${id}`)
+}
+
+export const getVideos = query => {
+    return axios.get(`/api/videos${query}`)
+}
+>>>>>>> 62210313862ca9cc703b32dc9a4ebd1c2c3ec3e9
