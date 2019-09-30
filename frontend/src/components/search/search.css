@@ -12,6 +12,7 @@
     border: 1px solid black;
     overflow: scroll;
     list-style-type: none; 
+    border-radius: 6px;
 }
 
 .content {

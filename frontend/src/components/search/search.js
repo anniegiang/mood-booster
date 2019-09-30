@@ -53,10 +53,12 @@ class Search extends React.Component {
                     <div className='result-container'>
                         {this.props.photos ? (
                             this.props.photos.map(photo => {
-                                return <li className='content'>
-                                    <h1>{photo.title}</h1>
-                                <img src={photo.photoUrl} ></img>
-                            </li>
+                                return <Link to={`/photos/${photo._id}`}>
+                                    <li className='content'>
+                                        <h1>{photo.title}</h1>
+                                        <img src={photo.photoUrl} ></img>
+                                    </li>
+                                </Link>
                             })
                         ): ("")
                         }
@@ -67,11 +69,9 @@ class Search extends React.Component {
                             this.props.quotes.map(quote => {
                                 return <Link to={`/quotes/${quote._id}`}>
                                     <li className='content'>
-                                    <h1>{quote.title}</h1> 
-                                    <blockquote>
-                                        {quote.quoteText}
-                                    </blockquote>
-                                </li>
+                                        <h1>{quote.title}</h1> 
+                                        <blockquote>{quote.quoteText}</blockquote>
+                                    </li>
                                 </Link>
                             })
                         ): ("")
