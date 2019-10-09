@@ -28,21 +28,6 @@
   margin: 20px 0;
 }
 
-.fav-btn {
-  background-color: #008cba;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  width: 20%;
-  padding: 1% 2%;
-  margin-top: 15px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
 .video-div button:hover {
   background-color: rgb(2, 167, 223);
 }

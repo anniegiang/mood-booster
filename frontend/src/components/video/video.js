@@ -38,6 +38,7 @@ class Video extends React.Component {
       text: this.state.comment,
       type: "video"
     };
+    this.setState({ comment: "" });
     this.props.createComment(data);
   }
 

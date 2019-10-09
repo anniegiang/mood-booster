@@ -4,18 +4,17 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .quote-box {
-  margin-top: 15vh;
+  margin: 15vh auto 15vh auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   background-color: white;
   opacity: 0.8;
-  width: 700px;
-  max-width: 700px;
-  height: 500px;
-  max-height: 700px;
+  max-width: 60%;
+  min-height: 50%;
   border-radius: 6px;
 }
 
@@ -35,23 +34,6 @@
   justify-content: center;
   font-family: "Sanchez", serif;
 }
-
-.quote-box button {
-  background-color: #008cba;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  min-width: 20%;
-  padding: 1% 2%;
-  margin-top: 15px;
-  margin: 15px auto;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
 button:hover {
   background-color: rgb(2, 167, 223);
 }
