@@ -31,15 +31,19 @@ class Video extends React.Component {
   }
 
   createComment(e) {
-    e.preventDefault();
-    let data = {
-      userId: this.props.currentUser.id,
-      videoId: this.props.match.params.video_id,
-      text: this.state.comment,
-      type: "video"
-    };
-    this.setState({ comment: "" });
-    this.props.createComment(data);
+    if (this.props.isAuthenticated) {
+      e.preventDefault();
+      let data = {
+        userId: this.props.currentUser.id,
+        videoId: this.props.match.params.video_id,
+        text: this.state.comment,
+        type: "video"
+      };
+      this.setState({ comment: "" });
+      this.props.createComment(data);
+    } else {
+      alert("Must be logged in.");
+    }
   }
 
   renderComments() {

@@ -27,15 +27,19 @@ class Photo extends React.Component {
   }
 
   createComment(e) {
-    e.preventDefault();
-    let data = {
-      userId: this.props.currentUser.id,
-      photoId: this.props.match.params.photo_id,
-      text: this.state.comment,
-      type: "photo"
-    };
-    this.setState({ comment: "" });
-    this.props.createComment(data);
+    if (this.props.isAuthenticated) {
+      e.preventDefault();
+      let data = {
+        userId: this.props.currentUser.id,
+        photoId: this.props.match.params.photo_id,
+        text: this.state.comment,
+        type: "photo"
+      };
+      this.setState({ comment: "" });
+      this.props.createComment(data);
+    } else {
+      alert("Must be logged in.");
+    }
   }
 
   renderComments() {

@@ -30,15 +30,19 @@ class Quote extends React.Component {
   }
 
   createComment(e) {
-    e.preventDefault();
-    let data = {
-      userId: this.props.currentUser.id,
-      quoteId: this.props.match.params.quote_id,
-      text: this.state.comment,
-      type: "quote"
-    };
-    this.setState({ comment: "" });
-    this.props.createComment(data);
+    if (this.props.isAuthenticated) {
+      e.preventDefault();
+      let data = {
+        userId: this.props.currentUser.id,
+        quoteId: this.props.match.params.quote_id,
+        text: this.state.comment,
+        type: "quote"
+      };
+      this.setState({ comment: "" });
+      this.props.createComment(data);
+    } else {
+      alert("Must be logged in.");
+    }
   }
 
   renderComments() {

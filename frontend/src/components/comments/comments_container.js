@@ -2,11 +2,11 @@ import { connect } from "react-redux";
 import { updateComment, deleteComment } from "../../actions/comment_actions";
 import Comments from "./comments";
 
-// const mapStateToProps = state => {
-//   return {
-//     currentUser: state.session.user
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    currentUser: state.session.user
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
