@@ -18,9 +18,16 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.2",
+<<<<<<< HEAD
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.4",
+=======
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.1",
+>>>>>>> e4bf07a8c8e510701ea7e6fb1b4c03862dd03e8d
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "validator": "^11.1.0"
@@ -28,6 +35,10 @@
   "devDependencies": {
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3",
+<<<<<<< HEAD
+    "nodemon": "^1.19.3"
+=======
     "nodemon": "^1.19.2"
+>>>>>>> e4bf07a8c8e510701ea7e6fb1b4c03862dd03e8d
   }
 }

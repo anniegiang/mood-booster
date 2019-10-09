@@ -15,15 +15,23 @@ class MainPage extends React.Component {
   renderRandomContentType() {
     const { randomContent } = this.props;
     if ("quoteText" in randomContent) {
-      return <p>{randomContent.quoteText}</p>;
-    }
+      return (
+      <span className="main-quote">
+        <p>"{randomContent.quoteText}" </p> 
+        <p>-{randomContent.author}</p>
+      </span>
+      )};
 
     if ("videoUrl" in randomContent) {
-      return <video src={randomContent.videoUrl}></video>;
-    }
+      return (
+      <span>
+        <p className="vid_title">{randomContent.title}</p>
+        <video width='426' height='240' src={randomContent.videoUrl} controls></video>
+      </span>
+      )};
 
     if ("photoUrl" in randomContent) {
-      return <img src={randomContent.photoUrl} alt="random-pic" />;
+      return <img className="main-photo" className="main-photo" src={randomContent.photoUrl} alt="random-pic" />;
     }
   }
 
@@ -41,7 +49,8 @@ class MainPage extends React.Component {
         <div className="splash-window">
           <h2>Welcome to</h2>
           <div className="logo-main"></div>
-          <p>Content of the day</p>
+          <p>Random Content:</p>
+          
           {this.renderRandomContentType()}
           <button className="main_button" onClick={this.handleClick}>Boost your mood!</button>
         </div>

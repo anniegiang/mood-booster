@@ -12,13 +12,18 @@ body {
 }
 
 .splash-window {
-  height: 500px;
+  /* height: 500px; */
   width: 500px;
+<<<<<<< HEAD
+  background-color: #e6eeff;  margin: 10%;
+=======
   /* background-color: rgba(255, 255, 255, 0.8); */
   background-color: #e6eeff;
   margin: 10%;
+>>>>>>> a906f556581a6dba09b20ad1fad3056f0a9c1438
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   border-radius: 50px;
 }
@@ -37,7 +42,7 @@ body {
   color: white;
   padding: 2%;
   text-align: center;
-  margin: 2%;
+  margin: 10%;
 
   font-size: 25px;
   width: 50%;
@@ -77,4 +82,23 @@ body {
   /* min-height: 35%; */
   text-align: center;
   margin: 3% 0 5%;
+}
+
+/* .main-photo {
+  width: 80%;
+} */
+
+.main-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.main-photo {
+  overflow: hidden;
+}
+
+.vid_title {
+  justify-content: left;
 }
