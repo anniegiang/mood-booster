@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CommentsContainer from "../comments/comments_container";
 import "./video.css";
+import "../comments/comments.css";
 
 class Video extends React.Component {
   constructor(props) {
@@ -42,7 +43,11 @@ class Video extends React.Component {
 
   renderComments() {
     if (this.props.video.comments !== undefined) {
-      return <CommentsContainer type="video" content={this.props.video} />;
+      return (
+        <div className="comments">
+          <CommentsContainer type="video" content={this.props.video} />
+        </div>
+      );
     }
   }
 
@@ -68,13 +73,14 @@ class Video extends React.Component {
         </video>
 
         <button>Save to my list</button>
-        <form onSubmit={this.createComment}>
+        <form className="comments-container" onSubmit={this.createComment}>
           <input
-            type="text"
+            className="comments-input"
+            type="textarea"
             onChange={this.handleComment}
             value={this.state.comment}
           />
-          <input type="submit" value="Comment" />
+          <input className="comments-submit" type="submit" value="Comment" />
         </form>
         {this.renderComments()}
       </div>

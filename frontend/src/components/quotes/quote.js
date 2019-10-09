@@ -1,6 +1,7 @@
 import React from "react";
 import CommentsContainer from "../comments/comments_container";
 import "./quote.css";
+import "../comments/comments.css";
 
 class Quote extends React.Component {
   constructor(props) {
@@ -41,7 +42,11 @@ class Quote extends React.Component {
 
   renderComments() {
     if (this.props.quotes.comments !== undefined) {
-      return <CommentsContainer type="quote" content={this.props.quotes} />;
+      return (
+        <div className="comments">
+          <CommentsContainer type="photo" content={this.props.photo} />
+        </div>
+      );
     }
   }
 
@@ -66,13 +71,15 @@ class Quote extends React.Component {
           <h3 className="author">- {this.props.quotes.author}</h3>
           {/* <p>Quote will go here</p> */}
           <button onClick={this.saveQuote}>Save to Favorites</button>
-          <form onSubmit={this.createComment}>
+          
+          <form className="comments-container" onSubmit={this.createComment}>
             <input
               type="text"
               onChange={this.handleComment}
               value={this.state.comment}
+              className="comments-input"
             />
-            <input type="submit" value="Comment" />
+            <input className="comments-submit" type="submit" value="Comment" />
           </form>
         </div>
         {this.renderComments()}

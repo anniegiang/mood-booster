@@ -1,6 +1,7 @@
 import React from "react";
 import CommentsContainer from "../comments/comments_container";
 import "./photo.css";
+import "../comments/comments.css";
 
 class Photo extends React.Component {
   constructor(props) {
@@ -38,7 +39,11 @@ class Photo extends React.Component {
 
   renderComments() {
     if (this.props.photo.comments !== undefined) {
-      return <CommentsContainer type="photo" content={this.props.photo} />;
+      return (
+        <div className="comments">
+          <CommentsContainer type="photo" content={this.props.photo} />
+        </div>
+      );
     }
   }
 
@@ -63,13 +68,14 @@ class Photo extends React.Component {
         {/* <p>Photo will go here</p> */}
         <button onClick={this.savePhoto}>Save to Favorites</button>
 
-        <form onSubmit={this.createComment}>
+        <form className="comments-container" onSubmit={this.createComment}>
           <input
             type="text"
             onChange={this.handleComment}
             value={this.state.comment}
+            className="comments-input"
           />
-          <input type="submit" value="Comment" />
+          <input className="comments-submit" type="submit" value="Comment" />
         </form>
         {this.renderComments()}
       </div>

@@ -28,7 +28,7 @@
   margin: 20px 0;
 }
 
-button {
+.video-div button {
   background-color: #008cba;
   border: none;
   color: white;
@@ -43,7 +43,7 @@ button {
   border-radius: 6px;
 }
 
-button:hover {
+.video-div button:hover {
   background-color: rgb(2, 167, 223);
 }
 @media only screen and (max-width: 900px) {

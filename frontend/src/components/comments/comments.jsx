@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./comments.css";
 class Comments extends React.Component {
   constructor(props) {
     super(props);
@@ -28,16 +28,24 @@ class Comments extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="comments-text-container">
         {this.props.content.comments.map(comment => (
-          <p>
+          <p className="comment-text">
             {comment.text}
-            <button onClick={this.handleDeleteComment(comment._id)}>
-              Delete
-            </button>
-            <button onClick={this.renderUpdateCommentForm(comment._id)}>
-              Update
-            </button>
+            <div className="comment-buttons">
+              <button
+                className="comment-delete"
+                onClick={this.handleDeleteComment(comment._id)}
+              >
+                Delete
+              </button>
+              <button
+                className="comment-update"
+                onClick={this.renderUpdateCommentForm(comment._id)}
+              >
+                Update
+              </button>
+            </div>
           </p>
         ))}
       </div>

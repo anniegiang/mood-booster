@@ -36,7 +36,7 @@
   font-family: "Sanchez", serif;
 }
 
-button {
+.quote-box button {
   z-index: 2;
   background-color: rgb(3, 150, 199);
   border: rgb(1, 134, 179);
