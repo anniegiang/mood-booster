@@ -19,21 +19,21 @@ class Search extends React.Component {
     }
     render() {
         
-        // if (!this.props.videos) {
-        //     return null
-        // }
-        if (this.props.videos === undefined && this.props.photos === undefined && this.props.quotes === undefined) {
+        if (this.props.videos === undefined || this.props.photos === undefined || this.props.quotes === undefined) {
+            // debugger
+            return null
+        }
+        if (this.props.videos.length === 0 && this.props.photos.length === 0 && this.props.quotes.length === 0) {
             return (
                 <div>
                     <h1>Sorry no Content!! Go to form page ya mankey</h1>
                 </div>
             )
-
-
-        } else {
+        } 
             return(
                 <div className='search-container'>
-                    <div className='result-container'>
+                    
+                    {/* <div className='result-container'>
                         {this.props.videos ? (
                             this.props.videos.map(video => {
                             return <Link to={`/videos/${video._id}`}>
@@ -47,11 +47,29 @@ class Search extends React.Component {
                             })               
                         ): ("")
                         }
-                    </div>
+                    </div> */}
+
+                    {this.props.videos.length > 0 ? (
+                        <div className='result-container'>
+                            {
+                                this.props.videos.map(video => {
+                                return <Link to={`/videos/${video._id}`}>
+                                        <li className='content'>
+                                            <h1>{video.title}</h1>
+                                            <video controls >
+                                                <source src={video.videoUrl} type="video/mp4"></source>
+                                            </video>                     
+                                        </li>
+                                    </Link>
+                                    })               
+                                }
+                        </div>) : ("")
+                    }
+                    
     
+                        {this.props.photos.length > 0 ? (
                     <div className='result-container'>
-                        {this.props.photos ? (
-                            this.props.photos.map(photo => {
+                            {this.props.photos.map(photo => {
                                 return <Link to={`/photos/${photo._id}`}>
                                     <li className='content'>
                                         <h1>{photo.title}</h1>
@@ -59,13 +77,14 @@ class Search extends React.Component {
                                     </li>
                                 </Link>
                             })
-                        ): ("")
                         }
                     </div>
+                        ): ("")
+                        }
     
+                        {this.props.quotes.length > 0 ? (
                     <div className='result-container'>
-                        {this.props.quotes ? (
-                            this.props.quotes.map(quote => {
+                            {this.props.quotes.map(quote => {
                                 return <Link to={`/quotes/${quote._id}`}>
                                     <li className='content'>
                                         <h1>{quote.title}</h1> 
@@ -73,13 +92,15 @@ class Search extends React.Component {
                                     </li>
                                 </Link>
                             })
-                        ): ("")
                         }
                     </div>
+                        ): ("")
+                        }
     
                 </div>
+                
             )
-        }
+        
     }
 }
 
