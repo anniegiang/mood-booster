@@ -25,18 +25,21 @@
   margin: 20px 0;
 }
 
-/* .photo-div button {
+.fav-btn {
   background-color: #008cba;
   border: none;
   color: white;
-  padding: 0 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  margin: 4px 2px;
+  min-width: 20%;
+  padding: 1% 2%;
+  margin-top: 15px;
+  margin: 15px auto;
   cursor: pointer;
-} */
+  border-radius: 6px;
+}
 
 button:hover {
   background-color: rgb(2, 167, 223);

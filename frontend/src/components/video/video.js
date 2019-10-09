@@ -72,7 +72,9 @@ class Video extends React.Component {
           <source src={this.props.video.videoUrl}></source>
         </video>
 
-        <button>Save to my list</button>
+        <button onClick={this.saveVideo} className="fav-btn">
+          Save to Favorites
+        </button>
         <form className="comments-container" onSubmit={this.createComment}>
           <input
             className="comments-input"

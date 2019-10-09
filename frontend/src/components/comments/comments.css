@@ -22,7 +22,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  width: 10%;
+  min-width: 10%;
   padding: 1% 2%;
   margin-top: 15px;
   margin: 15px auto;

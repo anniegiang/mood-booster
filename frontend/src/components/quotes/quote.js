@@ -44,7 +44,7 @@ class Quote extends React.Component {
     if (this.props.quotes.comments !== undefined) {
       return (
         <div className="comments">
-          <CommentsContainer type="photo" content={this.props.photo} />
+          <CommentsContainer type="quote" content={this.props.quotes} />
         </div>
       );
     }
@@ -71,7 +71,7 @@ class Quote extends React.Component {
           <h3 className="author">- {this.props.quotes.author}</h3>
           {/* <p>Quote will go here</p> */}
           <button onClick={this.saveQuote}>Save to Favorites</button>
-          
+
           <form className="comments-container" onSubmit={this.createComment}>
             <input
               type="text"

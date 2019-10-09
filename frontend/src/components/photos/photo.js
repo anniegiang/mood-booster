@@ -66,7 +66,7 @@ class Photo extends React.Component {
         <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl}></img>
         {/* <p>Photo will go here</p> */}
-        <button onClick={this.savePhoto}>Save to Favorites</button>
+        <button className="fav-btn" onClick={this.savePhoto}>Save to Favorites</button>
 
         <form className="comments-container" onSubmit={this.createComment}>
           <input
