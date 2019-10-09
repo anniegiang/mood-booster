@@ -58,7 +58,7 @@ class Photo extends React.Component {
     }
     return (
       <div className="photo-div">
-        <h1>{this.props.photo.title}</h1>
+        <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl}></img>
         {/* <p>Photo will go here</p> */}
         <button onClick={this.savePhoto}>Save to Favorites</button>

@@ -1,52 +1,54 @@
-.video-div {   
-    margin-top: 15vh;
-    padding: 0 10px 10px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-content: center;
-    background-color: white;
-    /* margin: 5% */
-    border-radius: 5px;
-    
+.video-div {
+  margin-top: 15vh;
+  margin: 15vh auto 15vh auto;
+  padding: 10px 30px;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  background-color: white;
+  /* margin: 5%; */
+  border-radius: 5px;
 }
 
 .video {
-    /* height: 504px;
+  /* height: 504px;
     width: 896px; */
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .title {
-    padding: 0 1%;
+  padding: 0 1%;
+  font-size: 23px;
+  font-weight: 900;
+  margin: 20px 0;
 }
 
-
 button {
-    background-color: #008CBA; 
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    width: 20%;
-    padding: 1% 2%;
-    margin-top: 15px;
-    cursor: pointer;
-    border-radius: 6px;
+  background-color: #008cba;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  width: 20%;
+  padding: 1% 2%;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 button:hover {
-    background-color: rgb(2, 167, 223);
-    
+  background-color: rgb(2, 167, 223);
 }
 @media only screen and (max-width: 900px) {
-    .video-div {
-        margin: 0px;
-        padding: 0px;
-    }
+  .video-div {
+    margin: 0px;
+    padding: 0px;
   }
+}

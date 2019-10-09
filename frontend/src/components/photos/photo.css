@@ -1,37 +1,44 @@
 .photo-div {
-    margin-top: 15vh;
-    padding: 0 10px 10px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-content: center;
-    background-color: white;
-    /* margin: 5% */
-    border-radius: 5px;
+  margin: 15vh auto 15vh auto;
+  padding: 0 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  background-color: white;
+  max-width: 60%;
+  max-height: 40%;
+  border-radius: 5px;
 }
 
-img {
-    border-radius: 5px; 
-    max-width: 100%;
-    height: auto;
+.photo-div img {
+  border-radius: 5px;
+  max-width: 50%;
+  max-height: 50%;
+  height: auto;
+}
+
+.photo-title {
+  font-size: 23px;
+  font-weight: 900;
+  margin: 20px 0;
 }
 
 button {
-    background-color: #008CBA; 
-    border: none;
-    color: white;
-    padding: 0 2%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-   
-    cursor: pointer;
+  background-color: #008cba;
+  border: none;
+  color: white;
+  padding: 0 2%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: rgb(2, 167, 223);
-    
+  background-color: rgb(2, 167, 223);
 }
