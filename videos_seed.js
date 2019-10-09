@@ -1,6 +1,6 @@
 const Video = require("./models/Video");
 
-const videoSeed = () => {
+const videosSeed = () => {
     const video1 = new Video({
         "title": "The Science Of Motivation",
         "videoUrl": "https://mood-booster-pro.s3-us-west-1.amazonaws.com/The+Science+Of+Motivation.mp4",
@@ -183,4 +183,4 @@ const videoSeed = () => {
     video14.save()
 }
 
-module.exports = videoSeed;
+module.exports = videosSeed;
