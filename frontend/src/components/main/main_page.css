@@ -63,11 +63,11 @@ h2 {
 }
 
 .logo-main {
-  background-image: url(/static/media/logo-no-back.7a39142d.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 108px;
-  width: 350px;
+  background-image: url(logo-no-back.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100px;
+    width: 350px;
 }
 
 p {
@@ -75,7 +75,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 35%;
+  /* min-height: 35%; */
   text-align: center;
   margin: 3% 0 5%;
 }
