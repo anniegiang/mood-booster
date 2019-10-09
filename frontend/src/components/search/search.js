@@ -18,11 +18,11 @@ class Search extends React.Component {
         // }
     }
     render() {
-     
-        if (!this.props.videos) {
-            return null
-        }
-        if (this.props.videos.length === 0 && this.props.photos.length === 0 && this.props.quotes.length === 0) {
+        
+        // if (!this.props.videos) {
+        //     return null
+        // }
+        if (this.props.videos === undefined && this.props.photos === undefined && this.props.quotes === undefined) {
             return (
                 <div>
                     <h1>Sorry no Content!! Go to form page ya mankey</h1>
