@@ -149,10 +149,12 @@ class Form extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        var checkboxes = document.querySelectorAll('input[name="c2"]');
+        var checkboxes2 = document.querySelectorAll('input[name="c1"]');
         var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+        var checkedOne2 = Array.prototype.slice.call(checkboxes2).some(x => x.checked);
         
-        if (checkedOne) {
+        if (checkedOne && checkedOne2) {
             this.props.history.push({
                 pathname: '/search',
                 search: `?mood1=${this.state.mood1}&mood2=${this.state.mood2}&mood3=${this.state.mood3}&mood4=${this.state.mood4}&mood5=${this.state.mood5}&mood6=${this.state.mood6}&mood7=${this.state.mood7}&videos=${this.state.videos}&photos=${this.state.photos}&quotes=${this.state.quotes}`,
@@ -182,46 +184,46 @@ class Form extends React.Component {
                         <div className='category-checkbox'>
                             <h3>What are you feeling?</h3>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood1}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood1}/>
                                 Lost of motivation
                             </label>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood2}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood2}/>
                                 Stressed
                             </label>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood3}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood3}/>
                                 Imposter syndrome
                             </label>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood4}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood4}/>
                                 Test anxiety
                             </label>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood5}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood5}/>
                                 Social anxiety
                             </label>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood6}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood6}/>
                                 Pressure
                             </label>
                             <label> 
-                                <input type='checkbox' onClick={this.handlemood7}/>
+                                <input type='checkbox' name='c2' onClick={this.handlemood7}/>
                                 Mental fatigue
                             </label>
                         </div>
                         <div className='content-checkbox'>
                             <h3>What do you want to see?</h3>
                             <label>
-                                <input type='checkbox' onClick={this.handlevideos}/>
+                                <input type='checkbox' name='c1' onClick={this.handlevideos}/>
                                 Videos
                             </label>
                             <label>
-                                <input type='checkbox' onClick={this.handlephotos}/>
+                                <input type='checkbox' name='c1' onClick={this.handlephotos}/>
                                 Photos
                             </label>
                             <label>
-                                <input type='checkbox' onClick={this.handlequotes}/>
+                                <input type='checkbox' name='c1' onClick={this.handlequotes}/>
                                 Quotes
                             </label>
                         </div>
