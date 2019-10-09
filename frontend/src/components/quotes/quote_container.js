@@ -7,6 +7,7 @@ import Quote from "./quote";
 const mapStateToProps = (state, ownProps) => {
   return {
     quotes: state.content.quotes[ownProps.match.params.quote_id],
+    isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user
   };
 };

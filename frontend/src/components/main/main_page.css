@@ -1,31 +1,36 @@
 body {
-background-image: url("water.jpg")
+  background-image: url("water.jpg");
 }
 
 .mainpage-container {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-   
-    width: 100vw;
-    height: 100vh;
-  }
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+}
 
 .splash-window {
   /* height: 500px; */
   width: 500px;
+<<<<<<< HEAD
   background-color: #e6eeff;  margin: 10%;
+=======
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: #e6eeff;
+  margin: 10%;
+>>>>>>> a906f556581a6dba09b20ad1fad3056f0a9c1438
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 50px
-
+  border-radius: 50px;
 }
 
 @media only screen and (max-width: 600px) {
   .splash-window {
-    margin-top: 20% 
+    margin-top: 20%;
   }
 }
 
@@ -46,17 +51,16 @@ background-image: url("water.jpg")
 }
 
 .main_button:hover {
-background-color: rgb(2, 167, 223);
+  background-color: rgb(2, 167, 223);
 }
 
 .main_button:active {
   background-color: rgb(0, 101, 134);
   margin: 3% 2% 2% 2%;
-  box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%))
-
+  box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
 }
 
-h2 {
+.logo-main h2 {
   margin-top: 5%;
   font-family: cursive;
   font-size: x-large;
@@ -64,13 +68,13 @@ h2 {
 
 .logo-main {
   background-image: url(logo-no-back.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    min-height: 100px;
-    width: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  width: 350px;
 }
 
-p {
+.logo-main p {
   width: 80%;
   display: flex;
   align-items: center;

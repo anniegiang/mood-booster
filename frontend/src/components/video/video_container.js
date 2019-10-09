@@ -6,6 +6,7 @@ import Video from "./video";
 const msp = (state, ownProps) => {
   return {
     video: state.content.videos[ownProps.match.params.video_id],
+    isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user
   };
 };

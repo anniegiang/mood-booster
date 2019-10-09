@@ -1,6 +1,7 @@
 import React from "react";
 import CommentsContainer from "../comments/comments_container";
 import "./photo.css";
+import "../comments/comments.css";
 
 class Photo extends React.Component {
   constructor(props) {
@@ -26,19 +27,28 @@ class Photo extends React.Component {
   }
 
   createComment(e) {
-    e.preventDefault();
-    let data = {
-      userId: this.props.currentUser.id,
-      photoId: this.props.match.params.photo_id,
-      text: this.state.comment,
-      type: "photo"
-    };
-    this.props.createComment(data);
+    if (this.props.isAuthenticated) {
+      e.preventDefault();
+      let data = {
+        userId: this.props.currentUser.id,
+        photoId: this.props.match.params.photo_id,
+        text: this.state.comment,
+        type: "photo"
+      };
+      this.setState({ comment: "" });
+      this.props.createComment(data);
+    } else {
+      alert("Must be logged in.");
+    }
   }
 
   renderComments() {
     if (this.props.photo.comments !== undefined) {
-      return <CommentsContainer type="photo" content={this.props.photo} />;
+      return (
+        <div className="comments">
+          <CommentsContainer type="photo" content={this.props.photo} />
+        </div>
+      );
     }
   }
 
@@ -58,18 +68,21 @@ class Photo extends React.Component {
     }
     return (
       <div className="photo-div">
-        <h1>{this.props.photo.title}</h1>
+        <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl}></img>
         {/* <p>Photo will go here</p> */}
-        <button onClick={this.savePhoto}>Save to Favorites</button>
+        <button className="fav-btn" onClick={this.savePhoto}>
+          Save to Favorites
+        </button>
 
-        <form onSubmit={this.createComment}>
+        <form className="comments-container" onSubmit={this.createComment}>
           <input
             type="text"
             onChange={this.handleComment}
             value={this.state.comment}
+            className="comments-input"
           />
-          <input type="submit" value="Comment" />
+          <input className="comments-submit" type="submit" value="Comment" />
         </form>
         {this.renderComments()}
       </div>
