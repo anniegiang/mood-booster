@@ -48,7 +48,6 @@
 }
 @media only screen and (max-width: 900px) {
   .video-div {
-    margin: 0px;
-    padding: 0px;
+    margin: 90px auto;
   }
 }
