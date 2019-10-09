@@ -33,6 +33,7 @@ class Search extends React.Component {
             return(
                 <div className='search-container'>
                     
+
                     {/* <div className='result-container'>
                         {this.props.videos ? (
                             this.props.videos.map(video => {
@@ -48,6 +49,7 @@ class Search extends React.Component {
                         ): ("")
                         }
                     </div> */}
+
 
                     {this.props.videos.length > 0 ? (
                         <div className='result-container'>
