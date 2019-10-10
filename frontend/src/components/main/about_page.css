@@ -13,6 +13,7 @@ body {
     
     .about-window {
       max-height: 560px;
+      min-height: 500px;
       width: 650px;
       background-color: #e6eeff;  
       margin: 15%;
@@ -72,7 +73,7 @@ body {
     .creators {
         display:flex;
         justify-content: space-evenly;
-        /* margin-top: 3%; */
+        margin-top: 3%;
         width: 80%;
         align-items: center;
     }
