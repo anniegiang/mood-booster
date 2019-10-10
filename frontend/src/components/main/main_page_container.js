@@ -6,7 +6,7 @@ import { fetchUser } from "../../actions/user_actions"
 const msp = (state, ownProps) => {
   return {
     randomContent: state.content.randomContent.content,
-    userId: state.session.user.id
+    user: state.session.user
   };
 };
 

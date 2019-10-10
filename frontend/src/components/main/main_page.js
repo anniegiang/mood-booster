@@ -10,8 +10,8 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchRandomContent();
-    if (this.props.userId) {
-      this.props.fetchUser(this.props.userId)
+    if (this.props.user.id) {
+      this.props.fetchUser(this.props.user.id)
     }
   
   }
