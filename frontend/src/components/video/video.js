@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import CommentsContainer from "../comments/comments_container";
 import "./video.css";
 import "../comments/comments.css";

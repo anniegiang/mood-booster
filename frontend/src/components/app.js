@@ -12,6 +12,7 @@ import VideoContainer from "./video/video_container";
 import FormContainer from "./form/form_container";
 import SearchContainer from "./search/search_container";
 import AboutPage from "./main/about_page";
+import FavoritesContainer from './favorites/favorites_container'
 
 const App = () => (
   <div className="app">
@@ -20,6 +21,7 @@ const App = () => (
       <Route exact path="/" component={MainPageContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/favorites" component={FavoritesContainer} />
       <Route exact path="/about" component={AboutPage} />
       <Route exact path="/quotes/:quote_id" component={QuoteContainer} />
       <Route exact path="/photos/:photo_id" component={PhotoContainer} />

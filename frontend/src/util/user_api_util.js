@@ -7,3 +7,4 @@ export const fetchUser = id => {
 export const saveContent = data => {
   return axios.post(`/api/users/content/like`, data);
 };
+

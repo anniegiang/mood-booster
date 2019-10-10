@@ -5,6 +5,7 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import { fetchQuotes } from '../../actions/quote_actions';
 
 const msp = (state,ownProps) => {
+    // debugger
     return({
         videos: state.content.videos.data,
         photos: state.content.photos.data,

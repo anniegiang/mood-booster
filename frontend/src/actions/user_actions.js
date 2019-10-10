@@ -14,3 +14,7 @@ const receiveUser = user => {
 export const saveContent = data => dispatch => {
   return APIUtil.saveContent(data).then(user => dispatch(receiveUser(user)));
 };
+
+export const fetchUser = id => dispatch => {
+  return APIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))
+}
