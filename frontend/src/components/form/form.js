@@ -165,7 +165,7 @@ class Form extends React.Component {
                 }
             })
         } else {
-            alert('Please Select a Feeling and Content type')
+            alert('Please Select a Feeling and a Content type')
         }
     
         

@@ -23,8 +23,8 @@ class NavBar extends React.Component {
           <Link className="nav-boost" to={"/form"}>
             Boost your mood
           </Link>
-          <Link className="nav-profile" to={"/profile"}>
-            Profile
+          <Link className="nav-profile" to={"/favorites"}>
+            My Favorites
           </Link>
           <a className="nav-logout" onClick={this.logoutUser}>
             Logout
