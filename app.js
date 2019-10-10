@@ -1,3 +1,6 @@
+const path = require("path");
+
+
 const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -34,6 +37,13 @@ app.use("/api/quotes", quotes);
 app.use("/api/photos", photos);
 app.use("/api/videos", videos);
 app.use("/api/random", randomContent);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
 
 // tell express to use middleware to parse JSON that's sent to frontend
 
