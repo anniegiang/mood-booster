@@ -30,69 +30,106 @@ class Search extends React.Component {
             )
         } 
 
+        // if (!(this.props.videos.length === 0)) {
+        //     let vid_content = (
+        //         <div className="content_div">
+        //             {this.props.videos.length > 0 ? (
+        //                 <div>
+        //                     <h1>Videos:</h1>
+        //                     <hr></hr>
+        //                     <div className='result-container'>
+        //                         {
+        //                             this.props.videos.map(video => {
+        //                             return <Link to={`/videos/${video._id}`} key={video._id}>
+        //                                     <li className='content' >
+        //                                         <h1 className="title">{video.title}</h1>
+        //                                         <video width='426' height='240' controls >
+        //                                             <source src={video.videoUrl} type="video/mp4"></source>
+        //                                         </video> 
+        //                                     </li>
+        //                                 </Link>
+        //                                 })               
+        //                             }
+        //                     </div>
+        //                 </div>
+        //             ) : ("")
+        //             }
+        //         </div>
+        //     )}
+
         return(
             <div className='search-container'>
                 <h1 className="headline">Your content:</h1>
-                {/* <hr className="headline_hr"></hr> */}
-
-                <div className="content_div">
-                    <h1>Videos:</h1>
-                    <hr></hr>
+                    <div>
                     {this.props.videos.length > 0 ? (
-                        <div className='result-container'>
-                            {
-                                this.props.videos.map(video => {
-                                return <Link to={`/videos/${video._id}`} key={video._id}>
-                                        <li className='content' >
-                                            <h1 className="title">{video.title}</h1>
-                                            <video width='426' height='240' controls >
-                                                <source src={video.videoUrl} type="video/mp4"></source>
-                                            </video> 
-                                        </li>
-                                    </Link>
-                                    })               
-                                }
-                        </div>) : ("")
+                        <div className="content_div">
+                            <div>
+                                <h1>Videos:</h1>
+                                <hr></hr>
+                                <div className='result-container'>
+                                    {
+                                        this.props.videos.map(video => {
+                                        return <Link to={`/videos/${video._id}`} key={video._id}>
+                                                <li className='content' >
+                                                    <h1 className="title">{video.title}</h1>
+                                                    <video width='426' height='240' controls >
+                                                        <source src={video.videoUrl} type="video/mp4"></source>
+                                                    </video> 
+                                                </li>
+                                            </Link>
+                                            })               
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                    ) : ("")
                     }
                 </div>
-
-                <div className="content_div">
-                    <h1>Photos:</h1>
-                    <hr></hr>
+                    
+                <div>
                     {this.props.photos.length > 0 ? (
-                        <div className='result-container'>
-                            {this.props.photos.map(photo => {
-                                return <Link to={`/photos/${photo._id}`} key={photo._id}>
-                                    <li className='content' >
-                                        <h1 className="title">{photo.title}</h1>
-                                        <img src={photo.photoUrl} ></img>
-                                    </li>
-                                </Link>
-                            })
-                        }
-                    </div>
-                        ): ("")
+                        <div className="content_div">
+                            <div>
+                                <h1>Photos:</h1>
+                                <hr></hr>
+                                <div className='result-container'>
+                                    {this.props.photos.map(photo => {
+                                        return <Link to={`/photos/${photo._id}`} key={photo._id}>
+                                            <li className='content' >
+                                                <h1 className="title">{photo.title}</h1>
+                                                <img src={photo.photoUrl} ></img>
+                                            </li>
+                                        </Link>
+                                        })
+                                    }
+                                </div>
+                            </div> 
+                        </div>
+                    ): ("")
                     }
                 </div>
-
-                <div className="content_div">
-                    <h1>Quotes:</h1>
-                    <hr></hr>
+                    
+                <div>
                     {this.props.quotes.length > 0 ? (
-                        <div className='result-container'>
-                            {this.props.quotes.map(quote => {
-                                return <Link to={`/quotes/${quote._id}`} key={quote._id}>
-                                    <li className='content' >
-                                        <h1 className="title">{quote.title}</h1> 
-                                        <br></br>
-                                        <p>"{quote.quoteText}"</p>
-                                        <blockquote> - {quote.author}</blockquote>
-                                    </li>
-                                </Link>
-                            })
-                        }
-                    </div>
-                        ): ("")
+                        <div className="content_div">
+                            <div>
+                            <h1>Quotes:</h1>
+                            <hr></hr>
+                                <div className='result-container'>
+                                    {this.props.quotes.map(quote => {
+                                        return <Link to={`/quotes/${quote._id}`} key={quote._id}>
+                                            <li className='content' >
+                                                <h1 className="title">{quote.title}</h1> 
+                                                <br></br>
+                                                <p>"{quote.quoteText}"</p>
+                                                <blockquote> - {quote.author}</blockquote>
+                                            </li>
+                                        </Link>
+                                        })
+                                    }
+                                </div>
+                        </div>
+                    </div> ): ("")
                     }
                 </div>
 
