@@ -35,7 +35,7 @@ class MainPage extends React.Component {
       )};
 
     if ("photoUrl" in randomContent) {
-      return <img className="main-photo" className="main-photo" src={randomContent.photoUrl} alt="random-pic" />;
+      return <img className="main-photo" src={randomContent.photoUrl} alt="random-pic" />;
     }
   }
 

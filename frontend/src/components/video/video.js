@@ -21,9 +21,6 @@ class Video extends React.Component {
     this.props.fetchVideo(this.props.match.params.video_id);
   }
 
-  componentDidMount() {
-    this.props.fetchVideo(this.props.match.params.video_id);
-  }
 
   handleComment(e) {
     this.setState({ comment: e.target.value });
