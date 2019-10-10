@@ -14,13 +14,9 @@ body {
 .splash-window {
   /* height: 500px; */
   width: 500px;
-<<<<<<< HEAD
-  background-color: #e6eeff;  margin: 10%;
-=======
   /* background-color: rgba(255, 255, 255, 0.8); */
   background-color: #e6eeff;
   margin: 10%;
->>>>>>> a906f556581a6dba09b20ad1fad3056f0a9c1438
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -101,4 +97,8 @@ body {
 
 .vid_title {
   justify-content: left;
+}
+
+.random_content {
+  margin-bottom: 20px;
 }

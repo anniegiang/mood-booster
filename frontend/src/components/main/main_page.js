@@ -49,7 +49,7 @@ class MainPage extends React.Component {
         <div className="splash-window">
           <h2>Welcome to</h2>
           <div className="logo-main"></div>
-          <p>Random Content:</p>
+          <p className="random_content">Random Content:</p>
           
           {this.renderRandomContentType()}
           <button className="main_button" onClick={this.handleClick}>Boost your mood!</button>
