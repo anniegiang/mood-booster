@@ -1,20 +1,19 @@
-body {
-}
-
 .mainpage-container {
   display: flex;
   align-content: center;
   justify-content: center;
-
+  background-image: url("./assets/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg");
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 }
 
 .splash-window {
-  /* height: 500px; */
+  min-height: 600px;
   width: 500px;
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  background-color: #e6eeff;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* background-color: #e6eeff; */
+  /* background-color: rgba(255, 255, 255, 0.7); */
   margin: 10%;
   display: flex;
   flex-direction: column;
@@ -29,16 +28,17 @@ body {
   }
 }
 
-.main_button {
+.mainpage-container .main_button {
   z-index: 2;
-  background-color: rgb(3, 150, 199);
+  background-color: #ef6730;
   border: rgb(1, 134, 179);
-  border: none;
+  /* border: none; */
+  border-radius: 4px;
   color: white;
   padding: 2%;
   text-align: center;
   margin: 10%;
-
+  font-weight: 600;
   font-size: 25px;
   width: 50%;
   cursor: pointer;
@@ -55,10 +55,10 @@ body {
   box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
 }
 
-.logo-main h2 {
+.mainpage-container h2 {
   margin-top: 5%;
-  font-family: cursive;
   font-size: x-large;
+  font-weight: 700;
 }
 
 .logo-main {
@@ -87,7 +87,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 60%;
+}
 
+.quote-text {
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  margin-top: 10px;
 }
 
 .main-photo {
@@ -95,9 +103,15 @@ body {
 }
 
 .vid_title {
-  justify-content: left;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .random_content {
   margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
 }
