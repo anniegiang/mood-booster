@@ -7,6 +7,7 @@ import Photo from "./photo";
 const mapStateToProps = (state, ownProps) => {
   return {
     photo: state.content.photos[ownProps.match.params.photo_id],
+    isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user
   };
 };

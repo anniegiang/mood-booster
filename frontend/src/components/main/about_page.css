@@ -12,10 +12,11 @@ body {
       }
     
     .about-window {
-      height: 700px;
-      width: 700px;
-      /* background-color: rgba(255, 255, 255, 0.8); */
-      background-color: #e6eeff;  margin: 10%;
+      max-height: 560px;
+      min-height: 500px;
+      width: 650px;
+      background-color: #e6eeff;  
+      margin: 15%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -72,8 +73,9 @@ body {
     .creators {
         display:flex;
         justify-content: space-evenly;
-        /* margin-top: 3%; */
+        margin-top: 3%;
         width: 80%;
+        align-items: center;
     }
 
 
@@ -119,7 +121,7 @@ body {
 
       .dropdown-content a:hover {
         background-color: #ddd;
-        color: black;
+        color: black;  
       }
       
       .dropdown:hover .dropdown-content {

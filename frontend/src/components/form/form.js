@@ -173,7 +173,6 @@ class Form extends React.Component {
 
 
     render() {
-        // debugger
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className='form-transparent'>

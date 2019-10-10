@@ -1,6 +1,7 @@
 import React from "react";
 import CommentsContainer from "../comments/comments_container";
 import "./quote.css";
+import "../comments/comments.css";
 
 class Quote extends React.Component {
   constructor(props) {
@@ -29,19 +30,28 @@ class Quote extends React.Component {
   }
 
   createComment(e) {
-    e.preventDefault();
-    let data = {
-      userId: this.props.currentUser.id,
-      quoteId: this.props.match.params.quote_id,
-      text: this.state.comment,
-      type: "quote"
-    };
-    this.props.createComment(data);
+    if (this.props.isAuthenticated) {
+      e.preventDefault();
+      let data = {
+        userId: this.props.currentUser.id,
+        quoteId: this.props.match.params.quote_id,
+        text: this.state.comment,
+        type: "quote"
+      };
+      this.setState({ comment: "" });
+      this.props.createComment(data);
+    } else {
+      alert("Must be logged in.");
+    }
   }
 
   renderComments() {
     if (this.props.quotes.comments !== undefined) {
-      return <CommentsContainer type="quote" content={this.props.quotes} />;
+      return (
+        <div className="comments">
+          <CommentsContainer type="quote" content={this.props.quotes} />
+        </div>
+      );
     }
   }
 
@@ -65,17 +75,21 @@ class Quote extends React.Component {
           <h1 className="quote-text">"{this.props.quotes.quoteText}"</h1>
           <h3 className="author">- {this.props.quotes.author}</h3>
           {/* <p>Quote will go here</p> */}
-          <button onClick={this.saveQuote}>Save to Favorites</button>
-          <form onSubmit={this.createComment}>
+          <button className="fav-btn" onClick={this.saveQuote}>
+            Save to Favorites
+          </button>
+
+          <form className="comments-container" onSubmit={this.createComment}>
             <input
               type="text"
               onChange={this.handleComment}
               value={this.state.comment}
+              className="comments-input"
             />
-            <input type="submit" value="Comment" />
+            <input className="comments-submit" type="submit" value="Comment" />
           </form>
+          {this.renderComments()}
         </div>
-        {this.renderComments()}
       </div>
     );
   }
