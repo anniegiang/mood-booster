@@ -1,5 +1,4 @@
 body {
-    background-image: url("water.jpg")
     }
     
     .about-container {
@@ -56,7 +55,7 @@ body {
     }
     
     .logo-main {
-      background-image: url(/static/media/logo-no-back.7a39142d.png);
+      background-image: url(logo-no-back.png);
       background-size: contain;
       background-repeat: no-repeat;
       height: 108px;
