@@ -7,22 +7,25 @@ import { fetchVideo } from "../../actions/video_actions";
 const msp = (state) => {
     // debugger
     let photosArray = [];
-    state.user.photoSave.forEach(photoId => {
+    state.session.user.photoSave.forEach(photoId => {
         photosArray.push(state.content.photos[photoId])
     })
 
     let quotesArray = [];
-    state.user.quoteSave.forEach(quoteId => {
+    state.session.user.quoteSave.forEach(quoteId => {
         quotesArray.push(state.content.quotes[quoteId])
     })
 
     let videosArray = [];
-    state.user.videoSave.forEach(videoId => {
+    state.session.user.videoSave.forEach(videoId => {
         videosArray.push(state.content.videos[videoId])
     })
-
+    
     return({
         user: state.user,
+        photoSave: state.session.user.photoSave,
+        quoteSave: state.session.user.quoteSave,
+        videoSave: state.session.user.videoSave,
         photos: photosArray,
         quotes: quotesArray,
         videos: videosArray

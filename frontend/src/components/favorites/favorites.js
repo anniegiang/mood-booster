@@ -3,23 +3,24 @@ import "./favorite.css"
 import { Link } from 'react-router-dom'
 class Favorites extends React.Component {
     componentDidMount(){
-        this.props.user.photoSave.forEach(photoId => {
+        this.props.photoSave.forEach(photoId => {
             this.props.fetchPhoto(photoId)
         })
 
-        this.props.user.quoteSave.forEach(quoteId => {
+        this.props.quoteSave.forEach(quoteId => {
             this.props.fetchQuote(quoteId)
         })
 
-        this.props.user.videoSave.forEach(videoId => {
+        this.props.videoSave.forEach(videoId => {
             this.props.fetchVideo(videoId)
         })
+        // debugger
     }
 
     render() {
-        if (!this.props.user) {
-            return null;
-        }
+        // if (!this.props.user) {
+        //     return null;
+        // }
 
         let undef = function(ele) {
             if (ele === undefined) {
