@@ -174,13 +174,11 @@ class Form extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className='form-transparent'>
-
-                </div>
-                 <div className='form-mood-container'>
+            <div className="form-background">
+            <form className="input-form" onSubmit={this.handleSubmit}>
                      <div className='checkbox-container'>
-                        <div className='category-checkbox'>
+
+                        <div className='symptoms'>
                             <h3>What are you feeling?</h3>
                             <label> 
                                 <input type='checkbox' name='c2' onClick={this.handlemood1}/>
@@ -211,7 +209,7 @@ class Form extends React.Component {
                                 Mental fatigue
                             </label>
                         </div>
-                        <div className='content-checkbox'>
+                        <div className='content-type'>
                             <h3>What do you want to see?</h3>
                             <label>
                                 <input type='checkbox' name='c1' onClick={this.handlevideos}/>
@@ -226,10 +224,10 @@ class Form extends React.Component {
                                 Quotes
                             </label>
                         </div>
-                     </div>
-                <button className='form-btn'>Submit</button>
                 </div>
+                <button className='form-btn'>Submit</button>
             </form>
+        </div>
         )
     }
 }

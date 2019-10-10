@@ -1,57 +1,27 @@
-.form-mood-container {
+/* .form-mood-container {
   display: flex;
   justify-content: space-evenly;
-  position: relative;
   height: 100vh;
   font-size: 140%;
-  color: black;
   margin-top: 3.5%;
-  /* z-index: -1; */
 }
 
 .checkbox-container {
   display: flex;
-  /* margin-bottom: 5%; */
-  /* margin-left: 5%; */
-  /* font-family: cursive; */
 }
 
-.category-checkbox {
+
+.checkbox {
   display: flex;
   flex-direction: column;
-  align-self: center;
-
-  background-color: #e6eeffd8;
-
-  width: 20vw;
-  height: 75vh;
+  position: absolute;
   padding: 2em;
-
-  border-radius: 6px;
-  /* -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000; */
+  width: 40vw;
+  height: 50vh;
+  border-radius: 5px;
 }
 
-.category-checkbox input {
-  margin-bottom: 10%;
-  margin-right: 5%;
-  cursor: pointer;
-}
-
-.content-checkbox {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-
-  background-color: #e6eeffd8;
-
-  padding: 2em;
-  width: 20vw;
-  height: 75vh;
-}
-
-.content-checkbox input {
+.checkbox input {
   margin-bottom: 10%;
   margin-right: 5%;
   cursor: pointer;
@@ -63,16 +33,59 @@
   margin-top: 18%;
   color: white;
   padding: 7px 7px;
-  background-color: #008cba;
+  background-color: #3C3C3C;
   border-radius: 6px;
-  /* font-family: cursive; */
-  /* font-size: 70%; */
 }
-/* 
-.form-transparent {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0, 0.7);
-    position: absolute;
-    z-index: -10;
+
+.symptoms {
+  background-color: #4DB8C4;
+  
+}
+
+.content-type {
+  background-color: #EF6730
 } */
+
+
+.input-form {
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkbox-container {
+  display: flex;
+}
+
+.symptoms {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 5px;
+
+  /* background-color: #4DB8C4; */
+}
+
+.symptoms input {
+  margin: 8%;
+  font-size: 24px;
+}
+
+.content-type {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 5px;
+
+  /* background-color: #EF6730 */
+}
+
+.content-type input {
+  margin: 8%;
+}
