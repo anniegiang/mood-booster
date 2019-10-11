@@ -208,24 +208,32 @@ class Form extends React.Component {
                                 <input type='checkbox' name='c2' onClick={this.handlemood7}/>
                                 Mental fatigue
                             </label>
+                            <div className="category-type-buttons">
+                                <button className='forward-form-btn'>Choose your content</button>
+                            </div>
                         </div>
                         <div className='content-type'>
-                            <h3>What do you want to see?</h3>
-                            <label>
-                                <input type='checkbox' name='c1' onClick={this.handlevideos}/>
-                                Videos
-                            </label>
-                            <label>
-                                <input type='checkbox' name='c1' onClick={this.handlephotos}/>
-                                Photos
-                            </label>
-                            <label>
-                                <input type='checkbox' name='c1' onClick={this.handlequotes}/>
-                                Quotes
-                            </label>
+                            <div className="input-fields">
+                                <h3>What do you want to see?</h3>
+                                <label>
+                                    <input type='checkbox' name='c1' onClick={this.handlevideos}/>
+                                    Videos
+                                </label>
+                                <label>
+                                    <input type='checkbox' name='c1' onClick={this.handlephotos}/>
+                                    Photos
+                                </label>
+                                <label>
+                                    <input type='checkbox' name='c1' onClick={this.handlequotes}/>
+                                    Quotes
+                                </label>
+                            </div>
+                            <div className="content-type-buttons">
+                                <button className='back-form-btn'>Back to symptoms</button>
+                                <button className='submit-form-btn'>Get your results!</button>
+                            </div>
                         </div>
                 </div>
-                <button className='form-btn'>Submit</button>
             </form>
         </div>
         )

@@ -1,58 +1,8 @@
-/* .form-mood-container {
-  display: flex;
-  justify-content: space-evenly;
-  height: 100vh;
-  font-size: 140%;
-  margin-top: 3.5%;
-}
-
-.checkbox-container {
-  display: flex;
-}
-
-
-.checkbox {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  padding: 2em;
-  width: 40vw;
-  height: 50vh;
-  border-radius: 5px;
-}
-
-.checkbox input {
-  margin-bottom: 10%;
-  margin-right: 5%;
-  cursor: pointer;
-}
-
-.form-btn {
-  align-self: center;
-  position: absolute;
-  margin-top: 18%;
-  color: white;
-  padding: 7px 7px;
-  background-color: #3C3C3C;
-  border-radius: 6px;
-}
-
-.symptoms {
-  background-color: #4DB8C4;
-  
-}
-
-.content-type {
-  background-color: #EF6730
-} */
-
 
 .input-form {
   margin: 10%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .checkbox-container {
@@ -64,10 +14,10 @@
   flex-direction: column;
   padding: 2em;
   width: 20vw;
-  height: 40vh;
+  /* height: 40vh; */
   border-radius: 5px;
 
-  /* background-color: #4DB8C4; */
+  background-color: #4DB8C4;
 }
 
 .symptoms input {
@@ -78,12 +28,61 @@
 .content-type {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2em;
   width: 20vw;
-  height: 40vh;
+  /* height: 40vh; */
   border-radius: 5px;
 
-  /* background-color: #EF6730 */
+  background-color: #EF6730;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-type-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.forward-form-btn {
+  background-color: #EF6730;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  color: black;
+  font-weight: 300;
+  width: 150px;
+}
+
+.content-type-buttons {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.back-form-btn {
+  background-color: #4DB8C4;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  color: black;
+  font-weight: 300;
+  width: 150px;
+}
+
+.submit-form-btn {
+  /* margin-left: 50%; */
+  background-color: #3C3C3C;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  width: 150px;
 }
 
 .content-type input {
