@@ -92,13 +92,14 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #ef6730;
 }
 
 .random_content {
+  color: rgb(2, 167, 223);
   margin-bottom: 15px;
   font-size: 25px;
   font-weight: 600;
-  color: #ef6730;
 }
 
 .splash-content {
