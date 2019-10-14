@@ -1,11 +1,11 @@
 ![logo](/frontend/src/components/main/logo-no-back.png)
 
 ## Mood Booster
-This web application is an app with the app that promotes mental health care to boost your productivity!
+This web application is an app that promotes mental health care to boost your productivity!
 
-Being in tech can be a grueling experience where individuals learn many different stacks and still feel like they do not understand anything. Drawing from our experiences from a coding bootcamp, we learned that productivity is directly correlated to an individual's mood. Employees and students in top condition are more to do well and thrive, even amidst the pressure that come from working in a time crunch. These individuals will also have an advantage by being more motivated to tackle new challenges.
+Being in tech can be a grueling experience where individuals can learn many different stacks and still feel like they do not understand anything. Drawing from our experiences from a coding bootcamp, we learned that productivity is directly correlated to an individual's mood. Employees and students in top condition are more to do well and thrive, even amidst the pressure that come from working in a time crunch. These individuals will also have an advantage from being more motivated to tackle new challenges.
 
-Mood Booster is our answer to helping you get a boost in the face stress, lack of motivation, imposter syndrome, and overall unsettling moods that can hinders performance.
+Mood Booster is our answer to helping you get a boost in the face stress, lack of motivation, imposter syndrome, and other unsettling moods that can hinder performance.
 
 Check it out [here!](https://moodbooster.herokuapp.com/)
 
