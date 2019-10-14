@@ -7,6 +7,7 @@ class Comments extends React.Component {
       comment: this.props.content.text
     };
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
+    this.renderCommentButtons = this.renderCommentButtons.bind(this);
   }
 
   handleDeleteComment(commentId) {
@@ -24,7 +25,20 @@ class Comments extends React.Component {
     };
   }
 
-  renderUpdateCommentForm(commentId) {}
+  renderCommentButtons(comment) {
+    if (comment.userId === this.props.currentUser.id) {
+      return (
+        <div className="comment-buttons">
+          <button
+            className="comment-delete"
+            onClick={this.handleDeleteComment(comment._id)}
+          >
+            Delete
+          </button>
+        </div>
+      );
+    }
+  }
 
   render() {
     return (
@@ -32,20 +46,7 @@ class Comments extends React.Component {
         {this.props.content.comments.map(comment => (
           <p className="comment-text">
             {comment.text}
-            <div className="comment-buttons">
-              <button
-                className="comment-delete"
-                onClick={this.handleDeleteComment(comment._id)}
-              >
-                Delete
-              </button>
-              <button
-                className="comment-update"
-                onClick={this.renderUpdateCommentForm(comment._id)}
-              >
-                Update
-              </button>
-            </div>
+            {this.renderCommentButtons(comment)}
           </p>
         ))}
       </div>
