@@ -1,25 +1,38 @@
 
+.form-background {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-image: url("hot-air-balloons.jpg");
+  z-index: -30;
+  background-color: gainsboro;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 .input-form {
-  margin: 10%;
+  margin: 12%;
   display: flex;
   justify-content: center;
 }
 
 .checkbox-container {
   display: flex;
+  z-index: 2;
 }
 
 .symptoms {
   position: relative;
-  /* left:; */
   z-index: 1;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 30vw;
-  height: 62vh;
+  width: 27vw;
+  height: 52vh;
   border-radius: 20px;
 
   background-color: #4DB8C4;
@@ -30,17 +43,18 @@
   font-size: 24px;
 }
 
+
 .content-type {
   position: absolute;
-  left: 35%;
+  left: 36%;
 
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 30vw;
-  height: 62vh;
+  width: 27vw;
+  height: 52vh;
   border-radius: 20px;
 
   background-color: #EF6730;
@@ -79,7 +93,8 @@
 
 
 .back-form-btn {
-  background-color: #4DB8C4;
+  /* background-color: #4DB8C4; */
+  background-color: #01A7DF;
   padding: 10px;
   text-align: center;
   border-radius: 6px;
@@ -100,5 +115,5 @@
 }
 
 .content-type input {
-  margin: 8%;
+  margin: 4%;
 }
