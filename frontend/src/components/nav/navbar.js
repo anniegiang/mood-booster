@@ -9,6 +9,10 @@ class NavBar extends React.Component {
     this.logoutUser = this.logoutUser.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.user.id)
+  }
+
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();

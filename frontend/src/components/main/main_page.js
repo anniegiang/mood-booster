@@ -10,10 +10,7 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchRandomContent();
-    if (this.props.user.length !== undefined) {
-      debugger;
-      this.props.fetchUser(this.props.user.id);
-    }
+    this.props.fetchUser(this.props.user.id)
   }
 
   renderRandomContentType() {
@@ -42,14 +39,7 @@ class MainPage extends React.Component {
     }
 
     if ("photoUrl" in randomContent) {
-      return (
-        <img
-          className="main-photo"
-          className="main-photo"
-          src={randomContent.photoUrl}
-          alt="random-pic"
-        />
-      );
+      return <img className="main-photo" src={randomContent.photoUrl} alt="random-pic" />;
     }
   }
 

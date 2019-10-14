@@ -31,6 +31,9 @@ class Form extends React.Component {
         this.getResults = this.getResults.bind(this)
         
     }
+    componentDidMount() {
+        // this.props.fetchUser(this.props.user.id)
+    }
 
     handlemood1 () {
         this.state.mood1 ? (
