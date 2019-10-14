@@ -12,16 +12,17 @@
 .symptoms {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2em;
-  width: 20vw;
-  /* height: 40vh; */
-  border-radius: 5px;
+  width: 30vw;
+  height: 62vh;
+  border-radius: 20px;
 
   background-color: #4DB8C4;
 }
 
 .symptoms input {
-  margin: 8%;
+  margin: 3%;
   font-size: 24px;
 }
 
@@ -30,9 +31,9 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 20vw;
-  /* height: 40vh; */
-  border-radius: 5px;
+  width: 30vw;
+  height: 62vh;
+  border-radius: 20px;
 
   background-color: #EF6730;
 }
@@ -40,11 +41,14 @@
 .input-fields {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .category-type-buttons {
-  display: flex;
-  justify-content: flex-end;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 
 }
 
@@ -56,6 +60,7 @@
   color: black;
   font-weight: 300;
   width: 150px;
+  margin-top: 10px;
 }
 
 .content-type-buttons {
@@ -73,6 +78,7 @@
   color: black;
   font-weight: 300;
   width: 150px;
+  /* margin-top:20px; */
 }
 
 .submit-form-btn {

@@ -179,6 +179,7 @@ class Form extends React.Component {
                      <div className='checkbox-container'>
 
                         <div className='symptoms'>
+                            <div className="input-fields">
                             <h3>What are you feeling?</h3>
                             <label> 
                                 <input type='checkbox' name='c2' onClick={this.handlemood1}/>
@@ -210,6 +211,7 @@ class Form extends React.Component {
                             </label>
                             <div className="category-type-buttons">
                                 <button className='forward-form-btn'>Choose your content</button>
+                            </div>
                             </div>
                         </div>
                         <div className='content-type'>
