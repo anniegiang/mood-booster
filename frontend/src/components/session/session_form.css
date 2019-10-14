@@ -17,6 +17,8 @@
 }
 
 .form-container h1 {
+  color: rgb(2, 167, 223);
+  font-weight: 600;
   font-size: 30px;
   text-align: center;
   margin-bottom: 25px;
@@ -57,13 +59,13 @@
   background-color: rgb(3, 150, 199);
   color: white;
   font-size: 20px;
-
+  font-weight: 600;
   padding: 10px 20px;
   border-radius: 10px;
 }
 
 .submit-btn:hover {
-  background-color: rgb(2, 167, 223);
+  background-color: #ef6730;
 
   /* background-color: blanchedalmond; */
 }
