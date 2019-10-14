@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 30vw;
+  width: 27vw;
   height: 52vh;
   border-radius: 20px;
 
@@ -32,14 +32,14 @@
 
 .content-type {
   position: absolute;
-  left: 35%;
+  left: 36%;
 
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 30vw;
+  width: 27vw;
   height: 52vh;
   border-radius: 20px;
 
@@ -99,11 +99,6 @@
   width: 150px;
 }
 
-/* .content-type input {
-  margin: 8%;
-} */
-
 .content-type input {
-  margin: 6%;
-  font-size: 24px;
+  margin: 4%;
 }
