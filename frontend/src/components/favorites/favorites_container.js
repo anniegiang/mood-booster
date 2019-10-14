@@ -8,12 +8,12 @@ import { fetchUser } from "../../actions/user_actions";
 const msp = (state) => {
     // debugger
     let photosArray = [];
-    state.user.photoSave.forEach(photoId => {
+    state.user.data.photoSave.forEach(photoId => {
         photosArray.push(state.content.photos[photoId])
     })
 
     let quotesArray = [];
-    state.session.user.quoteSave.forEach(quoteId => {
+    state.user.data.quoteSave.forEach(quoteId => {
         quotesArray.push(state.content.quotes[quoteId])
     })
 
@@ -25,7 +25,7 @@ const msp = (state) => {
     return({
         user: state.session.user,
         photoSave: state.user.data.photoSave,
-        quoteSave: state.session.user.quoteSave,
+        quoteSave: state.user.data.quoteSave,
         videoSave: state.session.user.videoSave,
         photos: photosArray,
         quotes: quotesArray,
