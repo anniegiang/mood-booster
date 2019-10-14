@@ -11,7 +11,6 @@
 
 .symptoms {
   position: relative;
-  /* left:; */
   z-index: 1;
 
   display: flex;
@@ -19,7 +18,7 @@
   justify-content: space-between;
   padding: 2em;
   width: 30vw;
-  height: 62vh;
+  height: 52vh;
   border-radius: 20px;
 
   background-color: #4DB8C4;
@@ -29,6 +28,7 @@
   margin: 3%;
   font-size: 24px;
 }
+
 
 .content-type {
   position: absolute;
@@ -40,7 +40,7 @@
   justify-content: space-between;
   padding: 2em;
   width: 30vw;
-  height: 62vh;
+  height: 52vh;
   border-radius: 20px;
 
   background-color: #EF6730;
@@ -99,6 +99,11 @@
   width: 150px;
 }
 
-.content-type input {
+/* .content-type input {
   margin: 8%;
+} */
+
+.content-type input {
+  margin: 6%;
+  font-size: 24px;
 }
