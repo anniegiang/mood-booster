@@ -12,6 +12,7 @@ class Video extends React.Component {
     };
 
     this.saveVideo = this.saveVideo.bind(this);
+    this.deleteVideo = this.deleteVideo.bind(this);
     this.createComment = this.createComment.bind(this);
     this.handleComment = this.handleComment.bind(this);
     this.renderComments = this.renderComments.bind(this);
@@ -62,6 +63,17 @@ class Video extends React.Component {
     this.props.saveContent(data);
   }
 
+  deleteVideo(e) {
+    e.preventDefault();
+    let data = {
+      contentType: "videoSave",
+      contentId: this.props.match.params.video_id,
+      userId: this.props.currentUser.id
+    };
+    // debugger
+    this.props.deleteContent(data);
+  }
+
   render() {
     if (!this.props.video) {
       return null;
@@ -73,9 +85,19 @@ class Video extends React.Component {
           <source src={this.props.video.videoUrl}></source>
         </video>
 
-        <button onClick={this.saveVideo} className="fav-btn">
-          Save to Favorites
-        </button>
+        {this.props.user ? (
+          <div>
+            {this.props.user.videoSave.includes(this.props.video._id) ? (
+              <button className="fav-btn" onClick={this.deleteVideo}>
+                Remove from Favorites
+            </button>
+            ) : (
+                <button className="fav-btn" onClick={this.saveVideo}>
+                  Save to Favorites
+            </button>
+              )}
+          </div>
+        ) : ("")}
         <form className="comments-container" onSubmit={this.createComment}>
           <input
             className="comments-input"

@@ -18,7 +18,7 @@ const msp = (state) => {
     })
 
     let videosArray = [];
-    state.session.user.videoSave.forEach(videoId => {
+    state.user.data.videoSave.forEach(videoId => {
         videosArray.push(state.content.videos[videoId])
     })
     
@@ -26,7 +26,7 @@ const msp = (state) => {
         user: state.session.user,
         photoSave: state.user.data.photoSave,
         quoteSave: state.user.data.quoteSave,
-        videoSave: state.session.user.videoSave,
+        videoSave: state.user.data.videoSave,
         photos: photosArray,
         quotes: quotesArray,
         videos: videosArray
