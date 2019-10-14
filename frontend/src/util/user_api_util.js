@@ -9,6 +9,9 @@ export const saveContent = data => {
 };
 
 export const deleteContent = data => {
-  return axios.delete('/api/users/content/delete', data)
+  debugger
+
+  return axios.delete(`/api/users/content/delete?contentType=${data.contentType}&contentId=${data.contentId}&userId=${data.userId}`, data)
+    // `/api/users/content/delete?contentType=${data.contentType}&contentId=${data.contentId}&userId=${data.userId}`
 }
 

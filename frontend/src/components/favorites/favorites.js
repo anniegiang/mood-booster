@@ -17,6 +17,16 @@ class Favorites extends React.Component {
         // debugger
     }
 
+    // handleDelete(e,contentType) {
+    //     e.preventDefault()
+    //     let data = {
+    //         contentType: "photoSave",
+    //         contentId: this.props.match.params.photo_id,
+    //         userId: this.props.currentUser.id
+    //     };
+    //     this.props.saveContent(data);
+    // }
+
     render() {
         // if (!this.props.user) {
         //     return null;

@@ -49,15 +49,19 @@ router.post(
 );
 
 // DELETE CONTENT 
-router.delete("/content/delete", (req, res) => {
-  let {contentType, contentId, userId } = req.body;
-  User.findOne({_id: userId})
-    .then(user => {
-      let saved = user[contentType].indexOf(contentId)
-      delete user[contentType][saved]
+router.delete("/content/delete", passport.authenticate("jwt", { session: false }),
+ (req, res) => {
+  let {contentType, contentId, userId } = req.query;
+ 
+  User.findOne( { _id: userId } )
+  .then(user => {
+      // let saved = user[contentType].indexOf(contentId)
+      // delete user[contentType][saved]
+      user[contentType].pull({_id: contentId})
       user.save();
       res.json(user)
     })
+    .catch(err => res.status(400).json(err));
 })
 
 // REGISTER

@@ -18,3 +18,7 @@ export const saveContent = data => dispatch => {
 export const fetchUser = id => dispatch => {
   return APIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))
 }
+
+export const deleteContent = data => dispatch => {
+  return APIUtil.deleteContent(data).then(user => dispatch(receiveUser(user)))
+}

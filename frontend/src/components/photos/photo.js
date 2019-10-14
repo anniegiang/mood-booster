@@ -13,6 +13,7 @@ class Photo extends React.Component {
     };
 
     this.savePhoto = this.savePhoto.bind(this);
+    this.deletePhoto = this.deletePhoto.bind(this);
     this.createComment = this.createComment.bind(this);
     this.handleComment = this.handleComment.bind(this);
     this.renderComments = this.renderComments.bind(this);
@@ -61,19 +62,37 @@ class Photo extends React.Component {
     };
     this.props.saveContent(data);
   }
+  
+  deletePhoto(e) {
+    e.preventDefault();
+    let data = {
+      contentType: "photoSave",
+      contentId: this.props.match.params.photo_id,
+      userId: this.props.currentUser.id
+    };
+    // debugger
+    this.props.deleteContent(data);
+  }
 
   render() {
     if (!this.props.photo) {
       return null;
     }
+    // debugger
     return (
       <div className="photo-div">
         <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl} alt={this.props.photo.title}></img>
-        {/* <p>Photo will go here</p> */}
-        <button className="fav-btn" onClick={this.savePhoto}>
-          Save to Favorites
-        </button>
+      
+        {this.props.currentUser.photoSave.includes(this.props.photo._id) ? (
+          <button className="fav-btn" onClick={this.deletePhoto}>
+            Remove from Favorites
+          </button>
+        ) : ( 
+          <button className="fav-btn" onClick={this.savePhoto}>
+            Save to Favorites
+          </button>
+        )}
 
         <form className="comments-container" onSubmit={this.createComment}>
           <input
