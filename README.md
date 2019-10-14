@@ -9,10 +9,14 @@ Mood Booster is our answer to helping you get a boost in the face stress, lack o
 The foundation of Mood Booster involves:
 
 - Receiving input from the user about what they are experiencing at that moment
-
+![Screenshot](/readme_photos/form.png)
 
 - Filtering our database of motivational videos, quotes and memes based on that input
+![Screenshot](/readme_photos/index.png)
+
+
 - Allowing users to search the content, comment on it, and save favorites
+![Screenshot](/readme_photos/show.png)
 
 ## Technologies
 
