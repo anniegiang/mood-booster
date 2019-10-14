@@ -10,7 +10,8 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchRandomContent();
-    if (this.props.user) {
+    if (this.props.user.length !== undefined) {
+      debugger;
       this.props.fetchUser(this.props.user.id);
     }
   }
@@ -64,14 +65,15 @@ class MainPage extends React.Component {
     return (
       <div className="mainpage-container">
         <div className="splash-window">
-          <h2>Welcome to</h2>
-          <div className="logo-main"></div>
-          <p className="random_content">Random Content:</p>
-
-          {this.renderRandomContentType()}
-          <button className="main_button" onClick={this.handleClick}>
-            Boost your mood!
-          </button>
+          <div className="splash-content">
+            {/* <h2>Welcome to</h2> */}
+            {/* <div className="logo-main"></div> */}
+            <p className="random_content">Motivational Content:</p>
+            {this.renderRandomContentType()}
+            <button className="main_button" onClick={this.handleClick}>
+              Boost your mood!
+            </button>
+          </div>
         </div>
       </div>
     );

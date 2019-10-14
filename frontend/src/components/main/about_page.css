@@ -43,10 +43,6 @@ body {
   cursor: pointer;
 }
 
-.main_button:hover {
-  background-color: rgb(2, 167, 223);
-}
-
 .about-container h2 {
   margin-top: 5%;
   font-family: cursive;
