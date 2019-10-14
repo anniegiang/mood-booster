@@ -48,6 +48,18 @@ router.post(
   }
 );
 
+// DELETE CONTENT 
+router.delete("/content/delete", (req, res) => {
+  let {contentType, contentId, userId } = req.body;
+  User.findOne({_id: userId})
+    .then(user => {
+      let saved = user[contentType].indexOf(contentId)
+      delete user[contentType][saved]
+      user.save();
+      res.json(user)
+    })
+})
+
 // REGISTER
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);

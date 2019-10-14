@@ -51,6 +51,10 @@ class Favorites extends React.Component {
                     {this.props.photos.map(photo => {
                        
                         return <li>
+                            <div className='li-title'>
+                                <h1>{photo.title}</h1>
+                                <button>X</button>
+                            </div>
                             <Link to={`/photos/${photo._id}`}>
                                 <img src={photo.photoUrl} alt={photo.title}></img> 
                             </Link>
@@ -59,8 +63,12 @@ class Favorites extends React.Component {
 
                     {this.props.quotes.map(quote => {
                         return <li>
+                            <div className='li-title'>
+                                <h1>{quote.title}</h1>
+                                <button>X</button>
+                            </div>
                             <Link to={`/quotes/${quote._id}`}>
-                                <h1>{quote.quoteText}</h1>
+                                <h3>{quote.quoteText}</h3>
                             </Link>
                         </li>
                         
@@ -68,6 +76,10 @@ class Favorites extends React.Component {
 
                     {this.props.videos.map(video => {
                         return <li> 
+                            <div className='li-title'>
+                                <h1>{video.title}</h1>                  
+                                <button>X</button>
+                            </div>
                             <Link to={`/videos/${video._id}`}>
                                 <video controls>
                                     <source src={video.videoUrl} type="video/mp4"></source>
