@@ -28,7 +28,7 @@ class Form extends React.Component {
         this.handlequotes = this.handlequotes.bind(this) 
         this.changeForm = this.changeForm.bind(this) 
         this.changeFormBack = this.changeFormBack.bind(this) 
-        // this.handleSubmit = this.handleSubmit.bind(this)
+        this.getResults = this.getResults.bind(this)
         
     }
 
@@ -149,37 +149,39 @@ class Form extends React.Component {
         )
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     var checkboxes = document.querySelectorAll('input[name="c2"]');
-    //     var checkboxes2 = document.querySelectorAll('input[name="c1"]');
-    //     var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
-    //     var checkedOne2 = Array.prototype.slice.call(checkboxes2).some(x => x.checked);
+    getResults(e) {
+        e.preventDefault();
+        var checkboxes = document.querySelectorAll('input[name="c2"]');
+        var checkboxes2 = document.querySelectorAll('input[name="c1"]');
+        var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+        var checkedOne2 = Array.prototype.slice.call(checkboxes2).some(x => x.checked);
         
-    //     if (checkedOne && checkedOne2) {
-    //         this.props.history.push({
-    //             pathname: '/search',
-    //             search: `?mood1=${this.state.mood1}&mood2=${this.state.mood2}&mood3=${this.state.mood3}&mood4=${this.state.mood4}&mood5=${this.state.mood5}&mood6=${this.state.mood6}&mood7=${this.state.mood7}&videos=${this.state.videos}&photos=${this.state.photos}&quotes=${this.state.quotes}`,
-    //             state: {
-    //                 videos: this.state.videos,
-    //                 photos: this.state.photos,
-    //                 quotes: this.state.quotes
-    //             }
-    //         })
-    //     } else {
-    //         alert('Please Select a Feeling and a Content type')
-    //     }
+        if (checkedOne && checkedOne2) {
+            this.props.history.push({
+                pathname: '/search',
+                search: `?mood1=${this.state.mood1}&mood2=${this.state.mood2}&mood3=${this.state.mood3}&mood4=${this.state.mood4}&mood5=${this.state.mood5}&mood6=${this.state.mood6}&mood7=${this.state.mood7}&videos=${this.state.videos}&photos=${this.state.photos}&quotes=${this.state.quotes}`,
+                state: {
+                    videos: this.state.videos,
+                    photos: this.state.photos,
+                    quotes: this.state.quotes
+                }
+            })
+        } else {
+            alert('Please Select a Feeling and a Content type')
+        }
     
-    // }
+    }
     
     changeForm(e) {
         // debugger
+        e.preventDefault();
         let form = document.getElementsByClassName('symptoms');
         form[0].style.zIndex='-1';
     }
     
     changeFormBack(e) {
         // debugger
+        e.preventDefault();
         let form = document.getElementsByClassName('symptoms');
         form[0].style.zIndex='1';
     }
@@ -245,7 +247,7 @@ class Form extends React.Component {
                             </div>
                             <div className="content-type-buttons">
                                 <button className='back-form-btn' onClick={this.changeFormBack} >Back to symptoms</button>
-                                <button className='submit-form-btn'>Get your results!</button>
+                                <button className='submit-form-btn' onClick={this.getResults}>Get your results!</button>
                             </div>
                         </div>
                 </div>
