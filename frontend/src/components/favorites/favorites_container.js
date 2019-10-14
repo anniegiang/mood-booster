@@ -3,11 +3,12 @@ import Favorites from './favorites'
 import { fetchPhoto } from "../../actions/photo_actions";
 import { fetchQuote } from "../../actions/quote_actions";
 import { fetchVideo } from "../../actions/video_actions";
+import { fetchUser } from "../../actions/user_actions";
 
 const msp = (state) => {
     // debugger
     let photosArray = [];
-    state.session.user.photoSave.forEach(photoId => {
+    state.user.data.photoSave.forEach(photoId => {
         photosArray.push(state.content.photos[photoId])
     })
 
@@ -22,8 +23,8 @@ const msp = (state) => {
     })
     
     return({
-        user: state.user,
-        photoSave: state.session.user.photoSave,
+        user: state.session.user,
+        photoSave: state.user.data.photoSave,
         quoteSave: state.session.user.quoteSave,
         videoSave: state.session.user.videoSave,
         photos: photosArray,
@@ -37,6 +38,7 @@ const mdp = dispatch => {
         fetchPhoto: id => dispatch(fetchPhoto(id)),
         fetchQuote: id => dispatch(fetchQuote(id)),
         fetchVideo: id => dispatch(fetchVideo(id)),
+        fetchUser: id => dispatch(fetchUser(id))
     
     })
 }

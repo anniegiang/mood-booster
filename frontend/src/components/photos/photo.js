@@ -21,6 +21,9 @@ class Photo extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photo_id);
+    if (this.props.currentUser) {
+      this.props.fetchUser(this.props.currentUser.id)
+    }
   }
 
   handleComment(e) {
@@ -84,15 +87,19 @@ class Photo extends React.Component {
         <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl} alt={this.props.photo.title}></img>
       
-        {this.props.currentUser.photoSave.includes(this.props.photo._id) ? (
-          <button className="fav-btn" onClick={this.deletePhoto}>
-            Remove from Favorites
-          </button>
-        ) : ( 
-          <button className="fav-btn" onClick={this.savePhoto}>
-            Save to Favorites
-          </button>
-        )}
+        {this.props.user ? (
+          <div>
+          {this.props.user.photoSave.includes(this.props.photo._id) ? (
+            <button className="fav-btn" onClick={this.deletePhoto}>
+              Remove from Favorites
+            </button>
+          ) : ( 
+            <button className="fav-btn" onClick={this.savePhoto}>
+              Save to Favorites
+            </button>
+          )}
+          </div>
+        ) : ("")}
 
         <form className="comments-container" onSubmit={this.createComment}>
           <input

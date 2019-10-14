@@ -3,6 +3,7 @@ import "./favorite.css"
 import { Link } from 'react-router-dom'
 class Favorites extends React.Component {
     componentDidMount(){
+        this.props.fetchUser(this.props.user.id)
         this.props.photoSave.forEach(photoId => {
             this.props.fetchPhoto(photoId)
         })
@@ -28,9 +29,9 @@ class Favorites extends React.Component {
     // }
 
     render() {
-        // if (!this.props.user) {
-        //     return null;
-        // }
+        if (!this.props.user) {
+            return null;
+        }
 
         let undef = function(ele) {
             if (ele === undefined) {
