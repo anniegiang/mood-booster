@@ -15,6 +15,7 @@
   height: 65px;
   width: 100%;
   z-index: 999;
+  font-weight: 600;
 }
 
 .logo {
@@ -31,8 +32,13 @@
 .nav-links a {
   margin-left: 20px;
   padding: 10px 10px;
-  background-color: #fff;
+  color: white;
+  background-color: rgb(2, 167, 223);
   border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background-color: #ef6730;
 }
 
 .nav-logout {
