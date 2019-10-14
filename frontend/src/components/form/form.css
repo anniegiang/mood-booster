@@ -1,78 +1,118 @@
-.form-mood-container {
+
+.form-background {
   display: flex;
-  justify-content: space-evenly;
-  position: relative;
+  align-content: center;
+  justify-content: center;
+  background-image: url("hot-air-balloons.jpg");
+  z-index: -30;
+  background-color: gainsboro;
+  background-size: cover;
+  width: 100vw;
   height: 100vh;
-  font-size: 140%;
-  color: black;
-  margin-top: 3.5%;
-  /* z-index: -1; */
+}
+
+
+.input-form {
+  margin: 12%;
+  display: flex;
+  justify-content: center;
 }
 
 .checkbox-container {
   display: flex;
-  /* margin-bottom: 5%; */
-  /* margin-left: 5%; */
-  /* font-family: cursive; */
+  z-index: 2;
 }
 
-.category-checkbox {
+.symptoms {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
-  align-self: center;
-
-  background-color: #e6eeffd8;
-
-  width: 20vw;
-  height: 75vh;
+  justify-content: space-between;
   padding: 2em;
+  width: 27vw;
+  height: 52vh;
+  border-radius: 20px;
 
-  border-radius: 6px;
-  /* -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000; */
+  background-color: #4DB8C4;
 }
 
-.category-checkbox input {
-  margin-bottom: 10%;
-  margin-right: 5%;
-  cursor: pointer;
+.symptoms input {
+  margin: 3%;
+  font-size: 24px;
 }
 
-.content-checkbox {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
 
-  background-color: #e6eeffd8;
-
-  padding: 2em;
-  width: 20vw;
-  height: 75vh;
-}
-
-.content-checkbox input {
-  margin-bottom: 10%;
-  margin-right: 5%;
-  cursor: pointer;
-}
-
-.form-btn {
-  align-self: center;
+.content-type {
   position: absolute;
-  margin-top: 18%;
-  color: white;
-  padding: 7px 7px;
-  background-color: #008cba;
-  border-radius: 6px;
-  /* font-family: cursive; */
-  /* font-size: 70%; */
+  left: 36%;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em;
+  width: 27vw;
+  height: 52vh;
+  border-radius: 20px;
+
+  background-color: #EF6730;
 }
-/* 
-.form-transparent {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0, 0.7);
-    position: absolute;
-    z-index: -10;
-} */
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.category-type-buttons {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
+
+.forward-form-btn {
+  background-color: #EF6730;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  color: black;
+  font-weight: 300;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.content-type-buttons {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.back-form-btn {
+  background-color: #4DB8C4;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  color: black;
+  font-weight: 300;
+  width: 150px;
+  /* margin-top:20px; */
+}
+
+.submit-form-btn {
+  /* margin-left: 50%; */
+  background-color: #3C3C3C;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  width: 150px;
+}
+
+.content-type input {
+  margin: 4%;
+}

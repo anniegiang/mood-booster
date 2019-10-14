@@ -72,6 +72,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
+      <div className="session-background">
       <div className="form-container">
         <div className="form-inner">
           <h1>Log In</h1>
@@ -100,6 +101,7 @@ class LoginForm extends React.Component {
             <input className="submit-btn" type="submit" value="Submit" />
           </form>
         </div>
+      </div>
       </div>
     );
   }

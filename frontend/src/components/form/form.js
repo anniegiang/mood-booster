@@ -26,7 +26,9 @@ class Form extends React.Component {
         this.handlevideos = this.handlevideos.bind(this) 
         this.handlephotos = this.handlephotos.bind(this) 
         this.handlequotes = this.handlequotes.bind(this) 
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.changeForm = this.changeForm.bind(this) 
+        this.changeFormBack = this.changeFormBack.bind(this) 
+        this.getResults = this.getResults.bind(this)
         
     }
     componentDidMount() {
@@ -150,7 +152,7 @@ class Form extends React.Component {
         )
     }
 
-    handleSubmit(e) {
+    getResults(e) {
         e.preventDefault();
         var checkboxes = document.querySelectorAll('input[name="c2"]');
         var checkboxes2 = document.querySelectorAll('input[name="c1"]');
@@ -171,19 +173,31 @@ class Form extends React.Component {
             alert('Please Select a Feeling and a Content type')
         }
     
-        
+    }
+    
+    changeForm(e) {
+        // debugger
+        e.preventDefault();
+        let form = document.getElementsByClassName('symptoms');
+        form[0].style.zIndex='-1';
+    }
+    
+    changeFormBack(e) {
+        // debugger
+        e.preventDefault();
+        let form = document.getElementsByClassName('symptoms');
+        form[0].style.zIndex='1';
     }
 
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className='form-transparent'>
-
-                </div>
-                 <div className='form-mood-container'>
+            <div className="form-background">
+            <form className="input-form" onSubmit={this.handleSubmit}>
                      <div className='checkbox-container'>
-                        <div className='category-checkbox'>
+
+                        <div className='symptoms'>
+                            <div className="input-fields">
                             <h3>What are you feeling?</h3>
                             <label> 
                                 <input type='checkbox' name='c2' onClick={this.handlemood1}/>
@@ -213,26 +227,35 @@ class Form extends React.Component {
                                 <input type='checkbox' name='c2' onClick={this.handlemood7}/>
                                 Mental fatigue
                             </label>
+                            <div className="category-type-buttons">
+                                <button className='forward-form-btn' onClick={this.changeForm} >Choose your content</button>
+                            </div>
+                            </div>
                         </div>
-                        <div className='content-checkbox'>
-                            <h3>What do you want to see?</h3>
-                            <label>
-                                <input type='checkbox' name='c1' onClick={this.handlevideos}/>
-                                Videos
-                            </label>
-                            <label>
-                                <input type='checkbox' name='c1' onClick={this.handlephotos}/>
-                                Photos
-                            </label>
-                            <label>
-                                <input type='checkbox' name='c1' onClick={this.handlequotes}/>
-                                Quotes
-                            </label>
+                        <div className='content-type'>
+                            <div className="input-fields">
+                                <h3>What do you want to see?</h3>
+                                <label>
+                                    <input type='checkbox' name='c1' onClick={this.handlevideos}/>
+                                    Videos
+                                </label>
+                                <label>
+                                    <input type='checkbox' name='c1' onClick={this.handlephotos}/>
+                                    Photos
+                                </label>
+                                <label>
+                                    <input type='checkbox' name='c1' onClick={this.handlequotes}/>
+                                    Quotes
+                                </label>
+                            </div>
+                            <div className="content-type-buttons">
+                                <button className='back-form-btn' onClick={this.changeFormBack} >Back to symptoms</button>
+                                <button className='submit-form-btn' onClick={this.getResults}>Get your results!</button>
+                            </div>
                         </div>
-                     </div>
-                <button className='form-btn'>Submit</button>
                 </div>
             </form>
+        </div>
         )
     }
 }

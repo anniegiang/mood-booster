@@ -102,6 +102,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
+      <div className="session-background">
       <div className="form-container signup">
         <div className="form-inner">
           <h1>Sign Up</h1>
@@ -151,6 +152,7 @@ class SignupForm extends React.Component {
           </form>
         </div>
       </div>
+    </div>
     );
   }
 }

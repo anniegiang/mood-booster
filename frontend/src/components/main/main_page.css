@@ -1,21 +1,20 @@
-body {
-}
-
 .mainpage-container {
   display: flex;
   align-content: center;
   justify-content: center;
-
+  background-image: url("./assets/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg");
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 }
 
 .splash-window {
-  /* height: 500px; */
+  max-height: 700px;
+  height: 600px;
   width: 500px;
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  background-color: #e6eeff;
-  margin: 10%;
+  min-width: 500px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -29,36 +28,29 @@ body {
   }
 }
 
-.main_button {
+.mainpage-container .main_button {
   z-index: 2;
-  background-color: rgb(3, 150, 199);
-  border: rgb(1, 134, 179);
-  border: none;
+  background-color: rgb(2, 167, 223);
+  box-shadow: 0px 5px 10px rgba(darken(rgb(5, 95, 185), 40%));
+  border-radius: 10px;
   color: white;
   padding: 2%;
   text-align: center;
   margin: 10%;
-
-  font-size: 25px;
+  font-weight: 600;
+  font-size: 23px;
   width: 50%;
   cursor: pointer;
-  box-shadow: 0px 5px 10px rgba(darken(rgb(5, 95, 185), 40%));
 }
 
 .main_button:hover {
-  background-color: rgb(2, 167, 223);
+  background-color: #ef6730;
 }
 
-.main_button:active {
-  background-color: rgb(0, 101, 134);
-  margin: 3% 2% 2% 2%;
-  box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
-}
-
-.logo-main h2 {
+.mainpage-container h2 {
   margin-top: 5%;
-  font-family: cursive;
   font-size: x-large;
+  font-weight: 700;
 }
 
 .logo-main {
@@ -79,25 +71,39 @@ body {
   margin: 3% 0 5%;
 }
 
-/* .main-photo {
-  width: 80%;
-} */
-
 .main-quote {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  /* width: 75%; */
+  /* max-height: 100px; */
 }
 
 .main-photo {
   overflow: hidden;
+  max-width: 400px;
+  max-height: 80%;
 }
 
 .vid_title {
-  justify-content: left;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ef6730;
 }
 
 .random_content {
-  margin-bottom: 20px;
+  color: rgb(2, 167, 223);
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
 }

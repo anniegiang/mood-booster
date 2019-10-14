@@ -5,7 +5,7 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.renderRandomContentType = this.renderRandomContentType.bind(this);
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -17,19 +17,26 @@ class MainPage extends React.Component {
     const { randomContent } = this.props;
     if ("quoteText" in randomContent) {
       return (
-      <span className="main-quote">
-        <p>"{randomContent.quoteText}" </p> 
-        <p>-{randomContent.author}</p>
-      </span>
-      )};
+        <span className="main-quote">
+          <p className="quote-text">"{randomContent.quoteText}" </p>
+          <p className="quote-author">-{randomContent.author}</p>
+        </span>
+      );
+    }
 
     if ("videoUrl" in randomContent) {
       return (
-      <span>
-        <p className="vid_title">{randomContent.title}</p>
-        <video width='426' height='240' src={randomContent.videoUrl} controls></video>
-      </span>
-      )};
+        <span>
+          <p className="vid_title">{randomContent.title}</p>
+          <video
+            width="426"
+            height="240"
+            src={randomContent.videoUrl}
+            controls
+          ></video>
+        </span>
+      );
+    }
 
     if ("photoUrl" in randomContent) {
       return <img className="main-photo" src={randomContent.photoUrl} alt="random-pic" />;
@@ -37,7 +44,7 @@ class MainPage extends React.Component {
   }
 
   handleClick() {
-    this.props.history.push({pathname: '/form'})
+    this.props.history.push({ pathname: "/form" });
   }
 
   render() {
@@ -48,12 +55,15 @@ class MainPage extends React.Component {
     return (
       <div className="mainpage-container">
         <div className="splash-window">
-          <h2>Welcome to</h2>
-          <div className="logo-main"></div>
-          <p className="random_content">Random Content:</p>
-          
-          {this.renderRandomContentType()}
-          <button className="main_button" onClick={this.handleClick}>Boost your mood!</button>
+          <div className="splash-content">
+            {/* <h2>Welcome to</h2> */}
+            {/* <div className="logo-main"></div> */}
+            <p className="random_content">Motivational Content:</p>
+            {this.renderRandomContentType()}
+            <button className="main_button" onClick={this.handleClick}>
+              Boost your mood!
+            </button>
+          </div>
         </div>
       </div>
     );
