@@ -1,12 +1,26 @@
 
+.form-background {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-image: url("hot-air-balloons.jpg");
+  z-index: -30;
+  background-color: gainsboro;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 .input-form {
-  margin: 10%;
+  margin: 15%;
   display: flex;
   justify-content: center;
 }
 
 .checkbox-container {
   display: flex;
+  z-index: 2;
 }
 
 .symptoms {
@@ -79,7 +93,8 @@
 
 
 .back-form-btn {
-  background-color: #4DB8C4;
+  /* background-color: #4DB8C4; */
+  background-color: #01A7DF;
   padding: 10px;
   text-align: center;
   border-radius: 6px;
