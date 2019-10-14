@@ -8,7 +8,7 @@ import { fetchUser } from "../../actions/user_actions";
 const msp = (state) => {
     // debugger
     let photosArray = [];
-    state.user.data.photoSave.forEach(photoId => {
+    state.user.photoSave.forEach(photoId => {
         photosArray.push(state.content.photos[photoId])
     })
 

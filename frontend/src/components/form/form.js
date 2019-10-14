@@ -29,6 +29,9 @@ class Form extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         
     }
+    componentDidMount() {
+        // this.props.fetchUser(this.props.user.id)
+    }
 
     handlemood1 () {
         this.state.mood1 ? (
