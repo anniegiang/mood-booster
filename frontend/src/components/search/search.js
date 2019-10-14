@@ -121,7 +121,7 @@ class Search extends React.Component {
                                             <li className='content' >
                                                 <h1 className="title">{quote.title}</h1> 
                                                 <br></br>
-                                                <p>"{quote.quoteText}"</p>
+                                                <p className="index-quote-text">"{quote.quoteText}"</p>
                                                 <blockquote> - {quote.author}</blockquote>
                                             </li>
                                         </Link>

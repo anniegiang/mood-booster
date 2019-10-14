@@ -65,3 +65,7 @@ hr {
     font-weight: 300;
     text-align: left;
 }
+
+.index-quote-text {
+    padding: 0 6%;
+}

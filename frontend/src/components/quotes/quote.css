@@ -3,19 +3,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
+  background-image: url("grey_texture.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
 .quote-box {
-  margin: 15vh auto 15vh auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: white;
-  opacity: 0.8;
-  width: 40%;
-  min-height: 50%;
-  border-radius: 6px;
+  margin: 23vh auto 15vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+    min-height: 50%;
+    border-radius: 30px;
 }
 
 .quote-text {
@@ -28,12 +31,13 @@
   text-align: center;
 }
 
-.quote-author {
+.author {
   z-index: 2;
   width: 80%;
   font-weight: 400;
   display: flex;
   justify-content: center;
+  margin-bottom: 10%;
 }
 button:hover {
   background-color: rgb(2, 167, 223);
