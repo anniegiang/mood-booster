@@ -18,8 +18,8 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 30vw;
-  height: 62vh;
+  width: 27vw;
+  height: 52vh;
   border-radius: 20px;
 
   background-color: #4DB8C4;
@@ -32,15 +32,15 @@
 
 .content-type {
   position: absolute;
-  left: 35%;
+  left: 36%;
 
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 30vw;
-  height: 62vh;
+  width: 27vw;
+  height: 52vh;
   border-radius: 20px;
 
   background-color: #EF6730;
@@ -100,5 +100,5 @@
 }
 
 .content-type input {
-  margin: 8%;
+  margin: 4%;
 }
