@@ -27,6 +27,9 @@ class NavBar extends React.Component {
           <Link className="nav-boost" to={"/form"}>
             Boost your mood
           </Link>
+          <Link className="nav-about" to={"/about"}>
+            About
+          </Link>
           <Link className="nav-profile" to={"/favorites"}>
             My Favorites
           </Link>
@@ -41,14 +44,14 @@ class NavBar extends React.Component {
           <Link className="nav-boost" to={"/form"}>
             Boost your mood
           </Link>
+          <Link className="nav-about" to={"/about"}>
+            About
+          </Link>
           <Link className="nav-signup" to={"/signup"}>
             Signup
           </Link>
           <Link className="nav-login" to={"/login"}>
             Login
-          </Link>
-          <Link className="nav-about" to={"/about"}>
-            About
           </Link>
         </div>
       );
