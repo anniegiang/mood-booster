@@ -1,5 +1,7 @@
 import React from "react";
 import "./main_page.css";
+import { Link } from 'react-router-dom'
+
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -17,29 +19,33 @@ class MainPage extends React.Component {
     const { randomContent } = this.props;
     if ("quoteText" in randomContent) {
       return (
-        <span className="main-quote">
-          <p className="quote-text">"{randomContent.quoteText}" </p>
-          <p className="quote-author">-{randomContent.author}</p>
-        </span>
+        <Link to={`/photos/${randomContent._id}`} key={randomContent._id}>
+          <span className="main-quote">
+            <p className="quote-text">"{randomContent.quoteText}" </p>
+            <p className="quote-author">-{randomContent.author}</p>
+          </span>
+        </Link>
       );
     }
 
     if ("videoUrl" in randomContent) {
       return (
-        <span>
-          <p className="vid_title">{randomContent.title}</p>
-          <video
-            width="426"
-            height="240"
-            src={randomContent.videoUrl}
-            controls
-          ></video>
-        </span>
+        <Link to={`/videos/${randomContent._id}`} key={randomContent._id}>
+          <span>
+            <p className="vid_title">{randomContent.title}</p>
+            <video
+              width="426"
+              height="240"
+              src={randomContent.videoUrl}
+              controls
+            ></video>
+          </span>
+        </Link>
       );
     }
 
     if ("photoUrl" in randomContent) {
-      return <img className="main-photo" src={randomContent.photoUrl} alt="random-pic" />;
+      return <Link to={`/photos/${randomContent._id}`} key={randomContent._id}><img className="main-photo" src={randomContent.photoUrl} alt="random-pic" /></Link>;
     }
   }
 
