@@ -1,4 +1,3 @@
-
 .form-background {
   display: flex;
   align-content: center;
@@ -11,11 +10,17 @@
   height: 100vh;
 }
 
-
 .input-form {
   margin: 12%;
   display: flex;
   justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.input-title {
+  font-weight: 800;
+  font-size: 23px;
 }
 
 .checkbox-container {
@@ -35,7 +40,7 @@
   height: 52vh;
   border-radius: 20px;
 
-  background-color: #4DB8C4;
+  background-color: #4db8c4;
 }
 
 .symptoms input {
@@ -43,11 +48,9 @@
   font-size: 24px;
 }
 
-
 .content-type {
   position: absolute;
   left: 36%;
-
 
   display: flex;
   flex-direction: column;
@@ -57,7 +60,7 @@
   height: 52vh;
   border-radius: 20px;
 
-  background-color: #EF6730;
+  background-color: #ef6730;
 }
 
 .input-fields {
@@ -67,20 +70,20 @@
 }
 
 .category-type-buttons {
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .forward-form-btn {
-  background-color: #EF6730;
+  background-color: #ef6730;
   padding: 10px;
   text-align: center;
   border-radius: 6px;
-  color: black;
-  font-weight: 300;
+  /* color: black; */
+  color: white;
+  font-weight: 600;
   width: 150px;
   margin-top: 10px;
 }
@@ -88,24 +91,23 @@
 .content-type-buttons {
   display: flex;
   justify-content: space-between;
-
 }
 
-
 .back-form-btn {
-  background-color: #4DB8C4;
+  background-color: #4db8c4;
   padding: 10px;
   text-align: center;
   border-radius: 6px;
-  color: black;
-  font-weight: 300;
+  /* color: black; */
+  color: white;
+  font-weight: 600;
   width: 150px;
   /* margin-top:20px; */
 }
 
 .submit-form-btn {
   /* margin-left: 50%; */
-  background-color: #3C3C3C;
+  background-color: #3c3c3c;
   padding: 10px;
   text-align: center;
   border-radius: 6px;

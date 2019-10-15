@@ -198,7 +198,7 @@ class Form extends React.Component {
 
                         <div className='symptoms'>
                             <div className="input-fields">
-                            <h3>What are you feeling?</h3>
+                            <h3 className="input-title">What are you feeling?</h3>
                             <label> 
                                 <input type='checkbox' name='c2' onClick={this.handlemood1}/>
                                 Lost of motivation
