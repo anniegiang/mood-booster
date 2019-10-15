@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push("/");
+      this.props.history.push("/login");
     }
 
     this.setState({ errors: nextProps.errors });
@@ -63,9 +63,7 @@ class SignupForm extends React.Component {
   renderEmailErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Email")) {
-        return (
-            <div>{err}</div>
-        );
+        return <div>{err}</div>;
       }
     }
   }
@@ -73,9 +71,7 @@ class SignupForm extends React.Component {
   renderHandleErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Handle")) {
-        return (
-            <div>{err}</div>
-        );
+        return <div>{err}</div>;
       }
     }
   }
@@ -83,9 +79,7 @@ class SignupForm extends React.Component {
   renderPasswordErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Password")) {
-        return (
-            <div>{err}</div>
-        );
+        return <div>{err}</div>;
       }
     }
   }
@@ -93,9 +87,7 @@ class SignupForm extends React.Component {
   renderConfirmPasswordErrors() {
     for (let err of Object.values(this.state.errors)) {
       if (err.includes("Confirm")) {
-        return (
-            <div>{err}</div>
-        );
+        return <div>{err}</div>;
       }
     }
   }
@@ -103,56 +95,54 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="session-background">
-      <div className="form-container signup">
-        <div className="form-inner">
-          <h1>Sign Up</h1>
-          <form className="form" onSubmit={this.handleSubmit}>
-            <input
-              className="input-email"
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <div className="errors-container">
-              {this.renderEmailErrors()}
-            </div>
-            <input
-              className="input-handle"
-              type="text"
-              value={this.state.handle}
-              onChange={this.update("handle")}
-              placeholder="Handle"
-            />
-            <div className="errors-container">
-              {this.renderHandleErrors()}
-            </div>
-            <input
-              className="input-password"
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <div className="errors-container">
-              {this.renderPasswordErrors()}
-            </div>
-            <input
-              className="input-password"
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <div className="errors-container">
-              {this.renderConfirmPasswordErrors()}
-            </div>
-            <br />
-            <input className="submit-btn" type="submit" value="Submit" />
-          </form>
+        <div className="form-container signup">
+          <div className="form-inner">
+            <h1>Sign Up</h1>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <input
+                className="input-email"
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+              />
+              <div className="errors-container">{this.renderEmailErrors()}</div>
+              <input
+                className="input-handle"
+                type="text"
+                value={this.state.handle}
+                onChange={this.update("handle")}
+                placeholder="Handle"
+              />
+              <div className="errors-container">
+                {this.renderHandleErrors()}
+              </div>
+              <input
+                className="input-password"
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+              />
+              <div className="errors-container">
+                {this.renderPasswordErrors()}
+              </div>
+              <input
+                className="input-password"
+                type="password"
+                value={this.state.password2}
+                onChange={this.update("password2")}
+                placeholder="Confirm Password"
+              />
+              <div className="errors-container">
+                {this.renderConfirmPasswordErrors()}
+              </div>
+              <br />
+              <input className="submit-btn" type="submit" value="Submit" />
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }
