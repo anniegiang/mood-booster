@@ -19,7 +19,7 @@ class MainPage extends React.Component {
     const { randomContent } = this.props;
     if ("quoteText" in randomContent) {
       return (
-        <Link to={`/photos/${randomContent._id}`} key={randomContent._id}>
+        <Link to={`/quotes/${randomContent._id}`} key={randomContent._id}>
           <span className="main-quote">
             <p className="quote-text">"{randomContent.quoteText}" </p>
             <p className="quote-author">-{randomContent.author}</p>
