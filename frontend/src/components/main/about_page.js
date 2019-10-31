@@ -34,9 +34,25 @@ class AboutPage extends React.Component {
             <div className="dropdown">
               <button className="dropbtn">Annie</button>
               <div className="dropdown-content">
-                {/* <a href="#">Personal Site</a> */}
-                <a href="https://github.com/anniegiang">GitHub</a>
-                <a href="https://www.linkedin.com/in/annie-giang-113bb4101/">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://anniegiang.me"
+                >
+                  Portfolio
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/anniegiang"
+                >
+                  GitHub
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/annie-giang-113bb4101/"
+                >
                   LinkedIn
                 </a>
               </div>
@@ -44,17 +60,39 @@ class AboutPage extends React.Component {
             <div className="dropdown">
               <button className="dropbtn">Johnson</button>
               <div className="dropdown-content">
-                {/* <a href="#">Personal Site</a> */}
-                <a href="https://github.com/joonson22">GitHub</a>
-                <a href="https://www.linkedin.com/in/jdlai/">LinkedIn</a>
+                {/* <a target="_blank"  rel="noopener noreferrer" href="#">Portfolio</a> */}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/joonson22"
+                >
+                  GitHub
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/jdlai/"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
             <div className="dropdown">
               <button className="dropbtn">Rebecca</button>
               <div className="dropdown-content">
-                {/* <a href="#">Personal Site</a> */}
-                <a href="https://github.com/rebeccalambert">GitHub</a>
-                <a href="https://www.linkedin.com/in/rebeccajlambert/">
+                {/* <a target="_blank"  rel="noopener noreferrer" href="#">Portfolio</a> */}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/rebeccalambert"
+                >
+                  GitHub
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/rebeccajlambert/"
+                >
                   LinkedIn
                 </a>
               </div>

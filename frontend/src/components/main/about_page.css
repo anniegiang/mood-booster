@@ -71,6 +71,10 @@
   align-items: center;
 }
 
+.creators > h4 {
+  font-weight: 800;
+}
+
 .dropdown {
   /* float: left; */
   overflow: hidden;
