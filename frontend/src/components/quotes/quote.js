@@ -94,7 +94,7 @@ class Quote extends React.Component {
   }
 
   render() {
-    if (!this.props.quotes || !this.props.user || !this.props.user.quoteSave) {
+    if (!this.props.quotes) {
       return null;
     }
 

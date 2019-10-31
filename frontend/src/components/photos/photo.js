@@ -86,12 +86,11 @@ class Photo extends React.Component {
       contentId: this.props.match.params.photo_id,
       userId: this.props.currentUser.id
     };
-    // debugger
     this.props.deleteContent(data);
   }
 
   render() {
-    if (!this.props.photo || !this.props.user || !this.props.user.photoSave) {
+    if (!this.props.photo) {
       return null;
     }
     // debugger
