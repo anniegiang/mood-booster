@@ -32,11 +32,11 @@
   font-weight: 600;
   font-size: 30px;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .form-inner {
-  padding: 60px 0 40px;
+  padding: 40px 0 40px;
 }
 
 .form {
@@ -79,6 +79,10 @@
   background-color: #ef6730;
 
   /* background-color: blanchedalmond; */
+}
+
+.demo-btn {
+  margin-top: 10px;
 }
 
 .input-email:focus,
