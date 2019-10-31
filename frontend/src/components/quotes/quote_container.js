@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     quotes: state.content.quotes[ownProps.match.params.quote_id],
     isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user,
-    user: state.user.data
+    user: state.user
   };
 };
 

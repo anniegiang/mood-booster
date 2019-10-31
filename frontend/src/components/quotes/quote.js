@@ -56,6 +56,22 @@ class Quote extends React.Component {
     }
   }
 
+  renderFavButton() {
+    if (this.props.user.quoteSave.includes(this.props.match.params.quote_id)) {
+      return (
+        <button className="fav-btn" onClick={this.deleteQuote}>
+          Remove from Favorites
+        </button>
+      );
+    } else {
+      return (
+        <button className="fav-btn" onClick={this.saveQuote}>
+          Save to Favorites
+        </button>
+      );
+    }
+  }
+
   saveQuote(e) {
     e.preventDefault();
     let data = {
