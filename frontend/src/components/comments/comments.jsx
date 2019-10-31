@@ -28,14 +28,14 @@ class Comments extends React.Component {
   renderCommentButtons(comment) {
     if (comment.userId === this.props.currentUser.id) {
       return (
-        <div className="comment-buttons">
+        <span className="comment-buttons">
           <button
             className="comment-delete"
             onClick={this.handleDeleteComment(comment._id)}
           >
             Delete
           </button>
-        </div>
+        </span>
       );
     }
   }
@@ -44,7 +44,7 @@ class Comments extends React.Component {
     return (
       <div className="comments-text-container">
         {this.props.content.comments.map(comment => (
-          <p key={comment.id} className="comment-text">
+          <p key={comment._id} className="comment-text">
             {comment.text}
             {this.renderCommentButtons(comment)}
           </p>
