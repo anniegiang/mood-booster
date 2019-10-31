@@ -11,7 +11,7 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchRandomContent();
-    this.props.fetchUser(this.props.user.id);
+    // this.props.fetchUser(this.props.user.id);
   }
 
   renderRandomContentType() {
