@@ -82,7 +82,7 @@ class Search extends React.Component {
                       <Link to={`/photos/${photo._id}`} key={photo._id}>
                         <li className="content">
                           <h1 className="title">{photo.title}</h1>
-                          <img src={photo.photoUrl}></img>
+                          <img alt="search-result" src={photo.photoUrl}></img>
                         </li>
                       </Link>
                     );

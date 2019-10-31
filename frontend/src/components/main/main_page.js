@@ -1,7 +1,6 @@
 import React from "react";
 import "./main_page.css";
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchRandomContent();
-    this.props.fetchUser(this.props.user.id)
+    this.props.fetchUser(this.props.user.id);
   }
 
   renderRandomContentType() {
@@ -45,7 +44,15 @@ class MainPage extends React.Component {
     }
 
     if ("photoUrl" in randomContent) {
-      return <Link to={`/photos/${randomContent._id}`} key={randomContent._id}><img className="main-photo" src={randomContent.photoUrl} alt="random-pic" /></Link>;
+      return (
+        <Link to={`/photos/${randomContent._id}`} key={randomContent._id}>
+          <img
+            className="main-photo"
+            src={randomContent.photoUrl}
+            alt="random-pic"
+          />
+        </Link>
+      );
     }
   }
 

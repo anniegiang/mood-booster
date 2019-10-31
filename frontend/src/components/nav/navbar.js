@@ -10,7 +10,9 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.user.id);
+    if (this.props.user.id !== undefined) {
+      this.props.fetchUser(this.props.user.id);
+    }
   }
 
   logoutUser(e) {
@@ -33,7 +35,7 @@ class NavBar extends React.Component {
           <Link className="nav-profile" to={"/favorites"}>
             My Favorites
           </Link>
-          <Link className="nav-logout" onClick={this.logoutUser} to={"/home"}>
+          <Link className="nav-logout" onClick={this.logoutUser} to={"/login"}>
             Logout
           </Link>
         </div>
