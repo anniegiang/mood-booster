@@ -100,7 +100,7 @@ class Photo extends React.Component {
         <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl} alt={this.props.photo.title}></img>
 
-        {this.renderFavButton()}
+        {this.props.isAuthenticated && this.renderFavButton()}
 
         <form className="comments-container" onSubmit={this.createComment}>
           <input

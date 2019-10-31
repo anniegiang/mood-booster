@@ -46,7 +46,7 @@ class Comments extends React.Component {
         {this.props.content.comments.map(comment => (
           <p key={comment._id} className="comment-text">
             {comment.text}
-            {this.renderCommentButtons(comment)}
+            {this.props.isAuthenticated && this.renderCommentButtons(comment)}
           </p>
         ))}
       </div>

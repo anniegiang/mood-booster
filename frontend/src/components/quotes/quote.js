@@ -105,21 +105,7 @@ class Quote extends React.Component {
           <h3 className="author">- {this.props.quotes.author}</h3>
           {/* <p>Quote will go here</p> */}
 
-          {this.props.user ? (
-            <div>
-              {this.props.user.quoteSave.includes(this.props.quotes._id) ? (
-                <button className="fav-btn" onClick={this.deleteQuote}>
-                  Remove from Favorites
-                </button>
-              ) : (
-                <button className="fav-btn" onClick={this.saveQuote}>
-                  Save to Favorites
-                </button>
-              )}
-            </div>
-          ) : (
-            ""
-          )}
+          {this.props.isAuthenticated && this.renderFavButton()}
 
           <form className="comments-container" onSubmit={this.createComment}>
             <input

@@ -74,7 +74,6 @@ class Video extends React.Component {
       contentId: this.props.video._id,
       userId: this.props.currentUser.id
     };
-    // this.setState({ liked: !this.state.liked });
     this.props.saveContent(data);
   }
 
@@ -86,7 +85,6 @@ class Video extends React.Component {
       userId: this.props.currentUser.id
     };
     // debugger
-    // this.setState({ liked: !this.state.liked });
     this.props.deleteContent(data);
   }
 
@@ -101,7 +99,7 @@ class Video extends React.Component {
           <source src={this.props.video.videoUrl}></source>
         </video>
 
-        {this.renderFavButton()}
+        {this.props.isAuthenticated && this.renderFavButton()}
 
         <form className="comments-container" onSubmit={this.createComment}>
           <input
