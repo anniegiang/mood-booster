@@ -52,6 +52,21 @@ class Video extends React.Component {
     }
   }
 
+  renderFavButton() {
+    if (this.props.user.videoSave.includes(this.props.match.params.video_id)) {
+      return (
+        <button className="fav-btn" onClick={this.deleteVideo}>
+          Remove from Favorites
+        </button>
+      );
+    } else {
+      return (
+        <button className="fav-btn" onClick={this.saveVideo}>
+          Save to Favorites
+        </button>
+      );
+    }
+  }
   saveVideo(e) {
     e.preventDefault();
     let data = {
@@ -59,6 +74,7 @@ class Video extends React.Component {
       contentId: this.props.video._id,
       userId: this.props.currentUser.id
     };
+    // this.setState({ liked: !this.state.liked });
     this.props.saveContent(data);
   }
 
@@ -70,6 +86,7 @@ class Video extends React.Component {
       userId: this.props.currentUser.id
     };
     // debugger
+    // this.setState({ liked: !this.state.liked });
     this.props.deleteContent(data);
   }
 
@@ -83,21 +100,9 @@ class Video extends React.Component {
         <video className="video" controls height="576" width="1024">
           <source src={this.props.video.videoUrl}></source>
         </video>
-        {this.props.user ? (
-          <div>
-            {this.props.user.videoSave.includes(this.props.video._id) ? (
-              <button className="fav-btn" onClick={this.deleteVideo}>
-                Remove from Favorites
-              </button>
-            ) : (
-              <button className="fav-btn" onClick={this.saveVideo}>
-                Save to Favorites
-              </button>
-            )}
-          </div>
-        ) : (
-          ""
-        )}
+
+        {this.renderFavButton()}
+
         <form className="comments-container" onSubmit={this.createComment}>
           <input
             className="comments-input"

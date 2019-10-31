@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
     video: state.content.videos[ownProps.match.params.video_id],
     isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user,
-    user: state.user.data
+    user: state.user
   };
 };
 

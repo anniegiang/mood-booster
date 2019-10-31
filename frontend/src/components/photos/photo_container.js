@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchPhoto } from "../../actions/photo_actions";
-import {fetchUser} from '../../actions/user_actions'
+import { fetchUser } from "../../actions/user_actions";
 import { saveContent, deleteContent } from "../../actions/user_actions";
 import { createComment } from "../../actions/comment_actions";
 import Photo from "./photo";
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     photo: state.content.photos[ownProps.match.params.photo_id],
     isAuthenticated: state.session.isAuthenticated,
     currentUser: state.session.user,
-    user: state.user.data
+    user: state.user
   };
 };
 

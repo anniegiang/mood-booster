@@ -21,9 +21,6 @@ class Photo extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photo_id);
-    // if (this.props.currentUser) {
-    //   this.props.fetchUser(this.props.currentUser.id)
-    // }
   }
 
   handleComment(e) {
@@ -56,6 +53,22 @@ class Photo extends React.Component {
     }
   }
 
+  renderFavButton() {
+    if (this.props.user.photoSave.includes(this.props.match.params.photo_id)) {
+      return (
+        <button className="fav-btn" onClick={this.deletePhoto}>
+          Remove from Favorites
+        </button>
+      );
+    } else {
+      return (
+        <button className="fav-btn" onClick={this.savePhoto}>
+          Save to Favorites
+        </button>
+      );
+    }
+  }
+
   savePhoto(e) {
     e.preventDefault();
     let data = {
@@ -65,7 +78,7 @@ class Photo extends React.Component {
     };
     this.props.saveContent(data);
   }
-  
+
   deletePhoto(e) {
     e.preventDefault();
     let data = {
@@ -86,20 +99,8 @@ class Photo extends React.Component {
       <div className="photo-div">
         <h1 className="photo-title">{this.props.photo.title}</h1>
         <img src={this.props.photo.photoUrl} alt={this.props.photo.title}></img>
-      
-        {this.props.user ? (
-          <div>
-          {this.props.user.photoSave.includes(this.props.photo._id) ? (
-            <button className="fav-btn" onClick={this.deletePhoto}>
-              Remove from Favorites
-            </button>
-          ) : ( 
-            <button className="fav-btn" onClick={this.savePhoto}>
-              Save to Favorites
-            </button>
-          )}
-          </div>
-        ) : ("")}
+
+        {this.renderFavButton()}
 
         <form className="comments-container" onSubmit={this.createComment}>
           <input

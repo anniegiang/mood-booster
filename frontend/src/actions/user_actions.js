@@ -3,7 +3,6 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const LIKE_CONTENT = "LIKE_CONTENT";
 
 const receiveUser = user => {
-
   return {
     type: RECEIVE_USER,
     user
@@ -16,9 +15,9 @@ export const saveContent = data => dispatch => {
 };
 
 export const fetchUser = id => dispatch => {
-  return APIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))
-}
+  return APIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)));
+};
 
 export const deleteContent = data => dispatch => {
-  return APIUtil.deleteContent(data).then(user => dispatch(receiveUser(user)))
-}
+  return APIUtil.deleteContent(data).then(user => dispatch(receiveUser(user)));
+};
