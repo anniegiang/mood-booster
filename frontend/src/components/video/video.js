@@ -22,7 +22,6 @@ class Video extends React.Component {
     this.props.fetchVideo(this.props.match.params.video_id);
   }
 
-
   handleComment(e) {
     this.setState({ comment: e.target.value });
   }
@@ -84,20 +83,21 @@ class Video extends React.Component {
         <video className="video" controls height="576" width="1024">
           <source src={this.props.video.videoUrl}></source>
         </video>
-
         {this.props.user ? (
           <div>
             {this.props.user.videoSave.includes(this.props.video._id) ? (
               <button className="fav-btn" onClick={this.deleteVideo}>
                 Remove from Favorites
-            </button>
+              </button>
             ) : (
-                <button className="fav-btn" onClick={this.saveVideo}>
-                  Save to Favorites
-            </button>
-              )}
+              <button className="fav-btn" onClick={this.saveVideo}>
+                Save to Favorites
+              </button>
+            )}
           </div>
-        ) : ("")}
+        ) : (
+          ""
+        )}
         <form className="comments-container" onSubmit={this.createComment}>
           <input
             className="comments-input"
