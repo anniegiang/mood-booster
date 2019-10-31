@@ -89,7 +89,7 @@ class Video extends React.Component {
   }
 
   render() {
-    if (!this.props.video) {
+    if (!this.props.video || !this.props.user || !this.props.user.videoSave) {
       return null;
     }
     return (

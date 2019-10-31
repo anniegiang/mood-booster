@@ -91,7 +91,7 @@ class Photo extends React.Component {
   }
 
   render() {
-    if (!this.props.photo) {
+    if (!this.props.photo || !this.props.user || !this.props.user.photoSave) {
       return null;
     }
     // debugger
