@@ -33,9 +33,9 @@ class NavBar extends React.Component {
           <Link className="nav-profile" to={"/favorites"}>
             My Favorites
           </Link>
-          <a className="nav-logout" onClick={this.logoutUser}>
+          <Link className="nav-logout" onClick={this.logoutUser} to={"/home"}>
             Logout
-          </a>
+          </Link>
         </div>
       );
     } else {
