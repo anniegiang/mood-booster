@@ -13,7 +13,7 @@
   max-height: 560px;
   min-height: 500px;
   width: 650px;
-  background-color: #e6eeff;
+  background-color: white;
   margin-top: 10%;
   display: flex;
   flex-direction: column;
@@ -85,13 +85,16 @@
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  min-width: 70px;
+  text-align: center;
+  font-weight: 700;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  width: 104px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -107,8 +110,9 @@
 
 .topnav a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #555;
-  width: 120px;
+  background-color: #ef6730;
+  /* width: 120px; */
+  border-radius: 3px;
   color: white;
 }
 
