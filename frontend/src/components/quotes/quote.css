@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-around;
 
-  background-image: url("grey_texture.jpg");
+  background-image: url("quote-bg.jpg");
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -12,13 +12,15 @@
 
 .quote-box {
   margin: 23vh auto 15vh auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 40%;
-    min-height: 50%;
-    border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.8);
+  text: #777;
+  width: 40%;
+  min-height: 50%;
+  border-radius: 30px;
 }
 
 .quote-text {

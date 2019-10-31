@@ -14,7 +14,7 @@ class Quote extends React.Component {
     this.state = {
       comment: ""
     };
-    
+
     this.saveQuote = this.saveQuote.bind(this);
     this.deleteQuote = this.deleteQuote.bind(this);
     this.createComment = this.createComment.bind(this);
@@ -81,7 +81,7 @@ class Quote extends React.Component {
     if (!this.props.quotes) {
       return null;
     }
- 
+
     return (
       <div className="quote-background">
         <div className="quote-box">
@@ -94,14 +94,16 @@ class Quote extends React.Component {
               {this.props.user.quoteSave.includes(this.props.quotes._id) ? (
                 <button className="fav-btn" onClick={this.deleteQuote}>
                   Remove from Favorites
-            </button>
+                </button>
               ) : (
-                  <button className="fav-btn" onClick={this.saveQuote}>
-                    Save to Favorites
-            </button>
-                )}
+                <button className="fav-btn" onClick={this.saveQuote}>
+                  Save to Favorites
+                </button>
+              )}
             </div>
-          ) : ("")}
+          ) : (
+            ""
+          )}
 
           <form className="comments-container" onSubmit={this.createComment}>
             <input
