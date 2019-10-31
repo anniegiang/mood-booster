@@ -60,7 +60,7 @@ class Favorites extends React.Component {
       <div className="fav-container">
         {this.props.photos.map(photo => {
           return (
-            <li>
+            <li key={photo._id}>
               {/* <div className='li-title'>
                                 <button>X</button>
                             </div> */}
@@ -74,7 +74,7 @@ class Favorites extends React.Component {
 
         {this.props.quotes.map(quote => {
           return (
-            <li>
+            <li key={quote._id}>
               {/* <div className='li-title'>
                                 <button>X</button>
                             </div> */}
@@ -88,7 +88,7 @@ class Favorites extends React.Component {
 
         {this.props.videos.map(video => {
           return (
-            <li>
+            <li key={video._id}>
               {/* <div className='li-title'>
                                 <button>X</button>
                             </div> */}
