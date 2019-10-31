@@ -44,7 +44,7 @@ class Comments extends React.Component {
     return (
       <div className="comments-text-container">
         {this.props.content.comments.map(comment => (
-          <p className="comment-text">
+          <p key={comment.id} className="comment-text">
             {comment.text}
             {this.renderCommentButtons(comment)}
           </p>
