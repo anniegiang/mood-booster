@@ -15,7 +15,6 @@ class Favorites extends React.Component {
     this.props.videoSave.forEach(videoId => {
       this.props.fetchVideo(videoId);
     });
-    // debugger
   }
 
   // handleDelete(e,contentType) {
@@ -54,8 +53,6 @@ class Favorites extends React.Component {
     if (v) {
       return null;
     }
-
-    // debugger
     return (
       <div className="fav-container">
         {this.props.photos.map(photo => {
