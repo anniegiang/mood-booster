@@ -13,7 +13,7 @@
   height: 600px;
   width: 500px;
   min-width: 500px;
-  background-color: white;
+  background-color: whitesmoke;
   /* background-color: rgba(255, 255, 255, 0.7); */
   margin-top: 10%;
   display: flex;
@@ -21,6 +21,7 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 50px;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 600px) {
@@ -83,7 +84,7 @@
 .main-photo {
   overflow: hidden;
   max-width: 400px;
-  max-height: 80%;
+  max-height: 430px;
 }
 
 .vid_title {
