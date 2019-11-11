@@ -40,8 +40,16 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-
-    this.props.signup(user, this.props.history);
+    
+    let loginuser = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    
+    this.props.signup(user, this.props.history)
+      .then(user => {
+        this.props.login(loginuser);
+      })
     this.renderEmailErrors = this.renderEmailErrors.bind(this);
     this.renderHandleErrors = this.renderHandleErrors.bind(this);
     this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
