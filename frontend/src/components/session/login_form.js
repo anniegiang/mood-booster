@@ -49,10 +49,11 @@ class LoginForm extends React.Component {
   }
 
   handleDemoLogin(e) {
-    this.setState({ email: "test@gmail.com", password: "password" });
-    this.props.login({
-      email: this.state.email,
-      password: this.state.password
+    this.setState({ email: "test@gmail.com", password: "password" }, () => {
+      this.props.login({
+        email: this.state.email,
+        password: this.state.password
+      });
     });
   }
 
