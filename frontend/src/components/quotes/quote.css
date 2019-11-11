@@ -8,6 +8,7 @@
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
 }
 
 .quote-box {
@@ -19,7 +20,7 @@
   background-color: rgba(255, 255, 255, 0.8);
   text: #777;
   width: 40%;
-  min-height: 50%;
+  /* min-height: 50%; */
   border-radius: 30px;
 }
 
