@@ -4,10 +4,12 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: this.props.content.text
+      comment: this.props.content.text,
+      handles: []
     };
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
     this.renderCommentButtons = this.renderCommentButtons.bind(this);
+    this.renderHandle = this.renderHandle.bind(this);
   }
 
   handleDeleteComment(commentId) {
@@ -23,6 +25,20 @@ class Comments extends React.Component {
 
       return this.props.deleteComment(data);
     };
+  }
+
+  componentDidMount() {
+    this.props.content.comments.map(comment => {
+      this.props.fetchUser(comment.userId).then(() => {
+        this.setState({
+          handles: [...this.state.handles, this.props.user.handle]
+        });
+      });
+    });
+  }
+
+  renderHandle(userId) {
+    this.props.fetchUser(userId);
   }
 
   renderCommentButtons(comment) {
@@ -43,9 +59,9 @@ class Comments extends React.Component {
   render() {
     return (
       <div className="comments-text-container">
-        {this.props.content.comments.map(comment => (
+        {this.props.content.comments.map((comment, idx) => (
           <p key={comment._id} className="comment-text">
-            {comment.text}
+            {this.state.handles[idx] || ""}: {comment.text}
             {this.props.isAuthenticated && this.renderCommentButtons(comment)}
           </p>
         ))}

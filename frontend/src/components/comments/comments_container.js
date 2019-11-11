@@ -4,6 +4,7 @@ import Comments from "./comments";
 
 const mapStateToProps = state => {
   return {
+    user: state.user,
     currentUser: state.session.user,
     isAuthenticated: state.session.isAuthenticated
   };

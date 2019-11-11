@@ -21,6 +21,7 @@ class Photo extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photo_id);
+    this.props.fetchUser();
   }
 
   handleComment(e) {
@@ -47,7 +48,11 @@ class Photo extends React.Component {
     if (this.props.photo.comments !== undefined) {
       return (
         <div className="comments">
-          <CommentsContainer type="photo" content={this.props.photo} />
+          <CommentsContainer
+            type="photo"
+            content={this.props.photo}
+            fetchUser={this.props.fetchUser}
+          />
         </div>
       );
     }
