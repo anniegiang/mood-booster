@@ -2,6 +2,7 @@ import React from "react";
 import "./favorite.css";
 import { Link } from "react-router-dom";
 class Favorites extends React.Component {
+
   componentDidMount() {
     this.props.fetchUser(this.props.user.id);
     this.props.photoSave.forEach(photoId => {
@@ -15,6 +16,7 @@ class Favorites extends React.Component {
     this.props.videoSave.forEach(videoId => {
       this.props.fetchVideo(videoId);
     });
+
   }
 
   // handleDelete(e,contentType) {
@@ -77,7 +79,7 @@ class Favorites extends React.Component {
                             </div> */}
               <Link to={`/quotes/${quote._id}`}>
                 <h1>{quote.title}</h1>
-                <h3>{quote.quoteText}</h3>
+                <h3 className="quote-text">{quote.quoteText}</h3>
               </Link>
             </li>
           );

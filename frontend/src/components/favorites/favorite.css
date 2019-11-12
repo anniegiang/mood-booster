@@ -1,12 +1,17 @@
 .fav-container {
-    margin-top: 7%;
+    background-image: url("./ocean.jpg");
+
+    margin-top: 80px;
     width: 100vw;
     height: 100vh;
     /* height: 100%; */
     display: flex;
     flex-wrap: wrap;
-    
+    padding-top: 20px;
+    overflow: scroll;
 }
+
+
 .fav-container li {
     list-style-type: none;
     width: 20%;
@@ -53,6 +58,8 @@
     vertical-align: center; 
     align-self: center;  */
     font-size: 130%;
+    text-align: center;
+    padding-bottom: 3px;
     
 }
 .fav-container video {
@@ -78,3 +85,8 @@
     
 }
 
+.quote-text {
+    background-color: rgba(245, 245, 245, 0.7);
+    border-radius: 6px;
+    padding: 7px;
+}
