@@ -45,7 +45,7 @@ class Video extends React.Component {
   renderComments() {
     if (this.props.video.comments !== undefined) {
       return (
-        <div className="comments">
+        <div className="comments"> Comments:
           <CommentsContainer
             type="video"
             content={this.props.video}
@@ -97,25 +97,29 @@ class Video extends React.Component {
       return null;
     }
     return (
-      <div className="video-div">
-        <h1 className="title">{this.props.video.title}</h1>
-        <video className="video" controls height="576" width="1024">
-          <source src={this.props.video.videoUrl}></source>
-        </video>
+      // <div className="quote-background">
+        <div className="video-div">
+          <h1 className="title">{this.props.video.title}</h1>
+          <video className="video" controls height="576" width="1024">
+            <source src={this.props.video.videoUrl}></source>
+          </video>
 
-        {this.props.isAuthenticated && this.renderFavButton()}
+          {this.props.isAuthenticated && this.renderFavButton()}
 
-        <form className="comments-container" onSubmit={this.createComment}>
-          <input
-            className="comments-input"
-            type="textarea"
-            onChange={this.handleComment}
-            value={this.state.comment}
-          />
-          <input className="comments-submit" type="submit" value="Comment" />
-        </form>
-        {this.renderComments()}
-      </div>
+          <form className="comments-container" onSubmit={this.createComment}>
+            <input
+              className="comments-input"
+              type="textarea"
+              onChange={this.handleComment}
+              value={this.state.comment}
+              placeholder="Add comment"
+            />
+            <input className="comments-submit" type="submit" value="Comment" />
+          </form>
+          {this.renderComments()}
+        </div>
+
+    // </div>
     );
   }
 }

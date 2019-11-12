@@ -117,6 +117,7 @@ class Quote extends React.Component {
               onChange={this.handleComment}
               value={this.state.comment}
               className="comments-input"
+              placeholder="Add comment"
             />
             <input className="comments-submit" type="submit" value="Comment" />
           </form>
