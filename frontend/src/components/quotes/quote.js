@@ -49,7 +49,7 @@ class Quote extends React.Component {
   renderComments() {
     if (this.props.quotes.comments !== undefined) {
       return (
-        <div className="comments">
+        <div className="comments"> Comments:
           <CommentsContainer
             type="quote"
             content={this.props.quotes}
@@ -121,9 +121,7 @@ class Quote extends React.Component {
             />
             <input className="comments-submit" type="submit" value="Comment" />
           </form>
-          <div className="comments">
             {this.renderComments()}
-          </div>
         </div>
       </div>
     );

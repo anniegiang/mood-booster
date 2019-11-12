@@ -36,7 +36,7 @@
     word-wrap: break-word;
     overflow: scroll;
     max-height: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 6px;
     text-align: center;
     padding-top: 5px;
@@ -72,7 +72,9 @@
   margin: 0 auto;
   /* width: auto; */
   word-break: break-all;
-  margin-top: 20px;
   background-color: white;
   border-radius: 9px;
+  padding: 9px;
+  overflow-y: scroll;
+  max-height: 100px;
 }
