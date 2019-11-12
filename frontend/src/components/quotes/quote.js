@@ -50,7 +50,11 @@ class Quote extends React.Component {
     if (this.props.quotes.comments !== undefined) {
       return (
         <div className="comments">
-          <CommentsContainer type="quote" content={this.props.quotes} />
+          <CommentsContainer
+            type="quote"
+            content={this.props.quotes}
+            fetchUser={this.props.fetchUser}
+          />
         </div>
       );
     }
