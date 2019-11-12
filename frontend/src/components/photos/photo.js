@@ -46,7 +46,7 @@ class Photo extends React.Component {
   renderComments() {
     if (this.props.photo.comments !== undefined) {
       return (
-        <div className="comments">
+        <div className="comments"> Comments:
           <CommentsContainer
             type="photo"
             content={this.props.photo}
@@ -111,6 +111,7 @@ class Photo extends React.Component {
             onChange={this.handleComment}
             value={this.state.comment}
             className="comments-input"
+            placeholder="Add comment"
           />
           <input className="comments-submit" type="submit" value="Comment" />
         </form>

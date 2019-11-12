@@ -79,7 +79,7 @@ class Favorites extends React.Component {
                             </div> */}
               <Link to={`/quotes/${quote._id}`}>
                 <h1>{quote.title}</h1>
-                <h3 className="quote-text">{quote.quoteText}</h3>
+                <h3 className="quote-text-favorites">{quote.quoteText}</h3>
               </Link>
             </li>
           );
