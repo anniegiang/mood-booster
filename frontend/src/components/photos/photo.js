@@ -21,7 +21,6 @@ class Photo extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photo_id);
-    this.props.fetchUser();
   }
 
   handleComment(e) {

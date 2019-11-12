@@ -46,7 +46,11 @@ class Video extends React.Component {
     if (this.props.video.comments !== undefined) {
       return (
         <div className="comments">
-          <CommentsContainer type="video" content={this.props.video} />
+          <CommentsContainer
+            type="video"
+            content={this.props.video}
+            fetchUser={this.props.fetchUser}
+          />
         </div>
       );
     }
