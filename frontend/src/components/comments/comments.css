@@ -34,6 +34,8 @@
   margin-top: 15px;
   min-width: 100%;
   word-wrap: break-word;
+  overflow: scroll;
+  max-height: 300px;
 }
 
 .comment-text {

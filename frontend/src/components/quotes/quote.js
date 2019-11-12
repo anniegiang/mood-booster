@@ -120,7 +120,9 @@ class Quote extends React.Component {
             />
             <input className="comments-submit" type="submit" value="Comment" />
           </form>
-          {this.renderComments()}
+          <div className="comments">
+            {this.renderComments()}
+          </div>
         </div>
       </div>
     );
